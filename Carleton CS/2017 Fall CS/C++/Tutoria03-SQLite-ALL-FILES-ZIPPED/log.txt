@@ -1,0 +1,2520 @@
+Microsoft Windows [Version 10.0.14393]
+(c) 2016 Microsoft Corporation. All rights reserved.
+
+C:\Users\samueldiamantstein\Desktop>cd Tutoria03-SQLite-ALL-FILES-ZIPPED
+
+C:\Users\samueldiamantstein\Desktop\Tutoria03-SQLite-ALL-FILES-ZIPPED>dir
+ Volume in drive C is WINDOWS
+ Volume Serial Number is D661-7AFE
+
+ Directory of C:\Users\samueldiamantstein\Desktop\Tutoria03-SQLite-ALL-FILES-ZIPPED
+
+10/04/2017  11:37 AM    <DIR>          .
+10/04/2017  11:37 AM    <DIR>          ..
+10/04/2017  11:37 AM    <DIR>          database
+10/04/2017  11:37 AM    <DIR>          images
+10/04/2017  11:37 AM               730 template.css
+10/04/2017  11:37 AM            11,233 Tutorial 03 SQLite.html
+               2 File(s)         11,963 bytes
+               4 Dir(s)  249,063,321,600 bytes free
+
+C:\Users\samueldiamantstein\Desktop\Tutoria03-SQLite-ALL-FILES-ZIPPED>cd database
+
+C:\Users\samueldiamantstein\Desktop\Tutoria03-SQLite-ALL-FILES-ZIPPED\database>dir
+ Volume in drive C is WINDOWS
+ Volume Serial Number is D661-7AFE
+
+ Directory of C:\Users\samueldiamantstein\Desktop\Tutoria03-SQLite-ALL-FILES-ZIPPED\database
+
+10/04/2017  11:37 AM    <DIR>          .
+10/04/2017  11:37 AM    <DIR>          ..
+10/04/2017  11:37 AM            40,960 beatles.db
+10/04/2017  11:37 AM             4,758 songScript.txt
+10/04/2017  11:37 AM           750,080 sqlite3.exe
+               3 File(s)        795,798 bytes
+               2 Dir(s)  249,063,321,600 bytes free
+
+C:\Users\samueldiamantstein\Desktop\Tutoria03-SQLite-ALL-FILES-ZIPPED\database>sqlite beatles.db
+'sqlite' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\samueldiamantstein\Desktop\Tutoria03-SQLite-ALL-FILES-ZIPPED\database>sqlite3 beatles.db
+SQLite version 3.20.1 2017-08-24 16:21:36
+Enter ".help" for usage hints.
+sqlite> .mode column
+sqlite> .header on
+sqlite> select * from recordings;
+id          title               artist      producer       year
+----------  ------------------  ----------  -------------  ----------
+102         A Hard Day's Night  Beatles     George Martin  1964
+103         Beatles For Sale    Beatles     George Martin  1964
+104         Help                Beatles     George Martin  1965
+105         Rubber Soul         Beatles     George Martin  1965
+106         Revolver            Beatles     George Martin  1966
+107         Sgt. Pepper's Lone  Beatles     George Martin  1967
+108         The Beatles aka Wh  Beatles     George Martin  1968
+109         Yellow Submarine    Beatles     George Martin  1969
+110         Abbey Road          Beatles     George Martin  1969
+111         Let It Be           Beatles     Phil Spector   1970
+112         With The Beatles    Beatles     George Martin  1963
+113         Please Please Me    Beatles     George Martin  1963
+sqlite> select * from songs;
+sid         title                     composer
+----------  ------------------------  ---------------------------
+1000        I Saw Her Standing There  Paul McCartney, John Lennon
+1001        Misery                    Paul McCartney, John Lennon
+1002        Anna (Go To Him)          Arthur Alexander
+1003        Chains                    Gerry Goffin, Carole King
+1004        Boys                      Luther Dixon, Wes Farrell
+1005        Ask Me Why                Paul McCartney, John Lennon
+1006        Please Please Me          Paul McCartney, John Lennon
+1007        Love Me Do                Paul McCartney, John Lennon
+1008        P.S. I Love You           Paul McCartney, John Lennon
+1009        Baby It's You             Hal David,Barney Williams,
+1010        Do You Want To Know A  S  Paul McCartney, John Lennon
+1011        A Taste Of Honey          Bobby Scott, Ric Marlow
+1012        There's A Place           Paul McCartney, John Lennon
+1013        Twist and Shout           Phil Medley, Bert Russell
+1014        It Won't Be Long          Paul McCartney, John Lennon
+1015        All I've Got To Do        Paul McCartney, John Lennon
+1016        All My Loving             Paul McCartney, John Lennon
+1017        Don't Bother Me           George Harrison
+1018        Little Child              Paul McCartney, John Lennon
+1019        Till There Was You        Meredith Willson
+1020        Please Mister Postman     Georgia Dobbins, William Ga
+1021        Roll Over Beethhoven      Chuck Berry
+1022        Hold Me Tight             Paul McCartney, John Lennon
+1023        I Wanna Be Your Man       Paul McCartney, John Lennon
+1024        Devil In Her Heart        Richard Drapkin
+1025        Not A Second Time         Paul McCartney, John Lennon
+1026        Money (That's What I Wan  Janie Bradford, Berry Gordy
+1027        A Hard Day's Night        John Lennon, Paul McCartney
+1028        I Should Have Known Bett  John Lennon, Paul McCartney
+1029        If I Fell                 John Lennon, Paul McCartney
+1030        I'm Happy Just To Dance   John Lennon, Paul McCartney
+1031        And I Love Her            John Lennon, Paul McCartney
+1032        Tell Me Why               John Lennon, Paul McCartney
+1033        Can't Buy Me Love         John Lennon, Paul McCartney
+1034        Any Time at All           John Lennon, Paul McCartney
+1035        I'll Cry Instead          John Lennon, Paul McCartney
+1036        Things We Said Today      John Lennon, Paul McCartney
+1037        When I Get Home           John Lennon, Paul McCartney
+1038        You Can't Do That         John Lennon, Paul McCartney
+1039        I'll Be Back              John Lennon, Paul McCartney
+1040        No Reply                  John Lennon, Paul McCartney
+1041        I'm a Loser               John Lennon, Paul McCartney
+1042        Baby's in Black           John Lennon, Paul McCartney
+1043        Rock and Roll Music       Chuck Berry
+1044        I'll Follow The Sun       John Lennon, Paul McCartney
+1045        Mr. Moonlight             Roy Lee Johnson
+1046        Kansas City/Hey,Hey,Hey,  Jerry Leiber, Mike Stoller
+1047        Eight Days a Week         John Lennon, Paul McCartney
+1048        Words of Love             Buddy Holly
+1049        Honey Don't               Carl Perkins
+1050        Every Little Thing        John Lennon, Paul McCartney
+1051        I Don't Want to Spoil th  John Lennon, Paul McCartney
+1052        What You're Doing         John Lennon, Paul McCartney
+1053        Everybody's Trying to Be  Carl Perkins
+1054        Help!                     John Lennon, Paul McCartney
+1055        The Night Before          John Lennon, Paul McCartney
+1056        You've Got To Hide Your   John Lennon, Paul McCartney
+1057        I Need You                George Harrison
+1058        Another Girl              John Lennon, Paul McCartney
+1059        You're Going to Lose Tha  John Lennon, Paul McCartney
+1060        Ticket To Ride            John Lennon, Paul McCartney
+1061        Act naturally             Johnny Russell, Voni Morris
+1062        It's Only Love            John Lennon, Paul McCartney
+1063        You Like Me Too Much      John Lennon, Paul McCartney
+1064        Tell Me What You See      John Lennon, Paul McCartney
+1065        I've Just Seen a Face     John Lennon, Paul McCartney
+1066        Yesterday                 John Lennon, Paul McCartney
+1067        Dizzy Miss Lizzy          Larry Williams
+1068        Drive My Car              John Lennon, Paul McCartney
+1069        Norwegian Wood            John Lennon, Paul McCartney
+1070        You Won't See Me          John Lennon, Paul McCartney
+1071        Nowhere Man               John Lennon, Paul McCartney
+1072        Think for Yourself        George Harrison
+1073        The World                 John Lennon, Paul McCartney
+1074        Michelle                  John Lennon, Paul McCartney
+1075        What Goes On              John Lennon, Paul McCartney
+1076        Girl                      John Lennon, Paul McCartney
+1077        I'm Looking Through You   John Lennon, Paul McCartney
+1078        In My Life                John Lennon, Paul McCartney
+1079        Wait                      John Lennon, Paul McCartney
+1080        If I Need Someone         George Harrison
+1081        Run for Your Life         John Lennon, Paul McCartney
+1082        Taxman                    George Harrison
+1083        Eleanor Rigby             John Lennon, Paul McCartney
+1084        I'm Only Sleeping         John Lennon, Paul McCartney
+1085        Love You To               George Harrison
+1086        Here, There and Everywhe  John Lennon, Paul McCartney
+1087        Yellow Submarine          John Lennon, Paul McCartney
+1088        She Said She Said         John Lennon, Paul McCartney
+1089        Good Day Sunshine         John Lennon, Paul McCartney
+1090        And your Bird Can Sing    John Lennon, Paul McCartney
+1091        For No One                John Lennon, Paul McCartney
+1092        Doctor Robert             John Lennon, Paul McCartney
+1093        I Want to Tell You        George Harrison
+1094        Got to Get You into My L  John Lennon, Paul McCartney
+1095        Tomorrow Never Knows      John Lennon, Paul McCartney
+1096        Sgt. Pepper's Lonely Hea  John Lennon, Paul McCartney
+1097        With a Little Help from   John Lennon, Paul McCartney
+1098        Luch in the Sky with Dia  John Lennon, Paul McCartney
+1099        Getting Better            John Lennon, Paul McCartney
+1100        Fixing a Hole             John Lennon, Paul McCartney
+1101        She's Leaving Home        John Lennon, Paul McCartney
+1102        Being for the Benefit of  John Lennon, Paul McCartney
+1103        Within You Without You    George Harrison
+1104        When I'm Sixty-Four       John Lennon, Paul McCartney
+1105        Lovely Rita               John Lennon, Paul McCartney
+1106        Good Morning Good Mornin  John Lennon, Paul McCartney
+1107        Sgt. Pepper's Lonely Hea  John Lennon, Paul McCartney
+1108        A Day in the Life         John Lennon, Paul McCartney
+1109        Back in the U.S.S.R       John Lennon, Paul McCartney
+1110        Dear Prudence             John Lennon, Paul McCartney
+1111        Glass Onion               John Lennon, Paul McCartney
+1112        Ob-La-Di, Ob-La_da        John Lennon, Paul McCartney
+1113        Wild Honey Pie            John Lennon, Paul McCartney
+1114        The Continuing Story of   John Lennon, Paul McCartney
+1115        While My Guitar Gently W  George Harrison
+1116        Happiness Is a Warm Gun   John Lennon, Paul McCartney
+1117        Martha My Dear            John Lennon, Paul McCartney
+1118        I'm So Tired              John Lennon, Paul McCartney
+1119        Blackbird                 John Lennon, Paul McCartney
+1120        Piggies                   Harrison
+1121        Rocky Raccon              John Lennon, Paul McCartney
+1122        Don't Pass Me By          Richard Starkey
+1123        Why Don't We Do It in th  John Lennon, Paul McCartney
+1124        I Will                    John Lennon, Paul McCartney
+1125        Julia                     John Lennon, Paul McCartney
+1126        Birthday                  John Lennon, Paul McCartney
+1127        Yer Blues                 John Lennon, Paul McCartney
+1128        Mother Nature's Son       John Lennon, Paul McCartney
+1129        Everybody's Got Somethin  John Lennon, Paul McCartney
+1130        Sexy Sadie                John Lennon, Paul McCartney
+1131        Helter Skelter            John Lennon, Paul McCartney
+1132        Long, Long, Long          John Lennon, Paul McCartney
+1133        Revolution 1              John Lennon, Paul McCartney
+1134        Honey Pie                 John Lennon, Paul McCartney
+1135        Savoy Truffle             George Harrison
+1136        Cry Baby Cry              John Lennon, Paul McCartney
+1137        Revolution 9              John Lennon, Paul McCartney
+1138        Good Night                John Lennon, Paul McCartney
+1140        Only a Northern Song      John Lennon, Paul McCartney
+1141        All Together Now          John Lennon, Paul McCartney
+1142        Hey Bulldog               John Lennon, Paul McCartney
+1143        It's All too Much         John Lennon, Paul McCartney
+1144        All You Need Is Love      John Lennon, Paul McCartney
+1145        Pepperland                John Lennon, Paul McCartney
+1146        Sea of Time               John Lennon, Paul McCartney
+1147        Sea of Holes              John Lennon, Paul McCartney
+1148        Sea of Monsters           John Lennon, Paul McCartney
+1149        March of the Meanies      John Lennon, Paul McCartney
+1150        Pepperland Laid Waste     John Lennon, Paul McCartney
+1151        Yellow Submarine in Pepp  John Lennon, Paul McCartney
+1152        Come Together             John Lennon, Paul McCartney
+1153        Something                 George Harrison
+1154        Maxwell's Silver Hammer   John Lennon, Paul McCartney
+1155        Oh! Darling               John Lennon, Paul McCartney
+1156        Octopus's Garden          Richard Starkey
+1157        I Want You (She's So Hea  John Lennon, Paul McCartney
+1158        Here Comes The Sun        George Harrison
+1159        Because                   John Lennon, Paul McCartney
+1160        You Never Give My Your M  John Lennon, Paul McCartney
+1161        Sun King                  John Lennon, Paul McCartney
+1162        Mean Mr. Mustard          John Lennon, Paul McCartney
+1163        Polythene Pam             John Lennon, Paul McCartney
+1164        She Came in Through the   John Lennon, Paul McCartney
+1166        Golden Slumbers           John Lennon, Paul McCartney
+1167        Carry That Weight         John Lennon, Paul McCartney
+1168        The End                   John Lennon, Paul McCartney
+1169        Her Majesty               John Lennon, Paul McCartney
+1170        Two of Us                 John Lennon, Paul McCartney
+1171        Dig a Pony                John Lennon, Paul McCartney
+1172        Across the Universe       John Lennon, Paul McCartney
+1173        I Me Mine                 John Lennon, Paul McCartney
+1174        Dig It                    John Lennon, Paul McCartney
+1175        Let It Be                 John Lennon, Paul McCartney
+1176        Magie Mae                 John Lennon, Paul McCartney
+1177        I've Got a Feeling        John Lennon, Paul McCartney
+1178        One After 909             John Lennon, Paul McCartney
+1179        The Long and Winding roa  John Lennon, Paul McCartney
+1180        For You Blue              John Lennon, Paul McCartney
+1181        Get Back                  John Lennon, Paul McCartney
+sqlite> select sid,title from songs;
+sid         title
+----------  ------------------------
+1000        I Saw Her Standing There
+1001        Misery
+1002        Anna (Go To Him)
+1003        Chains
+1004        Boys
+1005        Ask Me Why
+1006        Please Please Me
+1007        Love Me Do
+1008        P.S. I Love You
+1009        Baby It's You
+1010        Do You Want To Know A  S
+1011        A Taste Of Honey
+1012        There's A Place
+1013        Twist and Shout
+1014        It Won't Be Long
+1015        All I've Got To Do
+1016        All My Loving
+1017        Don't Bother Me
+1018        Little Child
+1019        Till There Was You
+1020        Please Mister Postman
+1021        Roll Over Beethhoven
+1022        Hold Me Tight
+1023        I Wanna Be Your Man
+1024        Devil In Her Heart
+1025        Not A Second Time
+1026        Money (That's What I Wan
+1027        A Hard Day's Night
+1028        I Should Have Known Bett
+1029        If I Fell
+1030        I'm Happy Just To Dance
+1031        And I Love Her
+1032        Tell Me Why
+1033        Can't Buy Me Love
+1034        Any Time at All
+1035        I'll Cry Instead
+1036        Things We Said Today
+1037        When I Get Home
+1038        You Can't Do That
+1039        I'll Be Back
+1040        No Reply
+1041        I'm a Loser
+1042        Baby's in Black
+1043        Rock and Roll Music
+1044        I'll Follow The Sun
+1045        Mr. Moonlight
+1046        Kansas City/Hey,Hey,Hey,
+1047        Eight Days a Week
+1048        Words of Love
+1049        Honey Don't
+1050        Every Little Thing
+1051        I Don't Want to Spoil th
+1052        What You're Doing
+1053        Everybody's Trying to Be
+1054        Help!
+1055        The Night Before
+1056        You've Got To Hide Your
+1057        I Need You
+1058        Another Girl
+1059        You're Going to Lose Tha
+1060        Ticket To Ride
+1061        Act naturally
+1062        It's Only Love
+1063        You Like Me Too Much
+1064        Tell Me What You See
+1065        I've Just Seen a Face
+1066        Yesterday
+1067        Dizzy Miss Lizzy
+1068        Drive My Car
+1069        Norwegian Wood
+1070        You Won't See Me
+1071        Nowhere Man
+1072        Think for Yourself
+1073        The World
+1074        Michelle
+1075        What Goes On
+1076        Girl
+1077        I'm Looking Through You
+1078        In My Life
+1079        Wait
+1080        If I Need Someone
+1081        Run for Your Life
+1082        Taxman
+1083        Eleanor Rigby
+1084        I'm Only Sleeping
+1085        Love You To
+1086        Here, There and Everywhe
+1087        Yellow Submarine
+1088        She Said She Said
+1089        Good Day Sunshine
+1090        And your Bird Can Sing
+1091        For No One
+1092        Doctor Robert
+1093        I Want to Tell You
+1094        Got to Get You into My L
+1095        Tomorrow Never Knows
+1096        Sgt. Pepper's Lonely Hea
+1097        With a Little Help from
+1098        Luch in the Sky with Dia
+1099        Getting Better
+1100        Fixing a Hole
+1101        She's Leaving Home
+1102        Being for the Benefit of
+1103        Within You Without You
+1104        When I'm Sixty-Four
+1105        Lovely Rita
+1106        Good Morning Good Mornin
+1107        Sgt. Pepper's Lonely Hea
+1108        A Day in the Life
+1109        Back in the U.S.S.R
+1110        Dear Prudence
+1111        Glass Onion
+1112        Ob-La-Di, Ob-La_da
+1113        Wild Honey Pie
+1114        The Continuing Story of
+1115        While My Guitar Gently W
+1116        Happiness Is a Warm Gun
+1117        Martha My Dear
+1118        I'm So Tired
+1119        Blackbird
+1120        Piggies
+1121        Rocky Raccon
+1122        Don't Pass Me By
+1123        Why Don't We Do It in th
+1124        I Will
+1125        Julia
+1126        Birthday
+1127        Yer Blues
+1128        Mother Nature's Son
+1129        Everybody's Got Somethin
+1130        Sexy Sadie
+1131        Helter Skelter
+1132        Long, Long, Long
+1133        Revolution 1
+1134        Honey Pie
+1135        Savoy Truffle
+1136        Cry Baby Cry
+1137        Revolution 9
+1138        Good Night
+1140        Only a Northern Song
+1141        All Together Now
+1142        Hey Bulldog
+1143        It's All too Much
+1144        All You Need Is Love
+1145        Pepperland
+1146        Sea of Time
+1147        Sea of Holes
+1148        Sea of Monsters
+1149        March of the Meanies
+1150        Pepperland Laid Waste
+1151        Yellow Submarine in Pepp
+1152        Come Together
+1153        Something
+1154        Maxwell's Silver Hammer
+1155        Oh! Darling
+1156        Octopus's Garden
+1157        I Want You (She's So Hea
+1158        Here Comes The Sun
+1159        Because
+1160        You Never Give My Your M
+1161        Sun King
+1162        Mean Mr. Mustard
+1163        Polythene Pam
+1164        She Came in Through the
+1166        Golden Slumbers
+1167        Carry That Weight
+1168        The End
+1169        Her Majesty
+1170        Two of Us
+1171        Dig a Pony
+1172        Across the Universe
+1173        I Me Mine
+1174        Dig It
+1175        Let It Be
+1176        Magie Mae
+1177        I've Got a Feeling
+1178        One After 909
+1179        The Long and Winding roa
+1180        For You Blue
+1181        Get Back
+sqlite> select 'add -s ' || title from songs;
+'add -s ' || title
+-------------------------------
+add -s I Saw Her Standing There
+add -s Misery
+add -s Anna (Go To Him)
+add -s Chains
+add -s Boys
+add -s Ask Me Why
+add -s Please Please Me
+add -s Love Me Do
+add -s P.S. I Love You
+add -s Baby It's You
+add -s Do You Want To Know A  S
+add -s A Taste Of Honey
+add -s There's A Place
+add -s Twist and Shout
+add -s It Won't Be Long
+add -s All I've Got To Do
+add -s All My Loving
+add -s Don't Bother Me
+add -s Little Child
+add -s Till There Was You
+add -s Please Mister Postman
+add -s Roll Over Beethhoven
+add -s Hold Me Tight
+add -s I Wanna Be Your Man
+add -s Devil In Her Heart
+add -s Not A Second Time
+add -s Money (That's What I Wan
+add -s A Hard Day's Night
+add -s I Should Have Known Bett
+add -s If I Fell
+add -s I'm Happy Just To Dance
+add -s And I Love Her
+add -s Tell Me Why
+add -s Can't Buy Me Love
+add -s Any Time at All
+add -s I'll Cry Instead
+add -s Things We Said Today
+add -s When I Get Home
+add -s You Can't Do That
+add -s I'll Be Back
+add -s No Reply
+add -s I'm a Loser
+add -s Baby's in Black
+add -s Rock and Roll Music
+add -s I'll Follow The Sun
+add -s Mr. Moonlight
+add -s Kansas City/Hey,Hey,Hey,
+add -s Eight Days a Week
+add -s Words of Love
+add -s Honey Don't
+add -s Every Little Thing
+add -s I Don't Want to Spoil th
+add -s What You're Doing
+add -s Everybody's Trying to Be
+add -s Help!
+add -s The Night Before
+add -s You've Got To Hide Your
+add -s I Need You
+add -s Another Girl
+add -s You're Going to Lose Tha
+add -s Ticket To Ride
+add -s Act naturally
+add -s It's Only Love
+add -s You Like Me Too Much
+add -s Tell Me What You See
+add -s I've Just Seen a Face
+add -s Yesterday
+add -s Dizzy Miss Lizzy
+add -s Drive My Car
+add -s Norwegian Wood
+add -s You Won't See Me
+add -s Nowhere Man
+add -s Think for Yourself
+add -s The World
+add -s Michelle
+add -s What Goes On
+add -s Girl
+add -s I'm Looking Through You
+add -s In My Life
+add -s Wait
+add -s If I Need Someone
+add -s Run for Your Life
+add -s Taxman
+add -s Eleanor Rigby
+add -s I'm Only Sleeping
+add -s Love You To
+add -s Here, There and Everywhe
+add -s Yellow Submarine
+add -s She Said She Said
+add -s Good Day Sunshine
+add -s And your Bird Can Sing
+add -s For No One
+add -s Doctor Robert
+add -s I Want to Tell You
+add -s Got to Get You into My L
+add -s Tomorrow Never Knows
+add -s Sgt. Pepper's Lonely Hea
+add -s With a Little Help from
+add -s Luch in the Sky with Dia
+add -s Getting Better
+add -s Fixing a Hole
+add -s She's Leaving Home
+add -s Being for the Benefit of
+add -s Within You Without You
+add -s When I'm Sixty-Four
+add -s Lovely Rita
+add -s Good Morning Good Mornin
+add -s Sgt. Pepper's Lonely Hea
+add -s A Day in the Life
+add -s Back in the U.S.S.R
+add -s Dear Prudence
+add -s Glass Onion
+add -s Ob-La-Di, Ob-La_da
+add -s Wild Honey Pie
+add -s The Continuing Story of
+add -s While My Guitar Gently W
+add -s Happiness Is a Warm Gun
+add -s Martha My Dear
+add -s I'm So Tired
+add -s Blackbird
+add -s Piggies
+add -s Rocky Raccon
+add -s Don't Pass Me By
+add -s Why Don't We Do It in th
+add -s I Will
+add -s Julia
+add -s Birthday
+add -s Yer Blues
+add -s Mother Nature's Son
+add -s Everybody's Got Somethin
+add -s Sexy Sadie
+add -s Helter Skelter
+add -s Long, Long, Long
+add -s Revolution 1
+add -s Honey Pie
+add -s Savoy Truffle
+add -s Cry Baby Cry
+add -s Revolution 9
+add -s Good Night
+add -s Only a Northern Song
+add -s All Together Now
+add -s Hey Bulldog
+add -s It's All too Much
+add -s All You Need Is Love
+add -s Pepperland
+add -s Sea of Time
+add -s Sea of Holes
+add -s Sea of Monsters
+add -s March of the Meanies
+add -s Pepperland Laid Waste
+add -s Yellow Submarine in Pepp
+add -s Come Together
+add -s Something
+add -s Maxwell's Silver Hammer
+add -s Oh! Darling
+add -s Octopus's Garden
+add -s I Want You (She's So Hea
+add -s Here Comes The Sun
+add -s Because
+add -s You Never Give My Your M
+add -s Sun King
+add -s Mean Mr. Mustard
+add -s Polythene Pam
+add -s She Came in Through the
+add -s Golden Slumbers
+add -s Carry That Weight
+add -s The End
+add -s Her Majesty
+add -s Two of Us
+add -s Dig a Pony
+add -s Across the Universe
+add -s I Me Mine
+add -s Dig It
+add -s Let It Be
+add -s Magie Mae
+add -s I've Got a Feeling
+add -s One After 909
+add -s The Long and Winding roa
+add -s For You Blue
+add -s Get Back
+sqlite> .mode list
+sqlite> select * from songs;
+sid|title|composer
+1000|I Saw Her Standing There|Paul McCartney, John Lennon
+1001|Misery|Paul McCartney, John Lennon
+1002|Anna (Go To Him)|Arthur Alexander
+1003|Chains|Gerry Goffin, Carole King
+1004|Boys|Luther Dixon, Wes Farrell
+1005|Ask Me Why|Paul McCartney, John Lennon
+1006|Please Please Me|Paul McCartney, John Lennon
+1007|Love Me Do|Paul McCartney, John Lennon
+1008|P.S. I Love You|Paul McCartney, John Lennon
+1009|Baby It's You|Hal David,Barney Williams, Burt Bacharach
+1010|Do You Want To Know A  Secret|Paul McCartney, John Lennon
+1011|A Taste Of Honey|Bobby Scott, Ric Marlow
+1012|There's A Place|Paul McCartney, John Lennon
+1013|Twist and Shout|Phil Medley, Bert Russell
+1014|It Won't Be Long|Paul McCartney, John Lennon
+1015|All I've Got To Do|Paul McCartney, John Lennon
+1016|All My Loving|Paul McCartney, John Lennon
+1017|Don't Bother Me|George Harrison
+1018|Little Child|Paul McCartney, John Lennon
+1019|Till There Was You|Meredith Willson
+1020|Please Mister Postman|Georgia Dobbins, William Garrett, Freddie Gorman, Brian Holland, Robert Bateman
+1021|Roll Over Beethhoven|Chuck Berry
+1022|Hold Me Tight|Paul McCartney, John Lennon
+1023|I Wanna Be Your Man|Paul McCartney, John Lennon
+1024|Devil In Her Heart|Richard Drapkin
+1025|Not A Second Time|Paul McCartney, John Lennon
+1026|Money (That's What I Want)|Janie Bradford, Berry Gordy
+1027|A Hard Day's Night|John Lennon, Paul McCartney
+1028|I Should Have Known Better|John Lennon, Paul McCartney
+1029|If I Fell|John Lennon, Paul McCartney
+1030|I'm Happy Just To Dance With You|John Lennon, Paul McCartney
+1031|And I Love Her|John Lennon, Paul McCartney
+1032|Tell Me Why|John Lennon, Paul McCartney
+1033|Can't Buy Me Love|John Lennon, Paul McCartney
+1034|Any Time at All|John Lennon, Paul McCartney
+1035|I'll Cry Instead|John Lennon, Paul McCartney
+1036|Things We Said Today|John Lennon, Paul McCartney
+1037|When I Get Home|John Lennon, Paul McCartney
+1038|You Can't Do That|John Lennon, Paul McCartney
+1039|I'll Be Back|John Lennon, Paul McCartney
+1040|No Reply|John Lennon, Paul McCartney
+1041|I'm a Loser|John Lennon, Paul McCartney
+1042|Baby's in Black|John Lennon, Paul McCartney
+1043|Rock and Roll Music|Chuck Berry
+1044|I'll Follow The Sun|John Lennon, Paul McCartney
+1045|Mr. Moonlight|Roy Lee Johnson
+1046|Kansas City/Hey,Hey,Hey,Hey|Jerry Leiber, Mike Stoller / Richard Penniman
+1047|Eight Days a Week|John Lennon, Paul McCartney
+1048|Words of Love|Buddy Holly
+1049|Honey Don't|Carl Perkins
+1050|Every Little Thing|John Lennon, Paul McCartney
+1051|I Don't Want to Spoil the Party|John Lennon, Paul McCartney
+1052|What You're Doing|John Lennon, Paul McCartney
+1053|Everybody's Trying to Be My Baby|Carl Perkins
+1054|Help!|John Lennon, Paul McCartney
+1055|The Night Before|John Lennon, Paul McCartney
+1056|You've Got To Hide Your love Away|John Lennon, Paul McCartney
+1057|I Need You|George Harrison
+1058|Another Girl|John Lennon, Paul McCartney
+1059|You're Going to Lose That Girl|John Lennon, Paul McCartney
+1060|Ticket To Ride|John Lennon, Paul McCartney
+1061|Act naturally|Johnny Russell, Voni Morrison
+1062|It's Only Love|John Lennon, Paul McCartney
+1063|You Like Me Too Much|John Lennon, Paul McCartney
+1064|Tell Me What You See|John Lennon, Paul McCartney
+1065|I've Just Seen a Face|John Lennon, Paul McCartney
+1066|Yesterday|John Lennon, Paul McCartney
+1067|Dizzy Miss Lizzy|Larry Williams
+1068|Drive My Car|John Lennon, Paul McCartney
+1069|Norwegian Wood|John Lennon, Paul McCartney
+1070|You Won't See Me|John Lennon, Paul McCartney
+1071|Nowhere Man|John Lennon, Paul McCartney
+1072|Think for Yourself|George Harrison
+1073|The World|John Lennon, Paul McCartney
+1074|Michelle|John Lennon, Paul McCartney
+1075|What Goes On|John Lennon, Paul McCartney, Richard Starkey
+1076|Girl|John Lennon, Paul McCartney
+1077|I'm Looking Through You|John Lennon, Paul McCartney
+1078|In My Life|John Lennon, Paul McCartney
+1079|Wait|John Lennon, Paul McCartney
+1080|If I Need Someone|George Harrison
+1081|Run for Your Life|John Lennon, Paul McCartney
+1082|Taxman|George Harrison
+1083|Eleanor Rigby|John Lennon, Paul McCartney
+1084|I'm Only Sleeping|John Lennon, Paul McCartney
+1085|Love You To|George Harrison
+1086|Here, There and Everywhere|John Lennon, Paul McCartney
+1087|Yellow Submarine|John Lennon, Paul McCartney
+1088|She Said She Said|John Lennon, Paul McCartney
+1089|Good Day Sunshine|John Lennon, Paul McCartney
+1090|And your Bird Can Sing|John Lennon, Paul McCartney
+1091|For No One|John Lennon, Paul McCartney
+1092|Doctor Robert|John Lennon, Paul McCartney
+1093|I Want to Tell You|George Harrison
+1094|Got to Get You into My Life|John Lennon, Paul McCartney
+1095|Tomorrow Never Knows|John Lennon, Paul McCartney
+1096|Sgt. Pepper's Lonely Hearts Club Band|John Lennon, Paul McCartney
+1097|With a Little Help from My Friends|John Lennon, Paul McCartney
+1098|Luch in the Sky with Diamonds|John Lennon, Paul McCartney
+1099|Getting Better|John Lennon, Paul McCartney
+1100|Fixing a Hole|John Lennon, Paul McCartney
+1101|She's Leaving Home|John Lennon, Paul McCartney
+1102|Being for the Benefit of Mr. Kite!|John Lennon, Paul McCartney
+1103|Within You Without You|George Harrison
+1104|When I'm Sixty-Four|John Lennon, Paul McCartney
+1105|Lovely Rita|John Lennon, Paul McCartney
+1106|Good Morning Good Morning|John Lennon, Paul McCartney
+1107|Sgt. Pepper's Lonely Hearts Club Band (reprise)|John Lennon, Paul McCartney
+1108|A Day in the Life|John Lennon, Paul McCartney
+1109|Back in the U.S.S.R|John Lennon, Paul McCartney
+1110|Dear Prudence|John Lennon, Paul McCartney
+1111|Glass Onion|John Lennon, Paul McCartney
+1112|Ob-La-Di, Ob-La_da|John Lennon, Paul McCartney
+1113|Wild Honey Pie|John Lennon, Paul McCartney
+1114|The Continuing Story of Bungalow Bill|John Lennon, Paul McCartney
+1115|While My Guitar Gently Weeps|George Harrison
+1116|Happiness Is a Warm Gun|John Lennon, Paul McCartney
+1117|Martha My Dear|John Lennon, Paul McCartney
+1118|I'm So Tired|John Lennon, Paul McCartney
+1119|Blackbird|John Lennon, Paul McCartney
+1120|Piggies|Harrison
+1121|Rocky Raccon|John Lennon, Paul McCartney
+1122|Don't Pass Me By|Richard Starkey
+1123|Why Don't We Do It in the Road|John Lennon, Paul McCartney
+1124|I Will|John Lennon, Paul McCartney
+1125|Julia|John Lennon, Paul McCartney
+1126|Birthday|John Lennon, Paul McCartney
+1127|Yer Blues|John Lennon, Paul McCartney
+1128|Mother Nature's Son|John Lennon, Paul McCartney
+1129|Everybody's Got Something to Hide Except Me and My Monkey|John Lennon, Paul McCartney
+1130|Sexy Sadie|John Lennon, Paul McCartney
+1131|Helter Skelter|John Lennon, Paul McCartney
+1132|Long, Long, Long|John Lennon, Paul McCartney
+1133|Revolution 1|John Lennon, Paul McCartney
+1134|Honey Pie|John Lennon, Paul McCartney
+1135|Savoy Truffle|George Harrison
+1136|Cry Baby Cry|John Lennon, Paul McCartney
+1137|Revolution 9|John Lennon, Paul McCartney
+1138|Good Night|John Lennon, Paul McCartney
+1140|Only a Northern Song|John Lennon, Paul McCartney
+1141|All Together Now|John Lennon, Paul McCartney
+1142|Hey Bulldog|John Lennon, Paul McCartney
+1143|It's All too Much|John Lennon, Paul McCartney
+1144|All You Need Is Love|John Lennon, Paul McCartney
+1145|Pepperland|John Lennon, Paul McCartney
+1146|Sea of Time|John Lennon, Paul McCartney
+1147|Sea of Holes|John Lennon, Paul McCartney
+1148|Sea of Monsters|John Lennon, Paul McCartney
+1149|March of the Meanies|John Lennon, Paul McCartney
+1150|Pepperland Laid Waste|John Lennon, Paul McCartney
+1151|Yellow Submarine in Pepperland|John Lennon, Paul McCartney
+1152|Come Together|John Lennon, Paul McCartney
+1153|Something|George Harrison
+1154|Maxwell's Silver Hammer|John Lennon, Paul McCartney
+1155|Oh! Darling|John Lennon, Paul McCartney
+1156|Octopus's Garden|Richard Starkey
+1157|I Want You (She's So Heavy)|John Lennon, Paul McCartney
+1158|Here Comes The Sun|George Harrison
+1159|Because|John Lennon, Paul McCartney
+1160|You Never Give My Your Money|John Lennon, Paul McCartney
+1161|Sun King|John Lennon, Paul McCartney
+1162|Mean Mr. Mustard|John Lennon, Paul McCartney
+1163|Polythene Pam|John Lennon, Paul McCartney
+1164|She Came in Through the Bathroom Window|John Lennon, Paul McCartney
+1166|Golden Slumbers|John Lennon, Paul McCartney
+1167|Carry That Weight|John Lennon, Paul McCartney
+1168|The End|John Lennon, Paul McCartney
+1169|Her Majesty|John Lennon, Paul McCartney
+1170|Two of Us|John Lennon, Paul McCartney
+1171|Dig a Pony|John Lennon, Paul McCartney
+1172|Across the Universe|John Lennon, Paul McCartney
+1173|I Me Mine|John Lennon, Paul McCartney
+1174|Dig It|John Lennon, Paul McCartney, George Harrison, Richard Starkey
+1175|Let It Be|John Lennon, Paul McCartney
+1176|Magie Mae|John Lennon, Paul McCartney, George Harrison, Richard Starkey
+1177|I've Got a Feeling|John Lennon, Paul McCartney
+1178|One After 909|John Lennon, Paul McCartney
+1179|The Long and Winding road|John Lennon, Paul McCartney
+1180|For You Blue|John Lennon, Paul McCartney
+1181|Get Back|John Lennon, Paul McCartney
+sqlite> select 'add -s ' || title from songs;
+'add -s ' || title
+add -s I Saw Her Standing There
+add -s Misery
+add -s Anna (Go To Him)
+add -s Chains
+add -s Boys
+add -s Ask Me Why
+add -s Please Please Me
+add -s Love Me Do
+add -s P.S. I Love You
+add -s Baby It's You
+add -s Do You Want To Know A  Secret
+add -s A Taste Of Honey
+add -s There's A Place
+add -s Twist and Shout
+add -s It Won't Be Long
+add -s All I've Got To Do
+add -s All My Loving
+add -s Don't Bother Me
+add -s Little Child
+add -s Till There Was You
+add -s Please Mister Postman
+add -s Roll Over Beethhoven
+add -s Hold Me Tight
+add -s I Wanna Be Your Man
+add -s Devil In Her Heart
+add -s Not A Second Time
+add -s Money (That's What I Want)
+add -s A Hard Day's Night
+add -s I Should Have Known Better
+add -s If I Fell
+add -s I'm Happy Just To Dance With You
+add -s And I Love Her
+add -s Tell Me Why
+add -s Can't Buy Me Love
+add -s Any Time at All
+add -s I'll Cry Instead
+add -s Things We Said Today
+add -s When I Get Home
+add -s You Can't Do That
+add -s I'll Be Back
+add -s No Reply
+add -s I'm a Loser
+add -s Baby's in Black
+add -s Rock and Roll Music
+add -s I'll Follow The Sun
+add -s Mr. Moonlight
+add -s Kansas City/Hey,Hey,Hey,Hey
+add -s Eight Days a Week
+add -s Words of Love
+add -s Honey Don't
+add -s Every Little Thing
+add -s I Don't Want to Spoil the Party
+add -s What You're Doing
+add -s Everybody's Trying to Be My Baby
+add -s Help!
+add -s The Night Before
+add -s You've Got To Hide Your love Away
+add -s I Need You
+add -s Another Girl
+add -s You're Going to Lose That Girl
+add -s Ticket To Ride
+add -s Act naturally
+add -s It's Only Love
+add -s You Like Me Too Much
+add -s Tell Me What You See
+add -s I've Just Seen a Face
+add -s Yesterday
+add -s Dizzy Miss Lizzy
+add -s Drive My Car
+add -s Norwegian Wood
+add -s You Won't See Me
+add -s Nowhere Man
+add -s Think for Yourself
+add -s The World
+add -s Michelle
+add -s What Goes On
+add -s Girl
+add -s I'm Looking Through You
+add -s In My Life
+add -s Wait
+add -s If I Need Someone
+add -s Run for Your Life
+add -s Taxman
+add -s Eleanor Rigby
+add -s I'm Only Sleeping
+add -s Love You To
+add -s Here, There and Everywhere
+add -s Yellow Submarine
+add -s She Said She Said
+add -s Good Day Sunshine
+add -s And your Bird Can Sing
+add -s For No One
+add -s Doctor Robert
+add -s I Want to Tell You
+add -s Got to Get You into My Life
+add -s Tomorrow Never Knows
+add -s Sgt. Pepper's Lonely Hearts Club Band
+add -s With a Little Help from My Friends
+add -s Luch in the Sky with Diamonds
+add -s Getting Better
+add -s Fixing a Hole
+add -s She's Leaving Home
+add -s Being for the Benefit of Mr. Kite!
+add -s Within You Without You
+add -s When I'm Sixty-Four
+add -s Lovely Rita
+add -s Good Morning Good Morning
+add -s Sgt. Pepper's Lonely Hearts Club Band (reprise)
+add -s A Day in the Life
+add -s Back in the U.S.S.R
+add -s Dear Prudence
+add -s Glass Onion
+add -s Ob-La-Di, Ob-La_da
+add -s Wild Honey Pie
+add -s The Continuing Story of Bungalow Bill
+add -s While My Guitar Gently Weeps
+add -s Happiness Is a Warm Gun
+add -s Martha My Dear
+add -s I'm So Tired
+add -s Blackbird
+add -s Piggies
+add -s Rocky Raccon
+add -s Don't Pass Me By
+add -s Why Don't We Do It in the Road
+add -s I Will
+add -s Julia
+add -s Birthday
+add -s Yer Blues
+add -s Mother Nature's Son
+add -s Everybody's Got Something to Hide Except Me and My Monkey
+add -s Sexy Sadie
+add -s Helter Skelter
+add -s Long, Long, Long
+add -s Revolution 1
+add -s Honey Pie
+add -s Savoy Truffle
+add -s Cry Baby Cry
+add -s Revolution 9
+add -s Good Night
+add -s Only a Northern Song
+add -s All Together Now
+add -s Hey Bulldog
+add -s It's All too Much
+add -s All You Need Is Love
+add -s Pepperland
+add -s Sea of Time
+add -s Sea of Holes
+add -s Sea of Monsters
+add -s March of the Meanies
+add -s Pepperland Laid Waste
+add -s Yellow Submarine in Pepperland
+add -s Come Together
+add -s Something
+add -s Maxwell's Silver Hammer
+add -s Oh! Darling
+add -s Octopus's Garden
+add -s I Want You (She's So Heavy)
+add -s Here Comes The Sun
+add -s Because
+add -s You Never Give My Your Money
+add -s Sun King
+add -s Mean Mr. Mustard
+add -s Polythene Pam
+add -s She Came in Through the Bathroom Window
+add -s Golden Slumbers
+add -s Carry That Weight
+add -s The End
+add -s Her Majesty
+add -s Two of Us
+add -s Dig a Pony
+add -s Across the Universe
+add -s I Me Mine
+add -s Dig It
+add -s Let It Be
+add -s Magie Mae
+add -s I've Got a Feeling
+add -s One After 909
+add -s The Long and Winding road
+add -s For You Blue
+add -s Get Back
+sqlite> .header off
+sqlite> select 'add -s "' || title || '"' from songs;
+add -s "I Saw Her Standing There"
+add -s "Misery"
+add -s "Anna (Go To Him)"
+add -s "Chains"
+add -s "Boys"
+add -s "Ask Me Why"
+add -s "Please Please Me"
+add -s "Love Me Do"
+add -s "P.S. I Love You"
+add -s "Baby It's You"
+add -s "Do You Want To Know A  Secret"
+add -s "A Taste Of Honey"
+add -s "There's A Place"
+add -s "Twist and Shout"
+add -s "It Won't Be Long"
+add -s "All I've Got To Do"
+add -s "All My Loving"
+add -s "Don't Bother Me"
+add -s "Little Child"
+add -s "Till There Was You"
+add -s "Please Mister Postman"
+add -s "Roll Over Beethhoven"
+add -s "Hold Me Tight"
+add -s "I Wanna Be Your Man"
+add -s "Devil In Her Heart"
+add -s "Not A Second Time"
+add -s "Money (That's What I Want)"
+add -s "A Hard Day's Night"
+add -s "I Should Have Known Better"
+add -s "If I Fell"
+add -s "I'm Happy Just To Dance With You"
+add -s "And I Love Her"
+add -s "Tell Me Why"
+add -s "Can't Buy Me Love"
+add -s "Any Time at All"
+add -s "I'll Cry Instead"
+add -s "Things We Said Today"
+add -s "When I Get Home"
+add -s "You Can't Do That"
+add -s "I'll Be Back"
+add -s "No Reply"
+add -s "I'm a Loser"
+add -s "Baby's in Black"
+add -s "Rock and Roll Music"
+add -s "I'll Follow The Sun"
+add -s "Mr. Moonlight"
+add -s "Kansas City/Hey,Hey,Hey,Hey"
+add -s "Eight Days a Week"
+add -s "Words of Love"
+add -s "Honey Don't"
+add -s "Every Little Thing"
+add -s "I Don't Want to Spoil the Party"
+add -s "What You're Doing"
+add -s "Everybody's Trying to Be My Baby"
+add -s "Help!"
+add -s "The Night Before"
+add -s "You've Got To Hide Your love Away"
+add -s "I Need You"
+add -s "Another Girl"
+add -s "You're Going to Lose That Girl"
+add -s "Ticket To Ride"
+add -s "Act naturally"
+add -s "It's Only Love"
+add -s "You Like Me Too Much"
+add -s "Tell Me What You See"
+add -s "I've Just Seen a Face"
+add -s "Yesterday"
+add -s "Dizzy Miss Lizzy"
+add -s "Drive My Car"
+add -s "Norwegian Wood"
+add -s "You Won't See Me"
+add -s "Nowhere Man"
+add -s "Think for Yourself"
+add -s "The World"
+add -s "Michelle"
+add -s "What Goes On"
+add -s "Girl"
+add -s "I'm Looking Through You"
+add -s "In My Life"
+add -s "Wait"
+add -s "If I Need Someone"
+add -s "Run for Your Life"
+add -s "Taxman"
+add -s "Eleanor Rigby"
+add -s "I'm Only Sleeping"
+add -s "Love You To"
+add -s "Here, There and Everywhere"
+add -s "Yellow Submarine"
+add -s "She Said She Said"
+add -s "Good Day Sunshine"
+add -s "And your Bird Can Sing"
+add -s "For No One"
+add -s "Doctor Robert"
+add -s "I Want to Tell You"
+add -s "Got to Get You into My Life"
+add -s "Tomorrow Never Knows"
+add -s "Sgt. Pepper's Lonely Hearts Club Band"
+add -s "With a Little Help from My Friends"
+add -s "Luch in the Sky with Diamonds"
+add -s "Getting Better"
+add -s "Fixing a Hole"
+add -s "She's Leaving Home"
+add -s "Being for the Benefit of Mr. Kite!"
+add -s "Within You Without You"
+add -s "When I'm Sixty-Four"
+add -s "Lovely Rita"
+add -s "Good Morning Good Morning"
+add -s "Sgt. Pepper's Lonely Hearts Club Band (reprise)"
+add -s "A Day in the Life"
+add -s "Back in the U.S.S.R"
+add -s "Dear Prudence"
+add -s "Glass Onion"
+add -s "Ob-La-Di, Ob-La_da"
+add -s "Wild Honey Pie"
+add -s "The Continuing Story of Bungalow Bill"
+add -s "While My Guitar Gently Weeps"
+add -s "Happiness Is a Warm Gun"
+add -s "Martha My Dear"
+add -s "I'm So Tired"
+add -s "Blackbird"
+add -s "Piggies"
+add -s "Rocky Raccon"
+add -s "Don't Pass Me By"
+add -s "Why Don't We Do It in the Road"
+add -s "I Will"
+add -s "Julia"
+add -s "Birthday"
+add -s "Yer Blues"
+add -s "Mother Nature's Son"
+add -s "Everybody's Got Something to Hide Except Me and My Monkey"
+add -s "Sexy Sadie"
+add -s "Helter Skelter"
+add -s "Long, Long, Long"
+add -s "Revolution 1"
+add -s "Honey Pie"
+add -s "Savoy Truffle"
+add -s "Cry Baby Cry"
+add -s "Revolution 9"
+add -s "Good Night"
+add -s "Only a Northern Song"
+add -s "All Together Now"
+add -s "Hey Bulldog"
+add -s "It's All too Much"
+add -s "All You Need Is Love"
+add -s "Pepperland"
+add -s "Sea of Time"
+add -s "Sea of Holes"
+add -s "Sea of Monsters"
+add -s "March of the Meanies"
+add -s "Pepperland Laid Waste"
+add -s "Yellow Submarine in Pepperland"
+add -s "Come Together"
+add -s "Something"
+add -s "Maxwell's Silver Hammer"
+add -s "Oh! Darling"
+add -s "Octopus's Garden"
+add -s "I Want You (She's So Heavy)"
+add -s "Here Comes The Sun"
+add -s "Because"
+add -s "You Never Give My Your Money"
+add -s "Sun King"
+add -s "Mean Mr. Mustard"
+add -s "Polythene Pam"
+add -s "She Came in Through the Bathroom Window"
+add -s "Golden Slumbers"
+add -s "Carry That Weight"
+add -s "The End"
+add -s "Her Majesty"
+add -s "Two of Us"
+add -s "Dig a Pony"
+add -s "Across the Universe"
+add -s "I Me Mine"
+add -s "Dig It"
+add -s "Let It Be"
+add -s "Magie Mae"
+add -s "I've Got a Feeling"
+add -s "One After 909"
+add -s "The Long and Winding road"
+add -s "For You Blue"
+add -s "Get Back"
+sqlite>
+sqlite> .output songScript.txt
+sqlite>
+sqlite> select 'add -s "' || title || '"' from songs;
+sqlite> .output stdout
+sqlite>
+sqlite> select * from users;
+gjones|Glenn Jones
+sjones|Susan Jones
+fjones|Frank Jones
+ajones|Anne Jones
+cindy|Cindy Reynolds
+sqlite> .header on
+sqlite> select * from users;
+user_id|name
+gjones|Glenn Jones
+sjones|Susan Jones
+fjones|Frank Jones
+ajones|Anne Jones
+cindy|Cindy Reynolds
+sqlite> select name from users;
+name
+Glenn Jones
+Susan Jones
+Frank Jones
+Anne Jones
+Cindy Reynolds
+sqlite> select 'add -s"' || name || '"' from users;
+'add -s"' || name || '"'
+add -s"Glenn Jones"
+add -s"Susan Jones"
+add -s"Frank Jones"
+add -s"Anne Jones"
+add -s"Cindy Reynolds"
+sqlite> select 'add -s "' || name || '"' from users;
+'add -s "' || name || '"'
+add -s "Glenn Jones"
+add -s "Susan Jones"
+add -s "Frank Jones"
+add -s "Anne Jones"
+add -s "Cindy Reynolds"
+sqlite> .output addNames.txt
+sqlite> select 'add -s "' || name || '"' from users;
+sqlite> .output stdout
+sqlite> select * from tracks;
+albumID|songID|track_number
+100|1000|1
+100|1001|2
+100|1002|3
+100|1003|4
+100|1004|5
+100|1005|6
+100|1006|7
+100|1007|8
+100|1008|9
+100|1009|10
+100|1010|11
+100|1011|12
+100|1012|13
+100|1013|14
+101|1014|1
+101|1015|2
+101|1016|3
+101|1017|4
+101|1018|5
+101|1019|6
+101|1020|7
+101|1021|8
+101|1022|9
+101|1023|10
+101|1024|11
+101|1025|12
+101|1026|13
+102|1027|1
+102|1028|2
+102|1029|3
+102|1030|4
+102|1031|5
+102|1032|6
+102|1033|7
+102|1034|8
+102|1035|9
+102|1036|10
+102|1037|11
+102|1038|12
+102|1039|13
+103|1040|1
+103|1041|2
+103|1042|3
+103|1043|4
+103|1044|5
+103|1045|6
+103|1046|7
+103|1047|8
+103|1048|9
+103|1049|10
+103|1050|11
+103|1051|12
+103|1052|13
+103|1053|14
+104|1054|1
+104|1055|2
+104|1056|3
+104|1057|4
+104|1058|5
+104|1059|6
+104|1060|7
+104|1061|8
+104|1062|9
+104|1063|10
+104|1064|11
+104|1065|12
+104|1066|13
+104|1067|14
+105|1068|1
+105|1069|2
+105|1070|3
+105|1071|4
+105|1072|5
+105|1073|6
+105|1074|7
+105|1075|8
+105|1076|9
+105|1077|10
+105|1078|11
+105|1079|12
+105|1080|13
+105|1081|14
+106|1082|1
+106|1083|2
+106|1084|3
+106|1085|4
+106|1086|5
+106|1087|6
+106|1088|7
+106|1089|8
+106|1090|9
+106|1091|10
+106|1092|11
+106|1093|12
+106|1094|13
+106|1095|14
+107|1096|1
+107|1097|2
+107|1098|3
+107|1099|4
+107|1100|5
+107|1101|6
+107|1102|7
+107|1103|8
+107|1104|9
+107|1105|10
+107|1106|11
+107|1107|12
+107|1108|13
+108|1109|1
+108|1110|2
+108|1111|3
+108|1112|4
+108|1113|5
+108|1114|6
+108|1115|7
+108|1116|8
+108|1117|9
+108|1118|10
+108|1119|11
+108|1120|12
+108|1121|13
+108|1122|14
+108|1123|15
+108|1124|16
+108|1125|17
+108|1126|18
+108|1127|19
+108|1128|20
+108|1129|21
+108|1130|22
+108|1131|23
+108|1132|24
+108|1133|25
+108|1134|26
+108|1135|27
+108|1136|28
+108|1137|29
+108|1138|30
+109|1139|1
+109|1140|2
+109|1141|3
+109|1142|4
+109|1143|5
+109|1144|6
+109|1145|7
+109|1146|8
+109|1147|9
+109|1148|10
+109|1149|11
+109|1150|12
+109|1151|13
+110|1152|1
+110|1153|2
+110|1154|3
+110|1155|4
+110|1156|5
+110|1157|6
+110|1158|7
+110|1159|8
+110|1160|9
+110|1161|10
+110|1162|11
+110|1163|12
+110|1164|13
+110|1165|14
+110|1166|15
+110|1167|16
+110|1168|17
+110|1169|18
+111|1170|1
+111|1171|2
+111|1172|3
+111|1173|4
+111|1174|5
+111|1175|6
+111|1176|7
+111|1177|8
+111|1178|9
+111|1179|10
+111|1180|11
+111|1181|12
+sqlite> select albumID, songID, track_number, songs.title from songs join tracks on songID=sid;
+albumID|songID|track_number|title
+100|1000|1|I Saw Her Standing There
+100|1001|2|Misery
+100|1002|3|Anna (Go To Him)
+100|1003|4|Chains
+100|1004|5|Boys
+100|1005|6|Ask Me Why
+100|1006|7|Please Please Me
+100|1007|8|Love Me Do
+100|1008|9|P.S. I Love You
+100|1009|10|Baby It's You
+100|1010|11|Do You Want To Know A  Secret
+100|1011|12|A Taste Of Honey
+100|1012|13|There's A Place
+100|1013|14|Twist and Shout
+101|1014|1|It Won't Be Long
+101|1015|2|All I've Got To Do
+101|1016|3|All My Loving
+101|1017|4|Don't Bother Me
+101|1018|5|Little Child
+101|1019|6|Till There Was You
+101|1020|7|Please Mister Postman
+101|1021|8|Roll Over Beethhoven
+101|1022|9|Hold Me Tight
+101|1023|10|I Wanna Be Your Man
+101|1024|11|Devil In Her Heart
+101|1025|12|Not A Second Time
+101|1026|13|Money (That's What I Want)
+102|1027|1|A Hard Day's Night
+102|1028|2|I Should Have Known Better
+102|1029|3|If I Fell
+102|1030|4|I'm Happy Just To Dance With You
+102|1031|5|And I Love Her
+102|1032|6|Tell Me Why
+102|1033|7|Can't Buy Me Love
+102|1034|8|Any Time at All
+102|1035|9|I'll Cry Instead
+102|1036|10|Things We Said Today
+102|1037|11|When I Get Home
+102|1038|12|You Can't Do That
+102|1039|13|I'll Be Back
+103|1040|1|No Reply
+103|1041|2|I'm a Loser
+103|1042|3|Baby's in Black
+103|1043|4|Rock and Roll Music
+103|1044|5|I'll Follow The Sun
+103|1045|6|Mr. Moonlight
+103|1046|7|Kansas City/Hey,Hey,Hey,Hey
+103|1047|8|Eight Days a Week
+103|1048|9|Words of Love
+103|1049|10|Honey Don't
+103|1050|11|Every Little Thing
+103|1051|12|I Don't Want to Spoil the Party
+103|1052|13|What You're Doing
+103|1053|14|Everybody's Trying to Be My Baby
+104|1054|1|Help!
+104|1055|2|The Night Before
+104|1056|3|You've Got To Hide Your love Away
+104|1057|4|I Need You
+104|1058|5|Another Girl
+104|1059|6|You're Going to Lose That Girl
+104|1060|7|Ticket To Ride
+104|1061|8|Act naturally
+104|1062|9|It's Only Love
+104|1063|10|You Like Me Too Much
+104|1064|11|Tell Me What You See
+104|1065|12|I've Just Seen a Face
+104|1066|13|Yesterday
+104|1067|14|Dizzy Miss Lizzy
+105|1068|1|Drive My Car
+105|1069|2|Norwegian Wood
+105|1070|3|You Won't See Me
+105|1071|4|Nowhere Man
+105|1072|5|Think for Yourself
+105|1073|6|The World
+105|1074|7|Michelle
+105|1075|8|What Goes On
+105|1076|9|Girl
+105|1077|10|I'm Looking Through You
+105|1078|11|In My Life
+105|1079|12|Wait
+105|1080|13|If I Need Someone
+105|1081|14|Run for Your Life
+106|1082|1|Taxman
+106|1083|2|Eleanor Rigby
+106|1084|3|I'm Only Sleeping
+106|1085|4|Love You To
+106|1086|5|Here, There and Everywhere
+106|1087|6|Yellow Submarine
+106|1088|7|She Said She Said
+106|1089|8|Good Day Sunshine
+106|1090|9|And your Bird Can Sing
+106|1091|10|For No One
+106|1092|11|Doctor Robert
+106|1093|12|I Want to Tell You
+106|1094|13|Got to Get You into My Life
+106|1095|14|Tomorrow Never Knows
+107|1096|1|Sgt. Pepper's Lonely Hearts Club Band
+107|1097|2|With a Little Help from My Friends
+107|1098|3|Luch in the Sky with Diamonds
+107|1099|4|Getting Better
+107|1100|5|Fixing a Hole
+107|1101|6|She's Leaving Home
+107|1102|7|Being for the Benefit of Mr. Kite!
+107|1103|8|Within You Without You
+107|1104|9|When I'm Sixty-Four
+107|1105|10|Lovely Rita
+107|1106|11|Good Morning Good Morning
+107|1107|12|Sgt. Pepper's Lonely Hearts Club Band (reprise)
+107|1108|13|A Day in the Life
+108|1109|1|Back in the U.S.S.R
+108|1110|2|Dear Prudence
+108|1111|3|Glass Onion
+108|1112|4|Ob-La-Di, Ob-La_da
+108|1113|5|Wild Honey Pie
+108|1114|6|The Continuing Story of Bungalow Bill
+108|1115|7|While My Guitar Gently Weeps
+108|1116|8|Happiness Is a Warm Gun
+108|1117|9|Martha My Dear
+108|1118|10|I'm So Tired
+108|1119|11|Blackbird
+108|1120|12|Piggies
+108|1121|13|Rocky Raccon
+108|1122|14|Don't Pass Me By
+108|1123|15|Why Don't We Do It in the Road
+108|1124|16|I Will
+108|1125|17|Julia
+108|1126|18|Birthday
+108|1127|19|Yer Blues
+108|1128|20|Mother Nature's Son
+108|1129|21|Everybody's Got Something to Hide Except Me and My Monkey
+108|1130|22|Sexy Sadie
+108|1131|23|Helter Skelter
+108|1132|24|Long, Long, Long
+108|1133|25|Revolution 1
+108|1134|26|Honey Pie
+108|1135|27|Savoy Truffle
+108|1136|28|Cry Baby Cry
+108|1137|29|Revolution 9
+108|1138|30|Good Night
+109|1140|2|Only a Northern Song
+109|1141|3|All Together Now
+109|1142|4|Hey Bulldog
+109|1143|5|It's All too Much
+109|1144|6|All You Need Is Love
+109|1145|7|Pepperland
+109|1146|8|Sea of Time
+109|1147|9|Sea of Holes
+109|1148|10|Sea of Monsters
+109|1149|11|March of the Meanies
+109|1150|12|Pepperland Laid Waste
+109|1151|13|Yellow Submarine in Pepperland
+110|1152|1|Come Together
+110|1153|2|Something
+110|1154|3|Maxwell's Silver Hammer
+110|1155|4|Oh! Darling
+110|1156|5|Octopus's Garden
+110|1157|6|I Want You (She's So Heavy)
+110|1158|7|Here Comes The Sun
+110|1159|8|Because
+110|1160|9|You Never Give My Your Money
+110|1161|10|Sun King
+110|1162|11|Mean Mr. Mustard
+110|1163|12|Polythene Pam
+110|1164|13|She Came in Through the Bathroom Window
+110|1166|15|Golden Slumbers
+110|1167|16|Carry That Weight
+110|1168|17|The End
+110|1169|18|Her Majesty
+111|1170|1|Two of Us
+111|1171|2|Dig a Pony
+111|1172|3|Across the Universe
+111|1173|4|I Me Mine
+111|1174|5|Dig It
+111|1175|6|Let It Be
+111|1176|7|Magie Mae
+111|1177|8|I've Got a Feeling
+111|1178|9|One After 909
+111|1179|10|The Long and Winding road
+111|1180|11|For You Blue
+111|1181|12|Get Back
+sqlite> select recordings.title, track_number, songs.title from songs join tracks on songID=sid join recordings on albumID=id;
+title|track_number|title
+A Hard Day's Night|1|A Hard Day's Night
+A Hard Day's Night|2|I Should Have Known Better
+A Hard Day's Night|3|If I Fell
+A Hard Day's Night|4|I'm Happy Just To Dance With You
+A Hard Day's Night|5|And I Love Her
+A Hard Day's Night|6|Tell Me Why
+A Hard Day's Night|7|Can't Buy Me Love
+A Hard Day's Night|8|Any Time at All
+A Hard Day's Night|9|I'll Cry Instead
+A Hard Day's Night|10|Things We Said Today
+A Hard Day's Night|11|When I Get Home
+A Hard Day's Night|12|You Can't Do That
+A Hard Day's Night|13|I'll Be Back
+Beatles For Sale|1|No Reply
+Beatles For Sale|2|I'm a Loser
+Beatles For Sale|3|Baby's in Black
+Beatles For Sale|4|Rock and Roll Music
+Beatles For Sale|5|I'll Follow The Sun
+Beatles For Sale|6|Mr. Moonlight
+Beatles For Sale|7|Kansas City/Hey,Hey,Hey,Hey
+Beatles For Sale|8|Eight Days a Week
+Beatles For Sale|9|Words of Love
+Beatles For Sale|10|Honey Don't
+Beatles For Sale|11|Every Little Thing
+Beatles For Sale|12|I Don't Want to Spoil the Party
+Beatles For Sale|13|What You're Doing
+Beatles For Sale|14|Everybody's Trying to Be My Baby
+Help|1|Help!
+Help|2|The Night Before
+Help|3|You've Got To Hide Your love Away
+Help|4|I Need You
+Help|5|Another Girl
+Help|6|You're Going to Lose That Girl
+Help|7|Ticket To Ride
+Help|8|Act naturally
+Help|9|It's Only Love
+Help|10|You Like Me Too Much
+Help|11|Tell Me What You See
+Help|12|I've Just Seen a Face
+Help|13|Yesterday
+Help|14|Dizzy Miss Lizzy
+Rubber Soul|1|Drive My Car
+Rubber Soul|2|Norwegian Wood
+Rubber Soul|3|You Won't See Me
+Rubber Soul|4|Nowhere Man
+Rubber Soul|5|Think for Yourself
+Rubber Soul|6|The World
+Rubber Soul|7|Michelle
+Rubber Soul|8|What Goes On
+Rubber Soul|9|Girl
+Rubber Soul|10|I'm Looking Through You
+Rubber Soul|11|In My Life
+Rubber Soul|12|Wait
+Rubber Soul|13|If I Need Someone
+Rubber Soul|14|Run for Your Life
+Revolver|1|Taxman
+Revolver|2|Eleanor Rigby
+Revolver|3|I'm Only Sleeping
+Revolver|4|Love You To
+Revolver|5|Here, There and Everywhere
+Revolver|6|Yellow Submarine
+Revolver|7|She Said She Said
+Revolver|8|Good Day Sunshine
+Revolver|9|And your Bird Can Sing
+Revolver|10|For No One
+Revolver|11|Doctor Robert
+Revolver|12|I Want to Tell You
+Revolver|13|Got to Get You into My Life
+Revolver|14|Tomorrow Never Knows
+Sgt. Pepper's Lonely Harts Club Band|1|Sgt. Pepper's Lonely Hearts Club Band
+Sgt. Pepper's Lonely Harts Club Band|2|With a Little Help from My Friends
+Sgt. Pepper's Lonely Harts Club Band|3|Luch in the Sky with Diamonds
+Sgt. Pepper's Lonely Harts Club Band|4|Getting Better
+Sgt. Pepper's Lonely Harts Club Band|5|Fixing a Hole
+Sgt. Pepper's Lonely Harts Club Band|6|She's Leaving Home
+Sgt. Pepper's Lonely Harts Club Band|7|Being for the Benefit of Mr. Kite!
+Sgt. Pepper's Lonely Harts Club Band|8|Within You Without You
+Sgt. Pepper's Lonely Harts Club Band|9|When I'm Sixty-Four
+Sgt. Pepper's Lonely Harts Club Band|10|Lovely Rita
+Sgt. Pepper's Lonely Harts Club Band|11|Good Morning Good Morning
+Sgt. Pepper's Lonely Harts Club Band|12|Sgt. Pepper's Lonely Hearts Club Band (reprise)
+Sgt. Pepper's Lonely Harts Club Band|13|A Day in the Life
+The Beatles aka White Album|1|Back in the U.S.S.R
+The Beatles aka White Album|2|Dear Prudence
+The Beatles aka White Album|3|Glass Onion
+The Beatles aka White Album|4|Ob-La-Di, Ob-La_da
+The Beatles aka White Album|5|Wild Honey Pie
+The Beatles aka White Album|6|The Continuing Story of Bungalow Bill
+The Beatles aka White Album|7|While My Guitar Gently Weeps
+The Beatles aka White Album|8|Happiness Is a Warm Gun
+The Beatles aka White Album|9|Martha My Dear
+The Beatles aka White Album|10|I'm So Tired
+The Beatles aka White Album|11|Blackbird
+The Beatles aka White Album|12|Piggies
+The Beatles aka White Album|13|Rocky Raccon
+The Beatles aka White Album|14|Don't Pass Me By
+The Beatles aka White Album|15|Why Don't We Do It in the Road
+The Beatles aka White Album|16|I Will
+The Beatles aka White Album|17|Julia
+The Beatles aka White Album|18|Birthday
+The Beatles aka White Album|19|Yer Blues
+The Beatles aka White Album|20|Mother Nature's Son
+The Beatles aka White Album|21|Everybody's Got Something to Hide Except Me and My Monkey
+The Beatles aka White Album|22|Sexy Sadie
+The Beatles aka White Album|23|Helter Skelter
+The Beatles aka White Album|24|Long, Long, Long
+The Beatles aka White Album|25|Revolution 1
+The Beatles aka White Album|26|Honey Pie
+The Beatles aka White Album|27|Savoy Truffle
+The Beatles aka White Album|28|Cry Baby Cry
+The Beatles aka White Album|29|Revolution 9
+The Beatles aka White Album|30|Good Night
+Yellow Submarine|2|Only a Northern Song
+Yellow Submarine|3|All Together Now
+Yellow Submarine|4|Hey Bulldog
+Yellow Submarine|5|It's All too Much
+Yellow Submarine|6|All You Need Is Love
+Yellow Submarine|7|Pepperland
+Yellow Submarine|8|Sea of Time
+Yellow Submarine|9|Sea of Holes
+Yellow Submarine|10|Sea of Monsters
+Yellow Submarine|11|March of the Meanies
+Yellow Submarine|12|Pepperland Laid Waste
+Yellow Submarine|13|Yellow Submarine in Pepperland
+Abbey Road|1|Come Together
+Abbey Road|2|Something
+Abbey Road|3|Maxwell's Silver Hammer
+Abbey Road|4|Oh! Darling
+Abbey Road|5|Octopus's Garden
+Abbey Road|6|I Want You (She's So Heavy)
+Abbey Road|7|Here Comes The Sun
+Abbey Road|8|Because
+Abbey Road|9|You Never Give My Your Money
+Abbey Road|10|Sun King
+Abbey Road|11|Mean Mr. Mustard
+Abbey Road|12|Polythene Pam
+Abbey Road|13|She Came in Through the Bathroom Window
+Abbey Road|15|Golden Slumbers
+Abbey Road|16|Carry That Weight
+Abbey Road|17|The End
+Abbey Road|18|Her Majesty
+Let It Be|1|Two of Us
+Let It Be|2|Dig a Pony
+Let It Be|3|Across the Universe
+Let It Be|4|I Me Mine
+Let It Be|5|Dig It
+Let It Be|6|Let It Be
+Let It Be|7|Magie Mae
+Let It Be|8|I've Got a Feeling
+Let It Be|9|One After 909
+Let It Be|10|The Long and Winding road
+Let It Be|11|For You Blue
+Let It Be|12|Get Back
+sqlite> .width 5 30 8 10 6
+sqlite> select recordings.title, track_number, songs.title from songs join tracks on songID=sid join recordings on albumID=id;
+title|track_number|title
+A Hard Day's Night|1|A Hard Day's Night
+A Hard Day's Night|2|I Should Have Known Better
+A Hard Day's Night|3|If I Fell
+A Hard Day's Night|4|I'm Happy Just To Dance With You
+A Hard Day's Night|5|And I Love Her
+A Hard Day's Night|6|Tell Me Why
+A Hard Day's Night|7|Can't Buy Me Love
+A Hard Day's Night|8|Any Time at All
+A Hard Day's Night|9|I'll Cry Instead
+A Hard Day's Night|10|Things We Said Today
+A Hard Day's Night|11|When I Get Home
+A Hard Day's Night|12|You Can't Do That
+A Hard Day's Night|13|I'll Be Back
+Beatles For Sale|1|No Reply
+Beatles For Sale|2|I'm a Loser
+Beatles For Sale|3|Baby's in Black
+Beatles For Sale|4|Rock and Roll Music
+Beatles For Sale|5|I'll Follow The Sun
+Beatles For Sale|6|Mr. Moonlight
+Beatles For Sale|7|Kansas City/Hey,Hey,Hey,Hey
+Beatles For Sale|8|Eight Days a Week
+Beatles For Sale|9|Words of Love
+Beatles For Sale|10|Honey Don't
+Beatles For Sale|11|Every Little Thing
+Beatles For Sale|12|I Don't Want to Spoil the Party
+Beatles For Sale|13|What You're Doing
+Beatles For Sale|14|Everybody's Trying to Be My Baby
+Help|1|Help!
+Help|2|The Night Before
+Help|3|You've Got To Hide Your love Away
+Help|4|I Need You
+Help|5|Another Girl
+Help|6|You're Going to Lose That Girl
+Help|7|Ticket To Ride
+Help|8|Act naturally
+Help|9|It's Only Love
+Help|10|You Like Me Too Much
+Help|11|Tell Me What You See
+Help|12|I've Just Seen a Face
+Help|13|Yesterday
+Help|14|Dizzy Miss Lizzy
+Rubber Soul|1|Drive My Car
+Rubber Soul|2|Norwegian Wood
+Rubber Soul|3|You Won't See Me
+Rubber Soul|4|Nowhere Man
+Rubber Soul|5|Think for Yourself
+Rubber Soul|6|The World
+Rubber Soul|7|Michelle
+Rubber Soul|8|What Goes On
+Rubber Soul|9|Girl
+Rubber Soul|10|I'm Looking Through You
+Rubber Soul|11|In My Life
+Rubber Soul|12|Wait
+Rubber Soul|13|If I Need Someone
+Rubber Soul|14|Run for Your Life
+Revolver|1|Taxman
+Revolver|2|Eleanor Rigby
+Revolver|3|I'm Only Sleeping
+Revolver|4|Love You To
+Revolver|5|Here, There and Everywhere
+Revolver|6|Yellow Submarine
+Revolver|7|She Said She Said
+Revolver|8|Good Day Sunshine
+Revolver|9|And your Bird Can Sing
+Revolver|10|For No One
+Revolver|11|Doctor Robert
+Revolver|12|I Want to Tell You
+Revolver|13|Got to Get You into My Life
+Revolver|14|Tomorrow Never Knows
+Sgt. Pepper's Lonely Harts Club Band|1|Sgt. Pepper's Lonely Hearts Club Band
+Sgt. Pepper's Lonely Harts Club Band|2|With a Little Help from My Friends
+Sgt. Pepper's Lonely Harts Club Band|3|Luch in the Sky with Diamonds
+Sgt. Pepper's Lonely Harts Club Band|4|Getting Better
+Sgt. Pepper's Lonely Harts Club Band|5|Fixing a Hole
+Sgt. Pepper's Lonely Harts Club Band|6|She's Leaving Home
+Sgt. Pepper's Lonely Harts Club Band|7|Being for the Benefit of Mr. Kite!
+Sgt. Pepper's Lonely Harts Club Band|8|Within You Without You
+Sgt. Pepper's Lonely Harts Club Band|9|When I'm Sixty-Four
+Sgt. Pepper's Lonely Harts Club Band|10|Lovely Rita
+Sgt. Pepper's Lonely Harts Club Band|11|Good Morning Good Morning
+Sgt. Pepper's Lonely Harts Club Band|12|Sgt. Pepper's Lonely Hearts Club Band (reprise)
+Sgt. Pepper's Lonely Harts Club Band|13|A Day in the Life
+The Beatles aka White Album|1|Back in the U.S.S.R
+The Beatles aka White Album|2|Dear Prudence
+The Beatles aka White Album|3|Glass Onion
+The Beatles aka White Album|4|Ob-La-Di, Ob-La_da
+The Beatles aka White Album|5|Wild Honey Pie
+The Beatles aka White Album|6|The Continuing Story of Bungalow Bill
+The Beatles aka White Album|7|While My Guitar Gently Weeps
+The Beatles aka White Album|8|Happiness Is a Warm Gun
+The Beatles aka White Album|9|Martha My Dear
+The Beatles aka White Album|10|I'm So Tired
+The Beatles aka White Album|11|Blackbird
+The Beatles aka White Album|12|Piggies
+The Beatles aka White Album|13|Rocky Raccon
+The Beatles aka White Album|14|Don't Pass Me By
+The Beatles aka White Album|15|Why Don't We Do It in the Road
+The Beatles aka White Album|16|I Will
+The Beatles aka White Album|17|Julia
+The Beatles aka White Album|18|Birthday
+The Beatles aka White Album|19|Yer Blues
+The Beatles aka White Album|20|Mother Nature's Son
+The Beatles aka White Album|21|Everybody's Got Something to Hide Except Me and My Monkey
+The Beatles aka White Album|22|Sexy Sadie
+The Beatles aka White Album|23|Helter Skelter
+The Beatles aka White Album|24|Long, Long, Long
+The Beatles aka White Album|25|Revolution 1
+The Beatles aka White Album|26|Honey Pie
+The Beatles aka White Album|27|Savoy Truffle
+The Beatles aka White Album|28|Cry Baby Cry
+The Beatles aka White Album|29|Revolution 9
+The Beatles aka White Album|30|Good Night
+Yellow Submarine|2|Only a Northern Song
+Yellow Submarine|3|All Together Now
+Yellow Submarine|4|Hey Bulldog
+Yellow Submarine|5|It's All too Much
+Yellow Submarine|6|All You Need Is Love
+Yellow Submarine|7|Pepperland
+Yellow Submarine|8|Sea of Time
+Yellow Submarine|9|Sea of Holes
+Yellow Submarine|10|Sea of Monsters
+Yellow Submarine|11|March of the Meanies
+Yellow Submarine|12|Pepperland Laid Waste
+Yellow Submarine|13|Yellow Submarine in Pepperland
+Abbey Road|1|Come Together
+Abbey Road|2|Something
+Abbey Road|3|Maxwell's Silver Hammer
+Abbey Road|4|Oh! Darling
+Abbey Road|5|Octopus's Garden
+Abbey Road|6|I Want You (She's So Heavy)
+Abbey Road|7|Here Comes The Sun
+Abbey Road|8|Because
+Abbey Road|9|You Never Give My Your Money
+Abbey Road|10|Sun King
+Abbey Road|11|Mean Mr. Mustard
+Abbey Road|12|Polythene Pam
+Abbey Road|13|She Came in Through the Bathroom Window
+Abbey Road|15|Golden Slumbers
+Abbey Road|16|Carry That Weight
+Abbey Road|17|The End
+Abbey Road|18|Her Majesty
+Let It Be|1|Two of Us
+Let It Be|2|Dig a Pony
+Let It Be|3|Across the Universe
+Let It Be|4|I Me Mine
+Let It Be|5|Dig It
+Let It Be|6|Let It Be
+Let It Be|7|Magie Mae
+Let It Be|8|I've Got a Feeling
+Let It Be|9|One After 909
+Let It Be|10|The Long and Winding road
+Let It Be|11|For You Blue
+Let It Be|12|Get Back
+sqlite> .mode column
+sqlite> select recordings.title, track_number, songs.title from songs join tracks on songID=sid join recordings on albumID=id;
+title  track_number                    title
+-----  ------------------------------  --------
+A Har  1                               A Hard D
+A Har  2                               I Should
+A Har  3                               If I Fel
+A Har  4                               I'm Happ
+A Har  5                               And I Lo
+A Har  6                               Tell Me
+A Har  7                               Can't Bu
+A Har  8                               Any Time
+A Har  9                               I'll Cry
+A Har  10                              Things W
+A Har  11                              When I G
+A Har  12                              You Can'
+A Har  13                              I'll Be
+Beatl  1                               No Reply
+Beatl  2                               I'm a Lo
+Beatl  3                               Baby's i
+Beatl  4                               Rock and
+Beatl  5                               I'll Fol
+Beatl  6                               Mr. Moon
+Beatl  7                               Kansas C
+Beatl  8                               Eight Da
+Beatl  9                               Words of
+Beatl  10                              Honey Do
+Beatl  11                              Every Li
+Beatl  12                              I Don't
+Beatl  13                              What You
+Beatl  14                              Everybod
+Help   1                               Help!
+Help   2                               The Nigh
+Help   3                               You've G
+Help   4                               I Need Y
+Help   5                               Another
+Help   6                               You're G
+Help   7                               Ticket T
+Help   8                               Act natu
+Help   9                               It's Onl
+Help   10                              You Like
+Help   11                              Tell Me
+Help   12                              I've Jus
+Help   13                              Yesterda
+Help   14                              Dizzy Mi
+Rubbe  1                               Drive My
+Rubbe  2                               Norwegia
+Rubbe  3                               You Won'
+Rubbe  4                               Nowhere
+Rubbe  5                               Think fo
+Rubbe  6                               The Worl
+Rubbe  7                               Michelle
+Rubbe  8                               What Goe
+Rubbe  9                               Girl
+Rubbe  10                              I'm Look
+Rubbe  11                              In My Li
+Rubbe  12                              Wait
+Rubbe  13                              If I Nee
+Rubbe  14                              Run for
+Revol  1                               Taxman
+Revol  2                               Eleanor
+Revol  3                               I'm Only
+Revol  4                               Love You
+Revol  5                               Here, Th
+Revol  6                               Yellow S
+Revol  7                               She Said
+Revol  8                               Good Day
+Revol  9                               And your
+Revol  10                              For No O
+Revol  11                              Doctor R
+Revol  12                              I Want t
+Revol  13                              Got to G
+Revol  14                              Tomorrow
+Sgt.   1                               Sgt. Pep
+Sgt.   2                               With a L
+Sgt.   3                               Luch in
+Sgt.   4                               Getting
+Sgt.   5                               Fixing a
+Sgt.   6                               She's Le
+Sgt.   7                               Being fo
+Sgt.   8                               Within Y
+Sgt.   9                               When I'm
+Sgt.   10                              Lovely R
+Sgt.   11                              Good Mor
+Sgt.   12                              Sgt. Pep
+Sgt.   13                              A Day in
+The B  1                               Back in
+The B  2                               Dear Pru
+The B  3                               Glass On
+The B  4                               Ob-La-Di
+The B  5                               Wild Hon
+The B  6                               The Cont
+The B  7                               While My
+The B  8                               Happines
+The B  9                               Martha M
+The B  10                              I'm So T
+The B  11                              Blackbir
+The B  12                              Piggies
+The B  13                              Rocky Ra
+The B  14                              Don't Pa
+The B  15                              Why Don'
+The B  16                              I Will
+The B  17                              Julia
+The B  18                              Birthday
+The B  19                              Yer Blue
+The B  20                              Mother N
+The B  21                              Everybod
+The B  22                              Sexy Sad
+The B  23                              Helter S
+The B  24                              Long, Lo
+The B  25                              Revoluti
+The B  26                              Honey Pi
+The B  27                              Savoy Tr
+The B  28                              Cry Baby
+The B  29                              Revoluti
+The B  30                              Good Nig
+Yello  2                               Only a N
+Yello  3                               All Toge
+Yello  4                               Hey Bull
+Yello  5                               It's All
+Yello  6                               All You
+Yello  7                               Pepperla
+Yello  8                               Sea of T
+Yello  9                               Sea of H
+Yello  10                              Sea of M
+Yello  11                              March of
+Yello  12                              Pepperla
+Yello  13                              Yellow S
+Abbey  1                               Come Tog
+Abbey  2                               Somethin
+Abbey  3                               Maxwell'
+Abbey  4                               Oh! Darl
+Abbey  5                               Octopus'
+Abbey  6                               I Want Y
+Abbey  7                               Here Com
+Abbey  8                               Because
+Abbey  9                               You Neve
+Abbey  10                              Sun King
+Abbey  11                              Mean Mr.
+Abbey  12                              Polythen
+Abbey  13                              She Came
+Abbey  15                              Golden S
+Abbey  16                              Carry Th
+Abbey  17                              The End
+Abbey  18                              Her Maje
+Let I  1                               Two of U
+Let I  2                               Dig a Po
+Let I  3                               Across t
+Let I  4                               I Me Min
+Let I  5                               Dig It
+Let I  6                               Let It B
+Let I  7                               Magie Ma
+Let I  8                               I've Got
+Let I  9                               One Afte
+Let I  10                              The Long
+Let I  11                              For You
+Let I  12                              Get Back
+sqlite> select recordings.title, track_number, songs.title from songs join tracks on songID=sid join recordings on albumID=id;
+title  track_number                    title
+-----  ------------------------------  --------
+A Har  1                               A Hard D
+A Har  2                               I Should
+A Har  3                               If I Fel
+A Har  4                               I'm Happ
+A Har  5                               And I Lo
+A Har  6                               Tell Me
+A Har  7                               Can't Bu
+A Har  8                               Any Time
+A Har  9                               I'll Cry
+A Har  10                              Things W
+A Har  11                              When I G
+A Har  12                              You Can'
+A Har  13                              I'll Be
+Beatl  1                               No Reply
+Beatl  2                               I'm a Lo
+Beatl  3                               Baby's i
+Beatl  4                               Rock and
+Beatl  5                               I'll Fol
+Beatl  6                               Mr. Moon
+Beatl  7                               Kansas C
+Beatl  8                               Eight Da
+Beatl  9                               Words of
+Beatl  10                              Honey Do
+Beatl  11                              Every Li
+Beatl  12                              I Don't
+Beatl  13                              What You
+Beatl  14                              Everybod
+Help   1                               Help!
+Help   2                               The Nigh
+Help   3                               You've G
+Help   4                               I Need Y
+Help   5                               Another
+Help   6                               You're G
+Help   7                               Ticket T
+Help   8                               Act natu
+Help   9                               It's Onl
+Help   10                              You Like
+Help   11                              Tell Me
+Help   12                              I've Jus
+Help   13                              Yesterda
+Help   14                              Dizzy Mi
+Rubbe  1                               Drive My
+Rubbe  2                               Norwegia
+Rubbe  3                               You Won'
+Rubbe  4                               Nowhere
+Rubbe  5                               Think fo
+Rubbe  6                               The Worl
+Rubbe  7                               Michelle
+Rubbe  8                               What Goe
+Rubbe  9                               Girl
+Rubbe  10                              I'm Look
+Rubbe  11                              In My Li
+Rubbe  12                              Wait
+Rubbe  13                              If I Nee
+Rubbe  14                              Run for
+Revol  1                               Taxman
+Revol  2                               Eleanor
+Revol  3                               I'm Only
+Revol  4                               Love You
+Revol  5                               Here, Th
+Revol  6                               Yellow S
+Revol  7                               She Said
+Revol  8                               Good Day
+Revol  9                               And your
+Revol  10                              For No O
+Revol  11                              Doctor R
+Revol  12                              I Want t
+Revol  13                              Got to G
+Revol  14                              Tomorrow
+Sgt.   1                               Sgt. Pep
+Sgt.   2                               With a L
+Sgt.   3                               Luch in
+Sgt.   4                               Getting
+Sgt.   5                               Fixing a
+Sgt.   6                               She's Le
+Sgt.   7                               Being fo
+Sgt.   8                               Within Y
+Sgt.   9                               When I'm
+Sgt.   10                              Lovely R
+Sgt.   11                              Good Mor
+Sgt.   12                              Sgt. Pep
+Sgt.   13                              A Day in
+The B  1                               Back in
+The B  2                               Dear Pru
+The B  3                               Glass On
+The B  4                               Ob-La-Di
+The B  5                               Wild Hon
+The B  6                               The Cont
+The B  7                               While My
+The B  8                               Happines
+The B  9                               Martha M
+The B  10                              I'm So T
+The B  11                              Blackbir
+The B  12                              Piggies
+The B  13                              Rocky Ra
+The B  14                              Don't Pa
+The B  15                              Why Don'
+The B  16                              I Will
+The B  17                              Julia
+The B  18                              Birthday
+The B  19                              Yer Blue
+The B  20                              Mother N
+The B  21                              Everybod
+The B  22                              Sexy Sad
+The B  23                              Helter S
+The B  24                              Long, Lo
+The B  25                              Revoluti
+The B  26                              Honey Pi
+The B  27                              Savoy Tr
+The B  28                              Cry Baby
+The B  29                              Revoluti
+The B  30                              Good Nig
+Yello  2                               Only a N
+Yello  3                               All Toge
+Yello  4                               Hey Bull
+Yello  5                               It's All
+Yello  6                               All You
+Yello  7                               Pepperla
+Yello  8                               Sea of T
+Yello  9                               Sea of H
+Yello  10                              Sea of M
+Yello  11                              March of
+Yello  12                              Pepperla
+Yello  13                              Yellow S
+Abbey  1                               Come Tog
+Abbey  2                               Somethin
+Abbey  3                               Maxwell'
+Abbey  4                               Oh! Darl
+Abbey  5                               Octopus'
+Abbey  6                               I Want Y
+Abbey  7                               Here Com
+Abbey  8                               Because
+Abbey  9                               You Neve
+Abbey  10                              Sun King
+Abbey  11                              Mean Mr.
+Abbey  12                              Polythen
+Abbey  13                              She Came
+Abbey  15                              Golden S
+Abbey  16                              Carry Th
+Abbey  17                              The End
+Abbey  18                              Her Maje
+Let I  1                               Two of U
+Let I  2                               Dig a Po
+Let I  3                               Across t
+Let I  4                               I Me Min
+Let I  5                               Dig It
+Let I  6                               Let It B
+Let I  7                               Magie Ma
+Let I  8                               I've Got
+Let I  9                               One Afte
+Let I  10                              The Long
+Let I  11                              For You
+Let I  12                              Get Back
+sqlite> select user_id from users;
+user_
+-----
+ajone
+cindy
+fjone
+gjone
+sjone
+sqlite> select users.user_id, users.name, playlists.playlist_name from users join playlists on users.id=playlists.user_id;
+Error: no such column: users.id
+sqlite> select users.user_id, users.name, playlists.playlist_name from users join playlists on users.user_id=playlists.user_id;
+user_  name                            playlist
+-----  ------------------------------  --------
+gjone  Glenn Jones                     mysongs
+fjone  Frank Jones                     favourit
+fjone  Frank Jones                     mysongs
+ajone  Anne Jones                      morning
+ajone  Anne Jones                      evening
+ajone  Anne Jones                      driving
+ajone  Anne Jones                      favourit
+cindy  Cindy Reynolds                  help
+cindy  Cindy Reynolds                  songs
+sqlite> select users.name playlist_tracks.playlist_name from users join playlist_tracks on users.user_id=playlist_tracks.user_id
+   ...> ;
+Error: near ".": syntax error
+sqlite> select users.name playlist_tracks.playlist_name from users join playlist_tracks on users.user_id=playlist_tracks.user_id;
+Error: near ".": syntax error
+sqlite> select users.name, playlist_tracks.playlist_name from users join playlist_tracks on users.user_id=playlist_tracks.user_id;
+name   playlist_name
+-----  ------------------------------
+Glenn  mysongs
+Glenn  mysongs
+Glenn  mysongs
+Glenn  mysongs
+Anne   driving
+Anne   driving
+Anne   driving
+Anne   favourites
+Anne   favourites
+Anne   favourites
+Frank  favourites
+Frank  favourites
+Frank  favourites
+Frank  favourites
+Cindy  songs
+Cindy  songs
+Cindy  songs
+Cindy  songs
+Cindy  songs
+Cindy  help
+Cindy  help
+Cindy  help
+Cindy  help
+Cindy  help
+Cindy  help
+Cindy  help
+Cindy  help
+Cindy  help
+Cindy  help
+Cindy  help
+Cindy  help
+Cindy  help
+Cindy  help
+sqlite> select users.name playlist_tracks.playlist_name from users join playlist_tracks on users.user_id=playlist_tracks.user_id;
+Error: near ".": syntax error
+sqlite> select users.name playlist_tracks.playlist_name from users join playlist_tracks on users.user_id=playlist_tracks.user_id
+   ...> ;
+Error: near ".": syntax error
+sqlite> select users.user_id, users.name, playlists.playlist_name from users join playlists on users.user_id=playlists.user_id;
+user_  name                            playlist
+-----  ------------------------------  --------
+gjone  Glenn Jones                     mysongs
+fjone  Frank Jones                     favourit
+fjone  Frank Jones                     mysongs
+ajone  Anne Jones                      morning
+ajone  Anne Jones                      evening
+ajone  Anne Jones                      driving
+ajone  Anne Jones                      favourit
+cindy  Cindy Reynolds                  help
+cindy  Cindy Reynolds                  songs
+sqlite> select users.name, playlist_tracks.playlist_name, songs.title from users join playlist_tracks on users.user_id=playlist_tracks.user_id join songs on playlist_tracks.song_id=songs.sid;
+name   playlist_name                   title
+-----  ------------------------------  --------
+Glenn  mysongs                         I Saw He
+Glenn  mysongs                         Ask Me W
+Glenn  mysongs                         If I Nee
+Glenn  mysongs                         Run for
+Anne   driving                         Norwegia
+Anne   driving                         Do You W
+Anne   driving                         Not A Se
+Anne   favourites                      Norwegia
+Anne   favourites                      Do You W
+Anne   favourites                      You Won'
+Frank  favourites                      There's
+Frank  favourites                      Twist an
+Frank  favourites                      Do You W
+Frank  favourites                      You Won'
+Cindy  songs                           There's
+Cindy  songs                           Norwegia
+Cindy  songs                           Do You W
+Cindy  songs                           Not A Se
+Cindy  songs                           You Won'
+Cindy  help                            Help!
+Cindy  help                            The Nigh
+Cindy  help                            You've G
+Cindy  help                            I Need Y
+Cindy  help                            Another
+Cindy  help                            You're G
+Cindy  help                            Ticket T
+Cindy  help                            Act natu
+Cindy  help                            It's Onl
+Cindy  help                            You Like
+Cindy  help                            Tell Me
+Cindy  help                            I've Jus
+Cindy  help                            Yesterda
+Cindy  help                            Dizzy Mi
+sqlite> .mode list
+sqlite> select users.name, playlist_tracks.playlist_name, songs.title from users join playlist_tracks on users.user_id=playlist_tracks.user_id join songs on playlist_tracks.song_id=songs.sid;
+name|playlist_name|title
+Glenn Jones|mysongs|I Saw Her Standing There
+Glenn Jones|mysongs|Ask Me Why
+Glenn Jones|mysongs|If I Need Someone
+Glenn Jones|mysongs|Run for Your Life
+Anne Jones|driving|Norwegian Wood
+Anne Jones|driving|Do You Want To Know A  Secret
+Anne Jones|driving|Not A Second Time
+Anne Jones|favourites|Norwegian Wood
+Anne Jones|favourites|Do You Want To Know A  Secret
+Anne Jones|favourites|You Won't See Me
+Frank Jones|favourites|There's A Place
+Frank Jones|favourites|Twist and Shout
+Frank Jones|favourites|Do You Want To Know A  Secret
+Frank Jones|favourites|You Won't See Me
+Cindy Reynolds|songs|There's A Place
+Cindy Reynolds|songs|Norwegian Wood
+Cindy Reynolds|songs|Do You Want To Know A  Secret
+Cindy Reynolds|songs|Not A Second Time
+Cindy Reynolds|songs|You Won't See Me
+Cindy Reynolds|help|Help!
+Cindy Reynolds|help|The Night Before
+Cindy Reynolds|help|You've Got To Hide Your love Away
+Cindy Reynolds|help|I Need You
+Cindy Reynolds|help|Another Girl
+Cindy Reynolds|help|You're Going to Lose That Girl
+Cindy Reynolds|help|Ticket To Ride
+Cindy Reynolds|help|Act naturally
+Cindy Reynolds|help|It's Only Love
+Cindy Reynolds|help|You Like Me Too Much
+Cindy Reynolds|help|Tell Me What You See
+Cindy Reynolds|help|I've Just Seen a Face
+Cindy Reynolds|help|Yesterday
+Cindy Reynolds|help|Dizzy Miss Lizzy
+sqlite> select users.user_id, playlist_tracks.playlist_name, songs.title from users join playlist_tracks on users.user_id=playlist_tracks.user_id join songs on playlist_tracks.song_id=songs.sid;
+user_id|playlist_name|title
+gjones|mysongs|I Saw Her Standing There
+gjones|mysongs|Ask Me Why
+gjones|mysongs|If I Need Someone
+gjones|mysongs|Run for Your Life
+ajones|driving|Norwegian Wood
+ajones|driving|Do You Want To Know A  Secret
+ajones|driving|Not A Second Time
+ajones|favourites|Norwegian Wood
+ajones|favourites|Do You Want To Know A  Secret
+ajones|favourites|You Won't See Me
+fjones|favourites|There's A Place
+fjones|favourites|Twist and Shout
+fjones|favourites|Do You Want To Know A  Secret
+fjones|favourites|You Won't See Me
+cindy|songs|There's A Place
+cindy|songs|Norwegian Wood
+cindy|songs|Do You Want To Know A  Secret
+cindy|songs|Not A Second Time
+cindy|songs|You Won't See Me
+cindy|help|Help!
+cindy|help|The Night Before
+cindy|help|You've Got To Hide Your love Away
+cindy|help|I Need You
+cindy|help|Another Girl
+cindy|help|You're Going to Lose That Girl
+cindy|help|Ticket To Ride
+cindy|help|Act naturally
+cindy|help|It's Only Love
+cindy|help|You Like Me Too Much
+cindy|help|Tell Me What You See
+cindy|help|I've Just Seen a Face
+cindy|help|Yesterday
+cindy|help|Dizzy Miss Lizzy
+sqlite> select users.user_id, playlist_tracks.playlist_name, songs.title from users join playlist_tracks on users.user_id=playlist_tracks.user_id join songs on playlist_tracks.song_id=songs.sid;
+user_id|playlist_name|title
+gjones|mysongs|I Saw Her Standing There
+gjones|mysongs|Ask Me Why
+gjones|mysongs|If I Need Someone
+gjones|mysongs|Run for Your Life
+ajones|driving|Norwegian Wood
+ajones|driving|Do You Want To Know A  Secret
+ajones|driving|Not A Second Time
+ajones|favourites|Norwegian Wood
+ajones|favourites|Do You Want To Know A  Secret
+ajones|favourites|You Won't See Me
+fjones|favourites|There's A Place
+fjones|favourites|Twist and Shout
+fjones|favourites|Do You Want To Know A  Secret
+fjones|favourites|You Won't See Me
+cindy|songs|There's A Place
+cindy|songs|Norwegian Wood
+cindy|songs|Do You Want To Know A  Secret
+cindy|songs|Not A Second Time
+cindy|songs|You Won't See Me
+cindy|help|Help!
+cindy|help|The Night Before
+cindy|help|You've Got To Hide Your love Away
+cindy|help|I Need You
+cindy|help|Another Girl
+cindy|help|You're Going to Lose That Girl
+cindy|help|Ticket To Ride
+cindy|help|Act naturally
+cindy|help|It's Only Love
+cindy|help|You Like Me Too Much
+cindy|help|Tell Me What You See
+cindy|help|I've Just Seen a Face
+cindy|help|Yesterday
+cindy|help|Dizzy Miss Lizzy
+sqlite> select users.user_id, playlist_tracks.playlist_name, songs.title from users join playlist_tracks on users.user_id=playlist_tracks.user_id join songs on playlist_tracks.song_id=songs.sid;
+user_id|playlist_name|title
+gjones|mysongs|I Saw Her Standing There
+gjones|mysongs|Ask Me Why
+gjones|mysongs|If I Need Someone
+gjones|mysongs|Run for Your Life
+ajones|driving|Norwegian Wood
+ajones|driving|Do You Want To Know A  Secret
+ajones|driving|Not A Second Time
+ajones|favourites|Norwegian Wood
+ajones|favourites|Do You Want To Know A  Secret
+ajones|favourites|You Won't See Me
+fjones|favourites|There's A Place
+fjones|favourites|Twist and Shout
+fjones|favourites|Do You Want To Know A  Secret
+fjones|favourites|You Won't See Me
+cindy|songs|There's A Place
+cindy|songs|Norwegian Wood
+cindy|songs|Do You Want To Know A  Secret
+cindy|songs|Not A Second Time
+cindy|songs|You Won't See Me
+cindy|help|Help!
+cindy|help|The Night Before
+cindy|help|You've Got To Hide Your love Away
+cindy|help|I Need You
+cindy|help|Another Girl
+cindy|help|You're Going to Lose That Girl
+cindy|help|Ticket To Ride
+cindy|help|Act naturally
+cindy|help|It's Only Love
+cindy|help|You Like Me Too Much
+cindy|help|Tell Me What You See
+cindy|help|I've Just Seen a Face
+cindy|help|Yesterday
+cindy|help|Dizzy Miss Lizzy
+sqlite> select users.name, playlist_tracks.playlist_name, songs.title from users join playlist_tracks on users.user_id=playlist_tracks.user_id join songs on playlist_tracks.song_id=songs.sid;
+name|playlist_name|title
+Glenn Jones|mysongs|I Saw Her Standing There
+Glenn Jones|mysongs|Ask Me Why
+Glenn Jones|mysongs|If I Need Someone
+Glenn Jones|mysongs|Run for Your Life
+Anne Jones|driving|Norwegian Wood
+Anne Jones|driving|Do You Want To Know A  Secret
+Anne Jones|driving|Not A Second Time
+Anne Jones|favourites|Norwegian Wood
+Anne Jones|favourites|Do You Want To Know A  Secret
+Anne Jones|favourites|You Won't See Me
+Frank Jones|favourites|There's A Place
+Frank Jones|favourites|Twist and Shout
+Frank Jones|favourites|Do You Want To Know A  Secret
+Frank Jones|favourites|You Won't See Me
+Cindy Reynolds|songs|There's A Place
+Cindy Reynolds|songs|Norwegian Wood
+Cindy Reynolds|songs|Do You Want To Know A  Secret
+Cindy Reynolds|songs|Not A Second Time
+Cindy Reynolds|songs|You Won't See Me
+Cindy Reynolds|help|Help!
+Cindy Reynolds|help|The Night Before
+Cindy Reynolds|help|You've Got To Hide Your love Away
+Cindy Reynolds|help|I Need You
+Cindy Reynolds|help|Another Girl
+Cindy Reynolds|help|You're Going to Lose That Girl
+Cindy Reynolds|help|Ticket To Ride
+Cindy Reynolds|help|Act naturally
+Cindy Reynolds|help|It's Only Love
+Cindy Reynolds|help|You Like Me Too Much
+Cindy Reynolds|help|Tell Me What You See
+Cindy Reynolds|help|I've Just Seen a Face
+Cindy Reynolds|help|Yesterday
+Cindy Reynolds|help|Dizzy Miss Lizzy
+sqlite> select users.name, playlist_tracks.playlist_name, songs.title from users join playlist_tracks on users.user_id=playlist_tracks.user_id join songs on playlist_tracks.song_id=songs.sid;
+name|playlist_name|title
+Glenn Jones|mysongs|I Saw Her Standing There
+Glenn Jones|mysongs|Ask Me Why
+Glenn Jones|mysongs|If I Need Someone
+Glenn Jones|mysongs|Run for Your Life
+Anne Jones|driving|Norwegian Wood
+Anne Jones|driving|Do You Want To Know A  Secret
+Anne Jones|driving|Not A Second Time
+Anne Jones|favourites|Norwegian Wood
+Anne Jones|favourites|Do You Want To Know A  Secret
+Anne Jones|favourites|You Won't See Me
+Frank Jones|favourites|There's A Place
+Frank Jones|favourites|Twist and Shout
+Frank Jones|favourites|Do You Want To Know A  Secret
+Frank Jones|favourites|You Won't See Me
+Cindy Reynolds|songs|There's A Place
+Cindy Reynolds|songs|Norwegian Wood
+Cindy Reynolds|songs|Do You Want To Know A  Secret
+Cindy Reynolds|songs|Not A Second Time
+Cindy Reynolds|songs|You Won't See Me
+Cindy Reynolds|help|Help!
+Cindy Reynolds|help|The Night Before
+Cindy Reynolds|help|You've Got To Hide Your love Away
+Cindy Reynolds|help|I Need You
+Cindy Reynolds|help|Another Girl
+Cindy Reynolds|help|You're Going to Lose That Girl
+Cindy Reynolds|help|Ticket To Ride
+Cindy Reynolds|help|Act naturally
+Cindy Reynolds|help|It's Only Love
+Cindy Reynolds|help|You Like Me Too Much
+Cindy Reynolds|help|Tell Me What You See
+Cindy Reynolds|help|I've Just Seen a Face
+Cindy Reynolds|help|Yesterday
+Cindy Reynolds|help|Dizzy Miss Lizzy
+sqlite> .output playlistPerPerson.txt
+sqlite> select 'add -stuff "' || users.user_id, playlist_tracks.playlist_name, songs.title || '"' from users join playlist_tracks on users.user_id=playlist_tracks.user_id join songs on playlist_tracks.song_id=songs.sid;
+sqlite> select 'add -stuff "' || users.user_id, playlist_tracks.playlist_name, songs.title || '"' from users join playlist_tracks on users.user_id=playlist_tracks.user_id join songs on playlist_tracks.song_id=songs.sid;

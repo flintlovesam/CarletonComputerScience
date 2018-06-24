@@ -1,0 +1,40 @@
+This file describes the meaning of the XML-style tags used to describe a recipe for 1406 Assignment #1
+
+<recipe>
+      <recipe_name>
+      Should give the title or name of the recipe
+      </recipe_name>
+      <contributor>
+      The student number of the contributer of the recipe
+      </contributor>
+      <category>
+      Category should be one of: Main Course, Side Dish, Appetizer, Soup, Desert, Breakfast, Lunch
+      </category>
+      <description>
+      A multi line English description of the dish. Make it interesting and appealing.
+      Describe why it's a nice dish, perhaps what origin or culture it came from etc.
+      </description>
+      <spices>
+      List, one line at a time, the spices that are used in this dish. 
+      We want to use this as a basis to filter recipes based on the spices they contain
+      Some recipes might not have any spices as all in which case the tag pair can be ommitted
+      or have no entries between the tags
+      </spices>
+      <source>
+      Provide the source of the recipe like the book it came from or from a relative if it's a
+      family recipe (Don't just take a recipe from somewhere and not reference the source.)
+      </source>
+      <rating>
+      Provide a rating of Mild, Medium, or Hot which is meant to reflect how spicy the recipe tastes
+      </rating>
+      <ingredients>
+      Provide and itemized list of the ingredients and quantity of each ingredient.
+      List each ingredient and quantity on its own line
+      </ingredients>
+      <directions>
+      Provide the cooking directions in English in multiline format
+      </directions>
+</recipe>
+
+
+Then entire recipe should be enclosed in the <recipe> </recipe> opening and closing tags

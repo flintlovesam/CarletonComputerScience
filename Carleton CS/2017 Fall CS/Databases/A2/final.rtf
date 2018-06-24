@@ -1,0 +1,93 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 AppleSymbols;\f2\ftech\fcharset77 Symbol;
+\f3\fnil\fcharset128 HiraMinProN-W3;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs36 \cf0 \expnd0\expndtw0\kerning0
+-- #1 (\uc0\u960  Pname ((\u960  P, Pname (Parts))
+\f1 \uc0\u10781 
+\f0 ((\uc0\u960  S, P (SP))
+\f1 \uc0\u10781 
+\f0 (\uc0\u960  S (\u963  Sname = 'Adams' (Suppliers))))))\
+\
+\
+-- #2  \uc0\u960  Sname ((\u960  S, P (\u963  P = 'P2' (SP)))
+\f1 \uc0\u10781 
+\f0 (\uc0\u960  S, Sname (Suppliers)))\
+-- OR USE:      \uc0\u960  Sname \u963  p= "p2" (Suppliers
+\f1 \uc0\u10781 
+\f0 SP)\
+\
+-- #3 gamma sum(qty) 
+\f2 \uc0\u8594 
+\f0  \
+-- aggregate Sname, sum(qty) (\uc0\u960  Sname, qty ((\u960  S, Sname (Suppliers))
+\f1 \uc0\u10781 
+\f0 (\uc0\u960  S, qty (SP))) );\
+  --   \uc0\u960  Sname, qty ((\u960  S, Sname (Suppliers))
+\f1 \uc0\u10781 
+\f0 (\uc0\u960  S, qty (SP)))       \
+\
+-- #4 \uc0\u960  Sname ((\u960  S, Sname (Suppliers))
+\f1 \uc0\u10781 
+\f0 (\uc0\u963  qty < 300 (SP)))\
+\
+-- #5\
+-- ((\uc0\u963  P = 'P2' (SP)) 
+\f2 \uc0\u8746 
+\f0  (\uc0\u963  P = 'P3' (SP)) 
+\f2 \uc0\u8746 
+\f0  (\uc0\u963  P = 'P5' (SP)) )  <-- Not right but interesting\
+\
+-- \uc0\u960  Sname ((\u960  S, Sname (Suppliers)) 
+\f1 \uc0\u10781 
+\f0  ((\uc0\u960  S, P (SP))
+\f1 \uc0\u10781 
+\f0  (\uc0\u960  P ((\u963  color = 'Green' (Parts)) 
+\f2 \uc0\u8746 
+\f0  (\uc0\u963  color = 'Blue' (Parts))))))\
+\
+-- #6((\uc0\u960  Sname (Suppliers)) 
+\f1 \uc0\u10799 
+\f0  (\uc0\u960  Pname (Parts))) - (\u960  Sname, Pname ((\u960  S, P (SP) ) 
+\f1 \uc0\u10781 
+\f0  (\uc0\u960  P, Pname (Parts)) 
+\f1 \uc0\u10781 
+\f0  (\uc0\u960  S, Sname (Suppliers))))\
+\
+\
+-- #7 (\uc0\u960  Sname ((\u960  S, Sname (Suppliers))
+\f3 \uc0\u9655 
+\f0  (\uc0\u960  S, P (SP))))\
+\
+-- #8   \uc0\u960  Sname (((\u960  S, P (SP)) \'f7 (\u960  P (Parts)))
+\f1 \uc0\u10781 
+\f0  (\uc0\u960  S, Sname (Suppliers)))\
+\
+-- #9 (\uc0\u960  Sname (((\u960  S, Sname (Suppliers)))
+\f1 \uc0\u10781 
+\f0 ((\uc0\u963  P = 'P2' (SP)) 
+\f2 \uc0\u8746 
+\f0  (\uc0\u963  P = 'P3' (SP)) 
+\f2 \uc0\u8746 
+\f0  (\uc0\u963  P = 'P4' (SP)) 
+\f2 \uc0\u8746 
+\f0  (\uc0\u963  P = 'P5' (SP)) 
+\f2 \uc0\u8746 
+\f0  (\uc0\u963  P = 'P6' (SP))) ))\
+\
+--  \uc0\u960  Sname (Suppliers
+\f1 \uc0\u10781 
+\f0 (((\uc0\u960  S, P (\u963  P !='P1' (SP))) \'f7 (\u960  P (\u963  P != 'P1' (SP)))) - (\u960  S (\u963  P = 'P1' (SP)))))\
+\
+\
+\
+-- #10   aggregate Sname sum(qty) (\uc0\u960  Sname, P, qty (Suppliers 
+\f1 \uc0\u10781 
+\f0  SP))\
+\
+}

@@ -1,0 +1,45 @@
+states are the memory of a given move
+
+
+Krylov
+
+In case of reward, treat same as testlin
+
+in case of penalty, treat penalty as reward w probability of .5 and use as a testlin penalty
+
+
+LRI: Linear reward - inaction scheme.
+
+P(0) = [.25,.25,.25,.25]    --> a reward for decision 2 occurs incentivizing it, increasing probability of making that decision --> [.22,.34,.22,.22]
+
+the process of reward is achieved by multiplying the none chosen options by value less than 1.
+
+the probability of the incentivized item is equated to  = 1 - (the sum of the probabilities of the disincentivized options)
+
+
+
+Change probabilities only when reward is needed...if punishment, do nothing.
+
+
+
+eight actions, each with 1/8 probability
+
+
+
+P(n) = [.3,.1,.4,.2]  --> choose decision two(.1) --> P(n+1) = [.27,.19,.26,.18]
+
+transform all other decisions in this case by multiply them by lamba = 0.9 (  EX.  .3 * .9 = .27)
+
+.19 = 1- (.27 + .26 + .18 )
+
+
+The random number generator gives a number between 0-1, and that number dictates which of the options
+ (using their assigned probabilities ) we choose
+ The probabilities
+
+  [  |   |     |     ]
+    .3   .4    .8    1         if the random int generator gives .2, we choose option 1. If .6 is returned, pick option 3
+
+
+
+Reporting

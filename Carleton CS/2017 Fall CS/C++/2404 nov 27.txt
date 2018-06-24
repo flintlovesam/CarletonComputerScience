@@ -1,0 +1,31 @@
+
+
+difference
+
+- variable that can masquerade of various types ..pointer. This is through single
+inheritance
+
+- object can represent many types, this is through multiple inhertiance
+  - done by inheritance of memory
+  - three flavors: public (isA), private(partof) ad protected( type of private)
+
+
+  in order for b2/b1 to get the same copy of a, like in the second image left Consideringwhat we need
+  is for b1 and b2 to virtually inherit .... "class B1 : virtual public A "
+  - afterwards, the compiler only creates one copy of A
+  and it is shared between b1/b2.
+
+  -in the case that both b1/b2 do not share access using virtual, we get different results based on the compiler
+
+
+
+   single inheritance
+   - downcast is not approved as it can stomp on mempry it has no access to
+   - upcast are more safe
+
+   emphasized on examples
+   - code from thursday...understand every single * and & is doing
+
+
+   4 types of pointers
+    - in the course we only look at pointers to data.

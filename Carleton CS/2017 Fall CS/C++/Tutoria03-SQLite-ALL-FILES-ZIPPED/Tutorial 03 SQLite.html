@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<head>
+<title>2406 Tutorial</title>
+<link href="template.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p class="header">COMP 2404 - Fall 2017 Tutorial: #3</p>
+<p class="header subheader">Data Modeling with SQLite</p>
+<hr/>
+<p>&copy; L.D. Nel 2017</p>
+<hr />
+<p class="segment-header">Description:</p>
+<p>The purpose of this tutorial is to introduce you to using the SQLite command shell application that can be used to work with SQLite relational databases. SQLite databases consist of a single file containg all their data. The SQLite sqlite3.exe shell application allows you to access an sqlite database through a simple command line interface. From you shell you can execute both SQL commands on the data along with some useful shell specific &quot;dot&quot; commands.</p>
+<p>In addition this tutorial will illustrate one application with a command line interface and show you how you might create a script for another language using the data from the sample database. We will use SQLite databases to provide you will data for apps your build and for modelling data that an app might have to contend with. Later in the course we will explore using the sqlite engine as the actuall persistent back end for our C++ programs.</p>
+<hr/>
+<p class="segment-header">Instructions:</p>
+<p class="segment-header black-bold">Installing sqlite3.exe Shell</p>
+<p>The following is described from a Windows 10 perspective but should work much the same on Mac and Linux.</p>
+<p>The sqlite3.exe is available at: <a href="https://www.sqlite.org/download.html">https://www.sqlite.org/download.html</a> and download the precompiled binaries for sqlite-tools:</p>
+<p><img src="images/00Install.png" width="1544" height="1184"></p>
+<p>&nbsp;</p>
+<p>Unzip the downloaded file and obtain the <span class="code">sqlite3.exe</span> file. Place it in the directory you want to work from with your database. In our case with the <span class="code">beatles.db</span> sample database.</p>
+<p><img src="images/01Launch.png"></p>
+<p>&nbsp;</p>
+<p>Execute <span class="code">sqlite3 beatles.db</span> to open the sqlite3 command interpreter on the <span class="code">beatles.db</span> database.</p>
+<p><img src="images/02Launch.png" width="557" height="73"></p>
+<p>Now the database is open and you can operate on it with SQL command or use the dedicated shell &quot;dot&quot; commands. For example to see what tables the database consists of execute .tables</p>
+<p>&nbsp;</p>
+<p><img src="images/03Tables.png" width="635" height="67"></p>
+<p>&nbsp;</p>
+<p>A &quot;dot&quot; command is specific to the sqlite3 shell program. To learn about all the possible &quot;dot&quot; command exectute .help</p>
+<p><img src="images/05Help.png" width="947" height="657"></p>
+<p>&nbsp;</p>
+<p>Here is some &quot;getting started&quot; tutorial information about running the shell from the sqlite.org site: <a href="http://www.sqlite.org/cli.html">http://www.sqlite.org/cli.html</a></p>
+<p>To see the schema of table <span class="code">songs</span> execute<span class="code"> .schema songs</span></p>
+<p><img src="images/06Schema.png" width="824" height="72"></p>
+<p>&nbsp;</p>
+<p class="segment-header">Using SQL Commands</p>
+<p>The following images show the E-R model of the <span class="code">beatles.db</span> database, a legend, and a diagram model of the database table schema. (These have nothing to do with objects in the object-oriented programming sense.)</p>
+<p><img src="images/01ERModel.png"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img src="images/01ERLegend.png" width="1010" height="698"></p>
+<p>&nbsp;</p>
+<p>Table Schema of the <span class="code">beatles.db</span> database</p>
+<p><img src="images/02Schema.png" width="952" height="577"></p>
+<p>&nbsp;</p>
+<p>To select (and show) all the rows and columns of the recordings table execute:<br>
+  <br>
+<span class="code">select * from recordings;</span></p>
+<p>Note sql commands don't start with a &quot;dot&quot; and always end in a semi-colon. (Because they end in semi-colon you can span them over multiple lines.) The following documentation on the sqlite.org site shows the SQL commands it supports and their syntax: <a href="http://www.sqlite.org/lang.html">http://www.sqlite.org/lang.html</a></p>
+<p><img src="images/07Select.png" width="839" height="238"></p>
+<p>&nbsp;</p>
+<p>Notice the format is not very nice.</p>
+<p>You can use the <span class="code">.mode column</span> and <span class="code">.header on</span> commands to put the output in column mode and show the column name header. Re-run the select command:</p>
+<p><img src="images/08Header.png" width="842" height="305"></p>
+<p>&nbsp;</p>
+<p>You will notice from time to time some data is cut-off because of the column width. You can use the <span class="code">.width</span> command to set the width (in characters) of each column:</p>
+<p><img src="images/09Width.png" width="857" height="290"></p>
+<p>&nbsp;</p>
+<p></p>
+<p class="segment-header"><span class="black-bold">Problem 1)</span></p>
+<p>Suppose you have invented a bash-style command for adding a song to an application:</p>
+<p class="code">add -s &quot;The Girl From Ipanema&quot;</p>
+<p>Here <span class="code">add</span> would be the command, perhaps <span class="code">-s</span> designates song and <span class="code">&quot;The Girl From Ipanema&quot;</span>  the title of the song.</p>
+<p>Suppose further you wanted a script with all such commands to populate your app with the Beatles songs contained in the <span class="code">beatles.db</span> database. Here is a strategy you could follow:</p>
+<p>1) Run an SQL query to find all the songs.</p>
+<p>2) Format the query output to resemble your commad language.</p>
+<p>3) Output the query result to a text file.</p>
+<p>Lets do these steps:</p>
+<p>Step 1) Execute the following query to list all the data in the songs table:</p>
+<p class="code">select * from songs;</p>
+<p><img src="images/10Songs.png" width="863" height="303"></p>
+<p>(Only a few entries of the result are shown)</p>
+<p>Next lets be selective and only select the song id and titles.</p>
+<p class="code">select sid,title from songs;</p>
+<p><img src="images/11Titles.png" width="734" height="174"></p>
+<p>&nbsp;</p>
+<p>Step 2)</p>
+<p>Next we can output additional information with the select. Here we will only select the title of the song but concatenate &quot;add -s&quot; in front of it using the SQL || concatenation operator (notice in SQL strings are delimited by single quotes).</p>
+<p class="code">select 'add -s ' || title from songs;</p>
+<p>You may see something like the following because the mode is still column and the width is set too small:</p>
+<p><img src="images/12WrongWidth.png"></p>
+<p>Switch to list mode by executing <span class="code">.mode list</span> and then execute the SQL <span class="code">select * from songs;</span></p>
+<p><img src="images/13ListMode.png" width="785" height="246"></p>
+<p>Notice this time the song table &quot;columns&quot; are simply separated by a &quot;|&quot;.</p>
+<p>Now use this mode to create your script commands:</p>
+<p class="code">select 'add -s ' || title from songs;</p>
+<p><img src="images/14Add.png" width="725" height="177"></p>
+<p>&nbsp;</p>
+<p>Remove the header column by executing <span class="code">.header off</span></p>
+<p><img src="images/15HeaderOff.png" width="623" height="215"></p>
+<p>&nbsp;</p>
+<p>Finally there is a good chance your app might want the multi-word song title in double quotes.</p>
+<p class="code">select 'add -s &quot;' || title || '&quot;' from songs;</p>
+<p><img src="images/16Quotes.png" width="771" height="212"></p>
+<p>&nbsp; </p>
+<p>You have now output the data in the exact script form of your invented bash language script.</p>
+<p>Step 3)</p>
+<p>Finally lets write the script to a text file. Redirect the output to a text file by executing:</p>
+<p class="code">.output songScript.txt</p>
+<p>re-execute the select query</p>
+<p class="code">select 'add -s &quot;' || title || '&quot;' from songs;</p>
+<p>This time the output will not appear because a file <span class="code">songScript.txt</span> will have been created and the output directed to it.</p>
+<p>Finally redirect the output back to stdout:</p>
+<p class="code">.output stdout</p>
+<p><img src="images/17Redirect.png" width="695" height="65"></p>
+<p>&nbsp;</p>
+<p>Your directory will not contain your script file:</p>
+<p><img src="images/19Directory.png" width="847" height="142"></p>
+<p>&nbsp;</p>
+<p>Which should look like this:</p>
+<p>&nbsp;</p>
+<p><img src="images/20Script.png" width="589" height="294"></p>
+<p>So you have just created a script in your new language which will populate your app with the same songs as the <span class="code">beatles.db</span> database.</p>
+<p>Problem exercise: repeat these steps for the command you have in mind for adding users to your app.</p>
+<p>&nbsp;</p>
+<p><span class="black-bold">Problem 2)</span></p>
+<p>An E-R model shows where data from different entities (tables) can be safely joined together. The relationships, indicated by the diamond shapes, allow the entities they connect to be joined together. Notice how recordings and songs have a relationship &quot;tracks&quot; connecting them:</p>
+<p><img src="images/21Tracks.png" width="1005" height="285"></p>
+<p>Suppose you wanted to show the name (title) of the album along with the title of the songs that appear on it. Notice the album title is part of the recordings entity and the song title is part of the songs entity. These would have to be joined along the tracks relationship. </p>
+<p>Notice in the schema diagram at the top that the tracks relationship is implemented by adding a dedicated tracks entity (this is typical for N:N relationships).</p>
+<p>Here is some data for the tracks entity:</p>
+<p class="code">select * from tracks;</p>
+<p><img src="images/22Tracks.png" width="550" height="158"></p>
+<p>In order to also have the name of the song in the result we can run an SQL query that joins the tracks and songs entity along the attribute that froms the relationship.</p>
+<p class="code">select albumID, songID, track_number, songs.title from songs join tracks on songID=sid;</p>
+<p><img src="images/23SongTitle.png" width="958" height="174"></p>
+<p>Finally to show the album title along with the song title and  the track number where the song appears on the ablum you can join all three tables:</p>
+<p class="code">select recordings.title, track_number, songs.title from songs join tracks on songID=sid join recordings on albumID=id;</p>
+<p><img src="images/24AlbumTitle.png" width="1016" height="494"></p>
+<p>Problem Exercise:</p>
+<p>Repeat this process to show for each user's name the playlists they own. Then show for each user's playlist the songs that are on that playlist.</p>
+<p>Finally create a command script in your designed command language that creates the playlists for the users currently in the beatles database and also adds the songs to their playlists.</p>
+<p class="red">When you have completed these exercises show your work to the TA's to get credit for the tutorial.</p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,3 @@
+(define (reciprocal x)
+  (/ 1 x)
+  )

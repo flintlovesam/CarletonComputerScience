@@ -1,0 +1,78 @@
+
+
+2 (g and i)
+
+a: movie(year(Y),Title,_), Y=<2010.
+Title = title([pirates, of, the, carribean])
+Title = title([die, hard])
+Title = title([lord, of, the, rings])
+
+b: movie(_,title(Title),_) , member(of, Title), member(the, Title).
+Title = [pirates, of, the, carribean] .
+Title = [guardians, of, the, galaxy]
+Title = [lord, of, the, rings]
+
+c: movie(_,title(Title1),cast(Cast1)) , member(X, Cast1),movie(_,title(Title2),cast(Cast2)),  member(Y, Cast2), Title1 \= Title2.
+
+d: movie(_,T,cast(C)),member(actor(chris,_),C).
+
+//movie(_,T,cast(actor(C,_)),C=chris.
+
+e: actor(X,Y,gender(Z)),Z=female.
+f: movie(_,T,cast(C)),member(actor(sean,bean),C).
+g: movie(_,title(Title1),cast(Cast1)) , member(X, Cast1),movie(_,title(Title2),cast(Cast2)),  member(Y, Cast2), Title1 \= Title2.
+h: movie(year(Y), T,_), \+ ( movie(year(X),_,_), X<Y).
+i: actor(F,L,_), not((movie(_,_,cast(C)), member(actor(F,L),C))).
+
+3a.
+lastEle(X,[X|[]]).
+lastEle(X,[_|T]) :- lastEle(X,T).
+
+
+3b)
+gradeMap([],[]).
+gradeMap([H|T],[a|R]):-
+  H>=81,H=<100,
+  gradeMap(T,R).
+gradeMap([H|T],[b|R]):-
+  H>=71,
+  H=<80,
+  gradeMap(T,R).
+gradeMap([H|T],[c|R]):-
+  H>=61,
+  H=<70,
+  gradeMap(T,R).
+gradeMap([H|T],[d|R]):-
+  H>=51,
+  H=<60,
+  gradeMap(T,R).
+gradeMap([H|T],[f|R]):-
+  H>=0,
+  H=<50,
+  gradeMap(T,R).
+
+3C)
+
+split([],Pivot,[],[]).
+
+split([H|T],Pivot,[H|L1],L2):-
+  H=<Pivot, split(T,Pivot,L1,L2).
+
+split([H|T],Pivot,L1,[H|L2]):-
+  H>Pivot, split(T,Pivot,L1,L2).
+
+
+3D) nextto(X, Y, L)
+
+nextto(X,Y,[]).
+nextto(X,Y,[H|T]):-
+X=H ; Y=T;
+
+adjacent(X, Y, [X,Y|_]).
+adjacent(X, Y, [_|Tail]) :-
+    adjacent(X, Y, Tail).
+
+
+4a)
+append([],L,L).
+append([H|T],L2,[H|L3])  :-  append(T,L2,L3).

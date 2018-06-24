@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> {{recipe_name}} </title>
+  <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+
+<div class="container">
+    <div class="wrapper">
+        Enter Ingredient Name: <input type="text" name="ingredient(s)" id="ingredientz" />
+        <button id="submit" onclick="getIngredients()" >Submit</button>
+    </div>
+    <div id="ingredientType"></div>
+</div>
+
+<div class="container">
+    <div class="wrapper">
+        Enter Spice Name: <input type="text" name="ingredient(s)" id="ingredientz" />
+        <button id="submit" onclick="getIngredients()" >Submit</button>
+    </div>
+    <div id="ingredientType"></div>
+</div>
+
+
+<body>
+   <h1>{{recipe_name}}</h1>
+<div>
+   {{#each recipeEntries}}
+      <p><a href= 'recipes/{{this.id}}'target="_blank">{{this.id}} {{this.recipe_name}}</a></p>
+   {{/each}}
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+body {
+	font-family: arial;
+	margin-left: 80px;
+}
+p {
+	font-size:24px;
+}
+pre {
+	font-size:24px;
+	font-family: 'Courier New';
+}
+hr {
+	width: 100%;
+	height: 2px;
+	
+	margin-top:10px;
+	margin-bottom:10px
+}
+.header {
+	text-align: center;
+	font-weight: bold;
+	font-size: 40px;
+	
+	margin-top:0px;
+	margin-bottom:0px;
+	
+	color: rgb(153, 0, 0);
+}
+.subheader {
+	color: #000099;
+	
+	margin-bottom:100px;
+}
+.segment-header {
+	color: rgb(0, 0, 153);
+	font-size: 30px;
+}
+.black-bold {
+	color: rgb(0,0,0);
+	font-weight: bold;
+}
+.glossary-term {
+	font-weight: 700;
+	color: #000099;
+}
+.code {
+	font-family: 'Courier New';
+}
+.comment {
+	color:rgb(0, 128, 0);
+}
+ul li {
+	margin-bottom: 5px;
+	font-size:24px;
+}.red {
+	color: #F00;
+}
+</style>
+</head>
+
+<body>
+<p class="header">COMP 2404 Fall 2017</p>
+<p class="header subheader">Tutorial 10: Exam Practice</p>
+<p>&copy; L.D. Nel 2017</p>
+<hr />
+<p class="red">Revisions will be noted here</p>
+<p class="red">&nbsp;</p>
+<hr />
+<p class="segment-header">Description:</p>
+
+<p>The purpose of this tutorial is to have you work with some C++ code that will be the basis of the main programming part of the final exam. If you do these exercises you will be well prepared for that part of the exam.</p>
+<p class="red">This tutorial is meant to be started as homework. You will not be able to finish if you only start working on it at your tutorial session.</p>
+<p>&nbsp;</p>
+<hr/>
+<p class="segment-header">Problem 1)</p>
+<p>The <span class="code">Bankaccount</span> class currently only has a <span class="code">balance</span> property. Modify the code so that BankAccounts<br>
+  have a string property <span class="code">owner</span> as well. Modify how BankAccount objects print to, say, <span class="code">Lou: $100</span> instead of just <span class="code">$100</span>. </p>
+<p>&nbsp;</p>
+<p class="segment-header">Problem 2)</p>
+<p>The <span class="code">Bankaccount</span> class currently implement <span class="code">==</span> and <span class="code">!=</span> operators that are based on &quot;identity&quot;. That is, the actual addresses of objects are compared. We want to implement these operators as &quot;equality&quot; rather than &quot;identity&quot; operators. Modify the operators so that A == B is true if and only if bankaccounts A and B have equivalent owner strings and have the equal balances. That is,  because their owner strings and balances are equal. (Also modify the != operator).</p>
+<p>&nbsp;</p>
+<p class="segment-header">Problem 3)</p>
+<p>Modify the <span class="code">OrderedCollection</span> class so that it behaves like an OrderedSet. The difference is that a set would not be allowed to contain duplicates (based on the == operator of items stored in the set). Here the various add methods need to be changed so that items will not be added if an equivalent item is already in the set. (Note for this exercise you don't actually have to change the name of the class to OrderedSet, though that would be ideal).</p>
+<p>&nbsp;</p>
+<p class="segment-header">Problem 4)</p>
+<p>Modify the container so that it grows if it gets full. If its internal array gets full a new one should be allocated that is bigger, items copied over, and the old one properly deteted.</p>
+<p>&nbsp;</p>
+<p class="red">When you have fixed the three memory leaks show your code to the TA to get credit for the tutorial.</p>
+<p class="red">&nbsp;</p>
+<p class="segment-header">Additional Exam Pratice)</p>
+<p>Finally the following practice exercise is highly recommended for the final exam: </p>
+<p>Take the demo code and remove various method bodies and then re-code them based on their signatures. You should be able to remove the code from any method and re-code it. (On the exam this kind of activity will be done by offering you five alternative implementations of method bodies and asking you to choose the right one.)</p>
+<p>&nbsp;</p>
+<p></p>
+<p class="red">&nbsp;</p>
+<p></p>
+<p>&nbsp;</p>
+</body>
+</html>

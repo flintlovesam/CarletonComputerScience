@@ -1,0 +1,33 @@
+1) Server-Side Requirements
+
+R1.1) The server code should use only javascript and node.js with build in modules (not use external npm modules or the express.js framework.
+
+R1.2) The server should have a directory of chord pro formated text files (use .crd or .txt extension as you prefer). So the server does not store data in an intermediate format like JSON strings.
+
+R1.3) The server should allow a client, via a browser, to request a particular song.
+
+R1.4) The server should accept updated data from the client and use that data to overwrite the contents of existing song files.
+
+R1.5) Server should be hosted on port 3000 and reachable from a browser on the same machine visiting something like http://localhost:3000/assignment1.html or http://localhost:3000/filename.ext. (Your ReadMe.txt file should tell the TA what specific URL to use to test your application.)
+
+ 
+
+2) Client-Server Data Exchange
+
+R2.1) The exchange of chord/lyric data between client and server should be in the form of JSON object strings. (The initial launch of the client web page will just be the result of a GET request for a static file.)
+
+R2.2) The initial launch of the web app should be either as the result of the client making a request to http://localhost:3000/assignment1.html or to a specific file name instead like http://localhost:3000/sisterGoldenHair.crd Include a ReadMe.txt file to tell the TA's how to test your app from the browser
+
+ 
+
+3) Client Requirements
+
+R3.1) When the user requests a file from the server the chords and lyrics should be displayed in the browser page with the chords properly positioned above the lyrics (like in tutorial 02).
+
+R3.2) The user should be able to drag the chord symbols and words around with a their mouse.
+
+R3.3) There should be a "submit" or " update" button to allow the client to submit the moved-around data back to the server which will then overwrite the original file contents in the original file format.
+
+R3.4) The client-side code will have to figure out from the position of the chord symbols and lyrics which words form a line of text and which chords appear above which words. (This will be the fun part -trying to figure out from the position of words which ones belong to the same line of text.)
+
+R3.5) The client should be able to request a different file. This could be done with a text field and "open" button or by visiting a different URL.

@@ -1,0 +1,31 @@
+.output in.txt
+
+select 'add recording  ' || id || ' ' || title  || '> <' || artist || '> <' || year  || '> <' || producer  || '>  ' from recordings;
+
+select 'add song <' || sid || '> <' || title  || '> <' || composer  || '>  ' from songs;
+
+select 'add track <' || albumID || '> <' || songID  || '> <' || track_number  || '>  ' from tracks;
+
+select 'add user <' || user_id || '> <' || name  || '>  ' from users;
+
+select 'add playlist <' || user_id || '> <' || playlist_name  || '>  ' from playlists;
+
+select 'add playlist_track <' || user_id || '> <' || playlist_name  || '> <' || song_id  || '> ' from playlist_tracks;
+
+
+
+==================
+
+select ’add*recording*' || id || '*' || title  || '*' || artist || '*' || year  || '*' || producer  || ‘*  ' from recordings;
+
+
+select 'add*song*’ || sid || '*' || title  || '*' || composer || '  ' from songs;
+
+select 'add*track*’ || albumID || '*' || songID  || '*' || track_number || '  ' from tracks;
+
+
+select 'add*user*’ || user_id || '*' || name || '  ' from users;
+
+select 'add*playlist*’ || user_id || '*' || playlist_name || '  ' from playlists;
+
+select ’add*playlist_track*’ || user_id || '*' || playlist_name  || '*' || song_id || '  ' from playlist_tracks;

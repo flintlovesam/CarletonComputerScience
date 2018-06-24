@@ -1,0 +1,124 @@
+
+FR3.2.8) Example output of: 
+	.read Part2TestScript.txt
+
+This example does not include the thousands of lines of "show" commands, to see them execute:
+	.read Part2TestScript.txt
+
+// FR2.7 & 2.8) ADD CUSTOM OBJECTS and ESTABLISH NEW CONNECTIONS
+// FR2.7) add a new recording -> ID / Recording Title / Artists / Producer / Year
+PARSED COMMAND:
+add
+-r
+114
+The Very Best of Dire Straits
+Dire Straits
+Muff Winwood
+1977
+Recording(string&, string&, String&, String&, int)
+EXECUTING: ADD RECORDING add -r 114 "The Very Best of Dire Straits" "Dire Straits" "Muff Winwood" 1977
+// FR2.7) add a new song -> ID / Song Title / Composer
+PARSED COMMAND:
+add
+-s
+1182
+Sultans of Swing
+Mark Knopfler
+Song(string&, string&, int)
+EXECUTING: ADD SONG add -s 1182 "Sultans of Swing" "Mark Knopfler"
+// FR2.7) add a new user -> Full Name / Username(ID)
+PARSED COMMAND:
+add
+-u
+dave
+Dave Nelson
+User(string&, string&, int)
+EXECUTING: ADD USER add -u dave "Dave Nelson"
+// FR2.8) add a new track -> Recording ID / Song ID / Track# / TrackID
+PARSED COMMAND:
+add
+-t
+183
+112
+1182
+1
+Track(int, Song*, string&)
+EXECUTING: ADD TRACK add -t 183 112 1182 1
+// FR2.8) add a new playlist -> User / Playlist Name
+PARSED COMMAND:
+add
+-p
+dave
+Coding Songs
+Playlist(string&)
+EXECUTING: ADD PLAYLIST add -p dave "Coding Songs"
+// FR2.8) add a new playlist track -> User OBJ / Playlist OBJ / TRACK OBJ linked to PTrack
+PARSED COMMAND:
+add
+-l
+dave
+Coding Songs
+183
+// FR2.9) delete LOCAL
+PARSED COMMAND:
+delete
+-t
+183
+~Track(void)
+// FR2.10) delete GLOBAL
+PARSED COMMAND:
+delete
+-s
+1182
+~Song(void)
+EXECUTING: DELETE SONG delete -s 1182
+PARSED COMMAND:
+delete
+-r
+114
+~Recording(void)
+EXECUTING: DELETE RECORDING delete -r 114
+// FR2.9) delete the user
+PARSED COMMAND:
+delete
+-u
+dave
+~User(void)
+~Playlist(void)
+EXECUTING: DELETE USER delete -u dave
+// FR2.15) This proves a comment works (printed below)
+//This proves a comment works
+//Log stop
+PARSED COMMAND:
+.log
+stop
+//Log show
+PARSED COMMAND:
+.log
+show
+//LOGS-----------------------------
+// FR1.3) .help
+// FR2.4) show recordings -> ID / Name / Composer / Year
+// FR2.4) show songs -> ID / Name / Producer
+// FR2.4) show users -> Full Name / User Name
+// FR2.4) show playlists -> There are no global. Must call by user.
+// FR2.5) show playlists gjones -> User Object / Owner / Number of Playlists / Names of Playlists
+// FR1.6) show tracks cindy -> -> User Object / Owner / Number of Playlists / Names of Playlists
+// FR2.7 & 2.8) ADD CUSTOM OBJECTS and ESTABLISH NEW CONNECTIONS
+// FR2.7) add a new recording -> ID / Recording Title / Artists / Producer / Year
+// FR2.7) add a new song -> ID / Song Title / Composer
+// FR2.7) add a new user -> Full Name / Username(ID)
+// FR2.8) add a new track -> Recording ID / Song ID / Track# / TrackID
+// FR2.8) add a new playlist -> User / Playlist Name
+// FR2.8) add a new playlist track -> User OBJ / Playlist OBJ / TRACK OBJ linked to PTrack
+// FR2.9) delete LOCAL
+// FR2.10) delete GLOBAL
+// FR2.9) delete the user
+// FR2.15) This proves a comment works (printed below)
+//This proves a comment works
+//Log stop
+-----------------------------------
+//END SHOW.TXT
+//NOTE: This executes every show command, adds a new object of every type, and links them all into a users, playlists track.
+//      This command will execute thousands of lines of code required for proof of concept.
+CMD or .quit:

@@ -1,0 +1,55 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww9340\viewh13580\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Functional Requirements\
+\
+\
+1.4 : display all of the information for each of the categories \
+\
+select '<'|| id ||'><'|| titles ||'><'|| artist ||'><'|| year ||'><'|| producer ||'>' from recordings;\
+select '<'|| sid ||'><'|| title ||'><'|| composer ||'>' from songs;\
+select '<'|| albumID ||'><'|| songID ||'><'|| track_number ||'>' from tracks;\
+select '<'|| user_id ||'><'|| name ||'>' from users;\
+select '<'|| user_id ||'><'|| playlist_name ||'>' from playlists;\
+select '<'|| user_id ||'><'|| playlist_name ||'><'|| song_id ||'>' from playlist_tracks;\
+\
+1.5 The playlist that a person owns\
+\
+select '<'|| users.user_id ||'><'|| users.name ||'><'|| playlists.playlist_name ||'>' from users join playlists on users.user_id=playlists.user_id;\
+\
+\
+1.6\
+\
+select '<'|| users.name ||'><'|| playlist_tracks.playlist_name ||'><'|| songs.title ||'>' from users join playlist_tracks on users.user_id=playlist_tracks.user_id join songs on playlist_tracks.song_id=songs.sid;\
+\
+\
+1.7 Taken care of already on other script file\
+\
+1.8  Taken care of I think above\
+\
+1.9\
+\
+select \'91delete recording  <' || id || '> <' || title  || '> <' || artist || '> <' || year  || '> <' || producer  || '>  ' from recordings;\
+select 'delete song <' || sid || '> <' || title  || '> <' || composer  || '>  ' from songs;\
+select 'delete track <' || albumID || '> <' || songID  || '> <' || track_number  || '>  ' from tracks;\
+select 'delete user <' || user_id || '> <' || name  || '>  ' from users;\
+select 'delete playlist <' || user_id || '> <' || playlist_name  || '>  ' from playlists;\
+select 'delete playlist_track <' || user_id || '> <' || playlist_name  || '> <' || song_id  || '> ' from playlist_tracks;\
+\
+//scenario where we want to delete and main integrity \'85 if song in playlist, delete the song in playlist \
+\
+1.10; global or local delete\
+\
+1.11: read in the script file, execute each line as a sql command \
+\
+1.12: take the in.txt file, and do all of the add commands for the various tables to built a database. Create table \'97> populate, and loop\
+\
+\
+\
+\
+\
+}

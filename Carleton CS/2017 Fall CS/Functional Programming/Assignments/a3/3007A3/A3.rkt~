@@ -1,0 +1,223 @@
+
+
+; Question 1
+
+(define (make-interval a b)
+  (cons a b))
+
+(define (lower-bound i)   ; lower-bound accesses the X value (x,y)
+  (car i))
+
+(define (upper-bound i)   ; upper-bound accesses the Y value (x,y)
+  (cdr i))
+
+
+; Addition: [a,b] + [c,d] = [a+c,b+d]
+
+(define (add-interval x y)
+  (make-interval (+ (lower-bound x) (lower-bound y))
+                 (+ (upper-bound x) (upper-bound y))))
+
+
+(define (sub-interval x y)
+  (make-interval (- (lower-bound x) (lower-bound y))
+                 (- (upper-bound x) (upper-bound y))))
+
+
+(define (mul-interval x y)
+  (let ((p1 (* (lower-bound x) (lower-bound y)))
+        (p2 (* (lower-bound x) (upper-bound y)))
+        (p3 (* (upper-bound x) (lower-bound y)))
+        (p4 (* (upper-bound x) (upper-bound y))))
+    (make-interval (min p1 p2 p3 p4)
+                   (max p1 p2 p3 p4))))
+
+; Division
+
+(define (width i)
+  (/ (- (upper-bound i) (lower-bound i)) 2))
+
+(define (div-interval x y)
+  (if (= (width y ) 0) 
+      (error "division by interval with width 0")
+      (mul-interval x
+                    (make-interval (/ 1.0 (upper-bound y))
+                                   (/ 1.0 (lower-bound y))))))
+
+
+;Question 2
+
+
+
+;; provided
+(define (special-cons x y)
+  (lambda (m) (m x y)))
+
+;2a  https://github.com/jbrennan/programming_paradigms/blob/master/a2/q3.rkt
+(define (special-car special-pair)
+  (special-pair (lambda (p1 p2) p1)))
+
+(define (special-cdr special-pair)
+  (special-pair (lambda (p1 p2) p2)))
+
+; 2 b
+
+(define (triple x y z)
+  (lambda (choice)
+    (cond ((eq? 'x choice) x)
+          ((eq? 'y choice) y)
+          (else z))))
+
+(define (first trpl)
+  (trpl 'x))
+
+(define (second trpl)
+  (trpl 'y))
+
+(define (third trpl)
+  (trpl 'z))
+
+
+
+
+; 3a
+(define (after L n)
+  (cond
+    ((null? L) L)
+    ( (= n 0) (cons (car L)(cdr L)))
+    (else (after (cdr L)(- n 1)))))
+
+
+
+;3b
+(define (before L n)
+  (cond
+    ((null? L) L)  
+    (rev(rev (after (rev L) n)))
+  ))
+
+(define (rev lis)
+   (if (null? lis)
+       '()
+       (append (rev (cdr lis))
+               (list (car lis)))))
+
+
+(define (append2 lis1 lis2)
+  (cond ((null? lis1)
+         lis2)
+        (else
+         (cons (car lis1)
+               (append2 (cdr lis1) lis2)))))
+
+
+(define (splice L n A)
+ (append2 (append2 (before L n) A) (after L n))
+  )
+
+
+
+
+;3c   works for first example : (multiDelete '(1 2 3 4 5) 2 1 '(a b c))
+
+(define (delete-n l n)
+  (if (= n 0) (cdr l)
+      (append (list (car l)) (delete-n (cdr l) (- n 1)))))
+
+(define (multiDelete l index num l2)
+ (if (= num 0) (splice l index l2)
+  (multiDelete (delete-n l index) index (- 1 num) l2)
+)
+  )
+
+
+(define (splice2 L i n A)            ; i i
+ (append2 (append2 (before L n) A) (after L n))
+  )
+
+
+
+
+
+;4a
+(define (add1 x)
+  (+ x 1))
+
+(define (depth lst)
+  (if (not (pair? lst))
+      0
+      (max (add1 (depth (car lst)))
+           (depth (cdr lst)))))
+
+;4b: 
+(define (treemap proc tree)
+   (cond ((null? tree) tree)
+          ((not (pair? tree)) (proc tree))
+          (else (cons (treemap proc (car tree))
+                      (treemap proc (cdr tree))))))
+
+(define (sqr x)
+   (* x x))
+
+
+
+;4c: http://www.billthelizard.com/2011/02/sicp-228-flattening-nested-lists.html
+
+
+(define (flattenList tree)
+  (cond ((null? tree) tree)
+        ((not (pair? tree)) (list tree))
+        (else (append (flattenList (car tree))
+                      (flattenList (cdr tree))))))
+;5;
+
+(define-syntax stream-cons
+    (syntax-rules ()
+        ((stream-cons a b)(cons a (delay b)))))
+
+(define (stream-car stream) 
+    (car stream))
+
+(define (stream-cdr stream)
+    (force (cdr stream)))
+
+
+;5a:
+(define (stream-first n str)
+(cond((null? str) str)
+  ((= n 0) (cons (stream-car str) (delay str)))
+  (else (stream-first (- n 1) (stream-cdr str)))))
+
+
+(define (int-start-from n)
+  (cons-stream n (int-start-from(+ 1 n))))
+               
+(define (integers int-start-from 1))))
+
+
+;5b:
+;5c:
+
+
+
+
+; TESTING
+
+
+; 1 (addition)     (add-interval (make-interval 0 6) (make-interval 0 5))
+
+
+; 2
+
+; test them
+(write "triple...first, second, third,.. expecting 'd, 'e, 'f respectively")
+(newline)
+(first (triple 'd 'e 'f))
+(second (triple 'd 'e 'f))
+(third (triple 'd 'e 'f))
+
+;3a
+ (define testRun (after '(1 2 3 4 5 6) 3))
+
+testRun
+

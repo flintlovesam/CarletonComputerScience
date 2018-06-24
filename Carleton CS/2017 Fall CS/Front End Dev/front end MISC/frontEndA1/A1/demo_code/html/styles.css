@@ -1,0 +1,16 @@
+/* an external style sheet
+
+   notice the use of c-style comments and not xhtml-style
+   comments
+   */
+  body {color: orange; background-color: gray;}
+  table {color: orange; 
+         background-color: #000000;
+         }
+  caption {font-size: 12px;
+           font-weight: bold;
+        font-family: Arial;
+        }
+        
+  td,th {padding: 20px;}
+

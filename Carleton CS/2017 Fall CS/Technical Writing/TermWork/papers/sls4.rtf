@@ -1,0 +1,49 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \\documentclass\{article\}[12pt]\
+\\pagestyle\{empty\}\
+\\linespread\{1.2\}\
+\
+\\begin\{document\}\
+\
+\\title\{\\vspace\{-4cm\}\
+Summary 4: \\\\\
+Soylent:\\\\ \\large A Crowd Sourced Text Editing Service\}\
+\\author\{Sam Diamantstein 101060342\}\
+\\date\{COMP 3301, Oct 5, 2017\}\
+\
+\\maketitle\
+\
+\\pagenumbering\{gobble\}\
+\
+Soylent is a word processing service that allows an author to edit their text using a crowd-sourced group of workers. The workers provide shortening, proofreading, and the performing of routine tasks like gathering citations. Soylent consists of Shortn, CrowdProof and the Human Macro to perform the above three paid services through its plugin to Microsoft Word, allowing authors to accept or deny the various changes that have been suggested. In order to control for the quality of the edits being provided, Soylent implements a division of labor into three steps for each of its services, finding the error, fixing it, and verifying the solution. In each step, workers vote to identify the correct action to take, ensuring that the final edit returned to the author is of the highest quality. \
+\
+\\vspace\{.5cm\}\
+\
+ Shortn allows authors to shorten the length of the text they have written in their Microsoft word editor. When a user highlights the text that they want to shorten, it is called into action,  prompting a group of remote Mechanical Turk(MT) workers to collectively suggest changes to decrease its word length. When the editing of the text is complete, Shortn presents the changed and the unchanged text side by side. Shortn also features a slider that when moved, dynamically scales the text to present its varying lengths. A single invocation of Shortn can remove 15-30 percent(p) of the text length, and additional usages can result in a 50 p reduction.\
+\
+\\vspace\{.5cm\}\
+\
+Crowdproof allows an author to submit their text to find spelling, grammar and style errors. MT workers take the text and underline the errors for the author, as well as appending the worker\'92s explanation of the mistake and suggested fixes. The author can then integrate the changes into their text. The experimental results of using Crowdproof was a 67 p reduction in errors, as well as an 88 p rate of successful fixes for the given errors\
+\
+\\vspace\{.5cm\}\
+\
+The Human Macro allows authors to make requests for the MT workers to perform tasks beyond Crowdproof and Shortn. Should an author want a repeated task performed such as providing the citations for a paper, they write a description of the task, which is translated into a request for work to be performed by the workers. In an experiment where workers were provided with Human Macro tasks, 70 p of the work was performed successfully \
+\\vspace\{.5cm\}\
+The three components of Soylent, Shortn, Crowdproof and Human Macro leverage the strength of a collective workforce. A subset of these workers, however, introduce errors into the text they are intended to fix making Soylent a less effective tool. One of these groups is the Lazy Turks(LT), individuals who do the absolute minimum work needed to be paid. The second group is the Eager Beavers(EB), people whose intentions are good but do unneeded work that compromises the edited text. The result is a 30 p reduction in the quality of the work performed by the MTs, rendering around one of three suggestions being below standard for display to the author. To control for the errors produced by the LT and EB, Soylent implemented a system called Find-Fix-Verify(FFV) where the process of making an edit is split into three steps.\
+\\vspace\{.5cm\}\
+\
+The first step directs the workers to identify an area in the text that is being edited that could use improvement, such as sentences could be shortened. Next, workers vote on the various opinions pooled in the Find stage, and finally, a new group of workers verifies the solution just presented. By segmenting the worker population into the individual steps, Soylent filters the proposed edits, removing the erroneous suggestions made by the LT and EBs. FFV does, however, come with its own drawbacks such as a system that stalls in providing completed work when workers are in short supply. \
+\\vspace\{.5cm\}\
+\
+As an interface to increase an authors productivity, Soylent offers a suite of tools that when using the FFV model ensures quality control. While issues of privacy and copyright are bound to Soylent, it demonstrates what can be achieved by pooling a group of individuals to achieve a task, in this case, text editing.\
+\
+\
+\\end\{document\}\
+\
+}

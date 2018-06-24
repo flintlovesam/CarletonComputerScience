@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+
+
+
+
+
+    <script src="https://unpkg.com/merge-images"></script>
+
+    <script>
+    function makeid() {
+      var text = "";
+      var possible = "abcdefghijklmnopqrstuvwxyz";
+
+      for (var i = 0; i < 4; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+      return text;
+    }
+
+    console.log(makeid());
+    </script>
+
+
+    <script>
+    document.getElementById("password").innerHTML = makeid();
+
+      </script>
+
+    <style>
+    #container {
+      text-align: center;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+    .block {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      display: inline-block;
+      background: #00CC99;
+    }
+    </style>
+
+
+  </head>
+  <body>
+
+    <div id="password"></div>
+    <div id="container">
+      <div class="block"><img src="https://source.unsplash.com/random/200x200" alt="Flowers in Chania"></div>
+      <div class="block"><img src="https://source.unsplash.com/random/200x201" alt="Flowers in Chania"></div>
+      <div class="block"><img src="https://source.unsplash.com/random/199x199" alt="Flowers in Chania"></div>
+      <div class="block"><img src="https://source.unsplash.com/random/200x199" alt="Flowers in Chania"></div>
+    </div>
+
+
+
+  </body>
+</html>

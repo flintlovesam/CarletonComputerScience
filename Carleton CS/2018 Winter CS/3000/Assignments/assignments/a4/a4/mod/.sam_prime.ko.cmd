@@ -1,0 +1,1 @@
+cmd_/home/student/Modules/sam_prime.ko := ld -r -m elf_i386 -T ./scripts/module-common.lds --build-id  -o /home/student/Modules/sam_prime.ko /home/student/Modules/sam_prime.o /home/student/Modules/sam_prime.mod.o

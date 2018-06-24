@@ -1,0 +1,41 @@
+
+PART1
+
+.output addNames.txt
+
+select 'add -s "' || name || '"' from users;
+
+
+
+
+PART 2
+
+A: show for each user's name the playlists they own
+
+
+select users.user_id, users.name, playlists.playlist_name from users join playlists on users.user_id=playlists.user_id;
+
+
+
+B: show for each user's playlist the songs that are on that playlist.
+
+
+
+select users.name, playlist_tracks.playlist_name, songs.title from users join playlist_tracks on users.user_id=playlist_tracks.user_id join songs on playlist_tracks.song_id=songs.sid;
+
+
+( evans mod to avoid situation where we have someone with the same name- another work around for uniqueness is to have title and composer, so that if two diff songs have same title, database can distinguish between the two)
+(notice difference is users.name versus users.user_id)
+
+select users.user_id, playlist_tracks.playlist_name, songs.title from users join playlist_tracks on users.user_id=playlist_tracks.user_id join songs on playlist_tracks.song_id=songs.sid;
+
+
+
+
+
+
+PART3 Finally create a command script in your designed command language that creates the playlists for the users currently in the beatles database and also adds the songs to their playlists.
+
+select 'add -stuff "' || users.user_id, playlist_tracks.playlist_name, songs.title || '"' from users join playlist_tracks on users.user_id=playlist_tracks.user_id join songs on playlist_tracks.song_id=songs.sid;
+
+

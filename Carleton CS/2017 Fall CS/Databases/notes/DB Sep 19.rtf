@@ -1,0 +1,132 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red255\green255\blue255;\red9\green47\blue157;
+}
+{\*\expandedcolortbl;;\cssrgb\c13333\c13333\c13333;\cssrgb\c100000\c100000\c100000;\cssrgb\c2353\c27059\c67843;
+}
+\margl1440\margr1440\vieww25400\viewh13880\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\
+\
+September 19th\
+\
+Database\
+\
+\
+
+\b Formal Definitions\
+
+\b0 \
+Key: \
+Keys are there to uniquely identify various rows\
+\
+Schema:\
+- description of a relation\
+\
+\
+Tuple\
+- ordered set of values\
+<\'85..>\
+A row in a course relation is a 3-tuple and consists of three values <CS3604, \'93tom\'94 , \'93happy\'94 >\
+\
+\
+Domain \
+- has three parts\
+- name , data type/ format , atomic values (indivisible)\
+\
+Attribute\
+- map from relation name to the domain\
+\
+\
+\
+
+\b Relational model\
+
+\b0 \
+\
+- there are no duplicates tuples in a relation\
+ - the instance of a relations a set\
+\
+- tuples in a relation are unordered (top to bottom)\
+ - set has no order\
+\
+- attributes of a relation are unordered (left to right)\
+ - the heading is a set\
+\
+All attributes values are atomic\
+ - domain consists of atomic values only\
+\
+* special null value is used to represent values that are unknown or inapplicable to certain tuples\
+\
+\
+
+\b Important notation\
+
+\b0 \
+- tuple in a relation R with schema R(a1\'85.an) can be represented as \
+T = <A1: V1,\'85\'85.An : Vn>\
+\
+\
+\
+\
+
+\b Contraints
+\b0 \
+- a condition that the database instance/state should satisfy. Needs to hold true\
+ - cannot enter two wives per person.\
+\
+3 main type of constraints: Key constraints, entity constraint, referential integrity \
+\
+\
+\
+
+\b Key constraint: \
+
+\b0 - a super key is a set of attributes in a relation can be the full set or a subset of attributes in a. Relation, but it satisfies certain condition: ( no two tuples may share the same value in the super key\
+\
+\
+3 database operations\
+Add  - delete - modify\
+\
+\
+
+\b Entity integrity\
+
+\b0 - primary key should not contain null values in an tuple\
+- this is because primary key is used to identify a tuple\
+\
+\
+
+\b Referential Integrity Constraint\
+
+\b0 - don\'92t know really\
+- reference . Value for foreign key is null or the value references an existing primary key\
+- uniqueness\
+\
+Foreign Key\
+-
+\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+is a {\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Field_(computer_science)"}}{\fldrslt \cf4 field}} (or collection of fields) in one {\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Table_(database)"}}{\fldrslt \cf4 table}} that uniquely identifies a row of another table or the same table.
+\fs22\fsmilli11200 \cf4 \super [1][2][3]
+\fs28 \cf2 \nosupersub  In simpler words, the foreign key is defined in a second table, but it refers to the primary key or a unique key in the first table. For example, a table called Employee has a primary key called 
+\b employee_id
+\b0 . Another table called Employee Details has a foreign key which references 
+\b employee_id
+\b0  in order to uniquely identify the relationship between both tables.
+\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\
+\
+\
+\
+\
+\
+Slide 38: if we delete John, we loose the connection to grade, where his number is represented twice. As a result, we violate ( but referential integrity is maintained)\
+\
+\
+\
+\
+File stream - upstream - string\
+\
+}

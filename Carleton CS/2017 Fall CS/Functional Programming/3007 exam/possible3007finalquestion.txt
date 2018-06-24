@@ -1,0 +1,31 @@
+possible questions in 3007 final
+
+- stack in scheme
+	- push, pop, peek, print
+
+- list in scheme
+	- depth of a list
+	
+
+- bicycle in prolog
+	http://groups.umd.umich.edu/cis/course.des/cis479/prolog.html
+
+- cons car (scheme)
+	- diagram to code, code to diagram
+
+- two contour diagrams
+
+- q3 and q4 in a5
+
+- applicative and normal order in scheme
+
+- definitions (t/f), 
+
+- implement your own append in prolog 
+	- member, contains.
+
+- data structures question in scheme
+	- deque 
+
+
+

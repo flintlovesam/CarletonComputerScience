@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> {{recipe_name}} </title>
+  <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+
+<div class="container">
+    <div class="wrapper">
+        Enter Ingredient Name: <input type="text" name="ingredient(s)" id="ingredientz" />
+        <button id="submit1" >Submit</button>
+    </div>
+    <div id="ingredientType"></div>
+</div>
+
+<script type="text/javascript">
+document.getElementById('submit1').addEventListener("click", function(event) {
+  alert("hi");
+// function getIngred(request, response){
+//
+// var sql = "SELECT id, recipe_name FROM recipes WHERE ingredients LIKE '%";
+//   		for(var i = 0; i < ingredientArray.length; i++)
+//   		{
+//   			sql += ingredientArray[i];
+//   			if(i == ingredientArray.length-1)
+//   				break;
+//   			sql += "%' AND ingredients LIKE '%";
+//   		}
+//   sql += "%'";
+// 	db.all(sql, function(err, rows){
+// 		let recipe = rows[0];
+// 	response.render('recipeDetails', {title: 'Recipe Details:', recipe: recipe});
+// });
+// }
+// }
+}
+</script>
+
+
+<div class="container">
+    <div class="wrapper">
+        Enter Spice Name: <input type="text" name="ingredient(s)" id="ingredientz" />
+        <button id="submit" onclick="getIngredients()" >Submit</button>
+    </div>
+    <div id="ingredientType"></div>
+</div>
+
+
+<body>
+   <h1>{{recipe_name}}</h1>
+<div>
+   {{#each recipeEntries}}
+      <p><a href= 'recipes/{{this.id}}'target="_blank">{{this.id}} {{this.recipe_name}}</a></p>
+   {{/each}}
+</div>
+</body>
+</html>

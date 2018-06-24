@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+<style>
+         body {
+            background: #dddddd;
+         }
+
+     /*element selectors: */
+     canvas {
+        margin: 20px;
+      /*important here for padding to be 0 for mouse calculations */
+            padding: 0px;
+     }
+     /* class selectors: */
+     input{
+
+      text-align:center;
+     }
+     .canvas {
+            background: #ffffff;
+            border: thin inset #aaaaaa;
+         }
+
+         /*id selectors: */
+
+         #canvas1 {
+
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+
+         }
+
+
+
+      </style>
+
+
+
+   </head>
+
+  <body>
+
+    <div align="center">
+  <h3>Welcome To Word Matcher: Where you have to match a word to its definition!</h3>
+</div>
+
+
+    <canvas id='canvas1' class='canvas' width='600' height='300'>
+      Canvas not supported
+    </canvas>
+
+
+    <br>
+     <div align="center">
+    <input type = "text"  id="userTextField" name = "userTextField"  value="" size = "60"  />
+   </div>
+<!--
+    <input type="button" value="Submit Request" onClick="handleSubmitButton()">
+   -->
+
+
+
+
+
+
+
+    Win Status:
+    <div id='messages'></div>
+
+    Player Status:
+    <div id='pStat'></div>
+
+  <script src="client.js"></script>
+  </body>
+</html>

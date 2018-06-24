@@ -1,0 +1,41 @@
+
+#include <stdio.h>
+int main(){
+
+exec sql include sqlca;
+exec sql begin declare section;
+char sqlstmt1[1024];
+char sqlstmt2[1024];
+char sqlstmt3[1024];
+char *LOGIN= "fedora/oracle";
+exec sql end declare section;
+
+exec sql whenever sqlerror goto error;
+exec sql whenever not found goto finish;
+
+exec sql connect :LOGIN;
+if (sqlca.sqlcode == 0)
+printf("Connected to ORACLE\n");
+else
+printf("Connection Failed\n");
+
+printf("Creating tables:\n");
+strcpy(sqlstmt1, "create table Bank(B# varchar(4) NOT NULL, Name varchar(20) NOT NULL, City varchar(20) NOT NULL, primary key (B#)" );
+strcpy(sqlstmt2, "create table Customer(C# varchar(4) NOT NULL, Name varchar(20) NOT NULL, Age int NOT NULL, City varchar(10) NOT NULL,  primary key (C#))" );
+strcpy(sqlstmt3, "create table Account (C# varchar(4) NOT NULL, B# varchar(4) NOT NULL, Balance int NOT NULL, primary key (C#,B#), foreign key (C#) references Customer(C#) ON DELETE CASCADE, foreign key (B#) references Bank(B#) ON DELETE CASCADE)");
+
+exec sql execute immediate :sqlstmt1;
+exec sql execute immediate :sqlstmt2;
+exec sql execute immediate :sqlstmt3;
+printf("Finished creating tables\n");
+
+finish:
+printf("Creation all done\n");
+exit(0);
+
+error:
+printf("Error found\n");
+printf("Table might exist\n");
+exec sql rollback release;
+exit(1);
+}

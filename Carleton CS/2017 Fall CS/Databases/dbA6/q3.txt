@@ -1,0 +1,67 @@
+#include <stdio.h>
+int main(){
+
+exec sql include sqlca;
+exec sql begin declare section;
+char sqlstmt1[1024];
+char sqlstmt2[1024];
+char cnum[3];
+char cname[10];
+int age;
+char ccity[10];
+char bnum[3];
+char bname[10];
+char bcity[10];
+int levels;
+char *LOGIN= "fedora/oracle";
+exec sql end declare section;
+
+exec sql whenever sqlerror goto error;
+exec sql whenever not found do break;
+
+exec sql connect :LOGIN;
+if (sqlca.sqlcode == 0)
+printf("Connected to ORACLE\n");
+else
+printf("Connection Failed\n");
+
+strcpy(sqlstmt1, "select * from Customer order by C#");
+exec sql prepare c from :sqlstmt1;
+exec sql declare c_cur cursor for c;
+strcpy(sqlstmt2, "select * from Bank where exists (select * from Account where
+Account.C#=:cnum and Account.B#=Bank.B#) order by Bank.B#");
+exec sql prepare t from :sqlstmt2;
+exec sql declare t_cur cursor for t;
+
+printf("+-----------------------------------------------------+\n");
+printf("|	C#	|	Name     	|	Age	|	City	|\n");
+printf("+-----------------------------------------------------+\n");
+while(1) {
+exec sql fetch p_cur into :cnum, :cname, :age, :ccity;
+printf("| %s |  %s |  %d |  %s |\n", cnum, cname, age, ccity);
+exec sql open t_cur using :cnum;
+printf("+-----------------------------------------------------+\n");
+printf("|  +-----------------------------------------------+ |\n");
+printf("|  |  B#    |      Name  |   City	| |\n");
+printf("|  +-----------------------------------------------+ |\n");
+while(1){
+exec sql fetch t_cur into :bnum, :bname, :bcity;
+printf("|  |  %s | %s | %s | |\n", bnum, bname, bcity);
+
+printf("|  +-----------------------------------------------+ |\n");
+
+}
+
+printf("+-----------------------------------------------------+\n");
+
+exec sql close t_cur;
+
+}
+exec sql close p_cur;
+exit(0);
+
+error:
+printf("Error found in SQL. \n");
+exec sql rollback release;
+exit(1);
+}

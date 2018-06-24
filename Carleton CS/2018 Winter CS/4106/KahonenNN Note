@@ -1,0 +1,14 @@
+nearest neighbore rule
+
+https://www.tutorialspoint.com/artificial_neural_network/artificial_neural_network_kohonen_selforganizing_feature_maps.htm
+http://www.scholarpedia.org/article/Kohonen_network
+https://en.wikipedia.org/wiki/Self-organizing_map
+https://www.cs.bham.ac.uk/~jlw/sem2a2/Web/Kohonen.htm
+
+
+Why do Kahonen?
+
+
+Minimize the computation needed to i nearest neighbor
+codebook vectors have 1) same probability distribution 2) same topological distribution
+orders poin

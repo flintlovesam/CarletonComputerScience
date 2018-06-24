@@ -1,0 +1,6 @@
+'add -s "' || name || '"'
+add -s "Glenn Jones"
+add -s "Susan Jones"
+add -s "Frank Jones"
+add -s "Anne Jones"
+add -s "Cindy Reynolds"

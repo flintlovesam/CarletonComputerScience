@@ -1,0 +1,83 @@
+====================================
+MyTunes Music Library
+Version 0.2 (Alpha) Oct 2017
+(c) Louis D. Nel
+====================================
+COMMANDS:
+add //add data to collections
+    // ? id attributes will be assigned by the application
+	//add recording
+    add -r id title artist producer year
+    add -r 103 "Beatles For Sale" "Beatles" "George Martin" 1964
+    add -r ? "Beatles For Sale" "Beatles" "George Martin" 1964
+    //add song
+    add -s sid title composer //add song
+    add -s 1001 "Misery" "Paul McCartney, John Lennon"
+    add -s ? "Misery" "Paul McCartney, John Lennon"
+    //add track
+    add -t trackID albumID songID track_number
+    add -t 12 100 1000 1
+	add -t 12 null 1000 1 //add track not on recording
+    add -t ? 100 1000 1
+	add -t ? null 1000 1  //add track not on recording
+    //add user
+    add -u user_id name
+    add -u ajones "Anne Jones"
+    //add playlist
+    add -p user_id playlist_name
+    add -p ajones "Driving Songs"
+    //add playlist track
+    add -l user_id playlist_name track_id
+    add -l gjones "mysongs" 6
+   
+delete  //delete data from collections
+    delete -r recording_id //delete recording 
+    delete -u user_id //delete user
+    delete -u user_id -p playist//delete user playlist
+    delete -u userID -p playlist -t trackID //del playlist track   
+    //CASCADING DELETES (Use with CAUTION):
+    delete -u userID -p playlist -t trackID -GLOBAL 
+    delete -t track_id //delete track
+    delete -s song_id //delete song
+
+show   //show collections or member of a collection
+    show recordings
+    show recordings -r recording_id
+    show songs
+    show songs -s song_id
+    show tracks
+    show tracks -t track_id
+    show users
+    show users -u user_id
+ 
+UI SHELL COMMANDS (start with a dot):
+
+.quit   //quit the application
+
+.read   //read a script file
+	.read filename
+
+.log    //log commands and output
+	.log clear //clear the logs
+	.log start //begin logging commands only
+	.log start_output //begin logging output only
+	.log start_both  //begin logging commands and output
+	.log stop //stop logging
+	.log save filename //save log to filename
+    .log show //display current log contents on console
+
+.help   //show this help menu
+
+//   //comments
+     Any input starting with "//" is treated as a comment.
+     If input on CLI the comment will be written to log file.
+
+*********************************************************************
+*   DISCLAIMER:                                                     *
+*   This prototype application expects well formed commands         *
+*   and valid agrument values.                                      *
+*   It is not yet built to withstand mal-formed commands or         *
+*   invalid argument values.                                        *
+*********************************************************************
+
+

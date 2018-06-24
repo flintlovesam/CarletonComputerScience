@@ -1,0 +1,15 @@
+
+Why is stragety valueable
+
+1)
+In the strategy pattern we
+see that the abstract class duck in this case
+will have within it two calls to instantiate the interfaces
+for its behavior types.
+
+We will use these two objects, "FlyBehavior" & "QuackBehavior"
+below in the setter functions
+1) setFlyBehavior
+2) setQuackBehavior
+where we can dynamically attribute
+the behavior at runtime with the variable that will be passed in

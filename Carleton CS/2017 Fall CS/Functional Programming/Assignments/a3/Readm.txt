@@ -1,0 +1,9 @@
+READ ME
+
+
+
+1. There are no special instructions for running this software. Testing can be found commented at the bottom of the file.
+
+2. There are no major assumptions made.
+
+3. Everything is coded in Dr.Racket using R5RSWelcome to EditPad.org - your online plain text editor. Enter or paste your text here. To download and save it, click on the button below.

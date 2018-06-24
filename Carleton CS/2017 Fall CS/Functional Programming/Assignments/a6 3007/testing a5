@@ -1,0 +1,109 @@
+testing
+
+#1: test all of the possible rules, both affirmative and  contrary examples"
+
+Ancestor Test: ancestor(jean,jonny).
+Expected: true
+Answer: true
+
+Ancestor Test: ancestor(Ben,jonny).
+Expected: false
+Answer: false
+==============
+parent test: parent(bob,sammy)
+Expected: true
+Answer: true
+
+parent test: parent(ben,sammy)
+Expected: false
+Answer: false
+==============
+different Test: difference(ben,sammy)
+Expected: true
+Answer: true
+
+different Test:(sammy,sammy)
+Expected: false
+Answer: false
+
+==============
+is_mother Test: is_mother(rebecca,sammy)
+Expected: true
+Answer: true
+
+is_mother Test:is_mother(ben,sammy)
+Expected: false
+Answer: false
+==============
+
+is_father Test: is_father(bob,sammy)
+Expected: true
+Answer: true
+
+is_father Test: is_father(ben,sammy)
+Expected: false
+Answer: false
+
+==============
+
+aunt Test: aunt(esther,sammy)
+aunt Test:Expected: true
+Answer: true
+
+aunt Test: pepi(esther,sammy)
+Expected: false
+Answer: false
+==============
+
+uncle Test: uncle(ben,sammy)
+aunt Test:Expected: true
+Answer: true
+
+uncle Test: uncle(bob,sammy)
+Expected: false
+Answer: false
+
+==============
+sister Test: sister(eliana,sammy)
+aunt Test:Expected: true
+Answer: true
+
+sister Test: sister(eliana,ben)
+Expected: false
+Answer: false
+==============
+
+brother Test: brother(sammy,jonny)
+aunt Test:Expected: true
+Answer: true
+
+brother Test: brother(ben,jonny)
+Expected: false
+Answer: false
+==============
+
+grandfather Test: grandfather(jean,sammy)
+aunt Test:Expected: true
+Answer: true
+
+grandfather Test: grandfather(ben,sammy)
+Expected: false
+Answer: false
+==============
+
+grandmother Test: grandmother(pepi,sammy)
+aunt Test:Expected: true
+Answer: true
+
+grandmother Test: grandmother(pepi,rebecca)
+Expected: false
+Answer: false
+==============
+
+ancestor Test: ancestor(jean,sammy)
+aunt Test:Expected: true
+Answer: true
+
+ancestor Test: ancestor(ben,sammy)
+Expected: false
+Answer: false

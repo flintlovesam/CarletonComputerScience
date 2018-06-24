@@ -1,0 +1,55 @@
+DECLARE
+  c_tuple Customer%rowtype;
+  b_tuple Bank%rowtype;
+
+  CURSOR c_cursor IS select * from Customer ORDER BY C# ASC;
+  CURSOR b_cursor(bnum Customer.C#%type)
+  IS  select B.*
+      FROM Bank B, Account A
+      WHERE A.B# = B.B#
+      AND   A.C# = cnum
+      ORDER BY B.B# ASC;
+BEGIN
+  dbms_output.put_line('  Customer                                                                                                                   ');
+  dbms_output.put_line('+----------+--------------------------------------------------+----------+--------------------------------------------------+');
+  dbms_output.put_line('|   C#     |       Name         |        Age |                 City             |');
+  dbms_output.put_line('+==========+==================================================+==========+==================================================+');
+
+  OPEN c_cursor;
+  LOOP
+    fetch c_cursor into c_tuple;
+    exit when c_cursor%NOTFOUND;
+
+    dbms_output.put_line('|' || lpad(to_char(c_tuple.C#),10) ||
+    '|' || rpad(c_tuple.Name,50) ||
+    '|' || rpad(c_tuple.Age,10)  ||
+    '|' || rpad(c_tuple.City,50) ||
+    '|');
+
+    dbms_output.put_line('+----------+--------------------------------------------------+----------+--------------------------------------------------+');
+    dbms_output.put_line('|                                                                                                                           |');
+    dbms_output.put_line('|   Account                                                                                                      |');
+    dbms_output.put_line('|     +----------+--------------------+------------------------------+-----+--------------------+                           |');
+    dbms_output.put_line('|     |   B#     |      Name       |   City               |');
+    dbms_output.put_line('|     +==========+====================+==============================+=====+====================+                           |');
+
+    OPEN b_cursor(c_tuple.C#);
+    LOOP
+      FETCH b_cursor into b_tuple;
+      exit when b_cursor%NOTFOUND;
+
+      dbms_output.put_line('|     |' || lpad(to_char(b_tuple.B#),10) ||
+        '|' || rpad(b_tuple.Name,20) ||
+        '|' || rpad(b_tuple.City,10) ||
+        '|' || '                           |' );
+
+      dbms_output.put_line('|     +----------+--------------------+------------------------------+-----+--------------------+                           |');
+
+    END LOOP;
+    CLOSE b_cursor;
+
+    dbms_output.put_line('|                                                                                                                           |');
+    dbms_output.put_line('+----------+--------------------------------------------------+----------+--------------------------------------------------+');
+  END LOOP;
+  CLOSE c_cursor;
+END;

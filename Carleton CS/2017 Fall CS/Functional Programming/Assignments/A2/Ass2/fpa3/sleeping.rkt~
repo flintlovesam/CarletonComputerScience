@@ -1,0 +1,58 @@
+(#%require (only racket/base random))
+;(define score 0)
+(define (rps)
+  (define score 0)
+
+  
+
+  (define prompt "\nPlease enter a selection, 0=Rock, 1=Paper, 2=scissors\n")
+
+        (define (statusPrint score Hmove Cmove)
+          (display "\nThe Human Move is: ")
+          (display Hmove)
+          (display "\nThe Computer Move is: ")
+          (display Cmove)
+          (display "\nThe new Score is: ")
+          (display score)
+          )
+  
+         (define (scoreKeeper update curScore)
+           (+ update curScore)
+           (display "i am alive")
+           )
+
+  
+
+	(define (battle Hmove score)
+          (let ((Cmove (random 3)))
+		(cond
+                           ((and (equal? Hmove 1)      (equal? Cmove 0))      (+ 1 score)) 
+			   ((and (equal? Hmove 1) (equal? Cmove 1)) (+ 0 score))
+			   ((and (equal? Hmove 1) (equal? Cmove 2)) (+ -1 score))
+			   ((and (equal? Hmove 0) (equal? Cmove 0)) (+ 0 score))
+			   ((and (equal? Hmove 0) (equal? Cmove 1)) (+ -1 score))
+			   ((and (equal? Hmove 0) (equal? Cmove 2)) (+ 1 score))
+			   ((and (equal? Hmove 2) (equal? Cmove 0)) (+ -1 score))
+			   ((and (equal? Hmove 2) (equal? Cmove 1)) (+ 1 score))
+			   ((and (equal? Hmove 2) (equal? Cmove 2)) (+ 0 score)))
+            (display (+ 1 score)) ; 
+            (statusPrint score Hmove Cmove)
+            (read-and-display score )
+
+            ))
+  
+        ; The game runner and displayer of information
+	(define (read-and-display score)    
+          (display prompt)
+          (let ((Hmove (read)))
+            (if(not(eof-object? Hmove))
+               (begin
+                 (newline)
+                 (battle Hmove score)
+                 ;(read-and-display score )
+                 ))))
+  (read-and-display score)
+	
+	
+	)
+	

@@ -1,0 +1,209 @@
+Sammy Diamantstein: 101060342
+
+testing
+(for comments see bottom of file..)
+#1: test all of the possible rules, both affirmative and  contrary examples"
+
+Ancestor Test: ancestor(jean,jonny).
+Expected: true
+Answer: true
+
+Ancestor Test: ancestor(Ben,jonny).
+Expected: false
+Answer: false
+==============
+parent test: parent(bob,sammy)
+Expected: true
+Answer: true
+
+parent test: parent(ben,sammy)
+Expected: false
+Answer: false
+==============
+different Test: difference(ben,sammy)
+Expected: true
+Answer: true
+
+different Test:(sammy,sammy)
+Expected: false
+Answer: false
+
+==============
+is_mother Test: is_mother(rebecca,sammy)
+Expected: true
+Answer: true
+
+is_mother Test:is_mother(ben,sammy)
+Expected: false
+Answer: false
+==============
+
+is_father Test: is_father(bob,sammy)
+Expected: true
+Answer: true
+
+is_father Test: is_father(ben,sammy)
+Expected: false
+Answer: false
+
+==============
+
+aunt Test: aunt(esther,sammy)
+aunt Test:Expected: true
+Answer: true
+
+aunt Test: pepi(esther,sammy)
+Expected: false
+Answer: false
+==============
+
+uncle Test: uncle(ben,sammy)
+aunt Test:Expected: true
+Answer: true
+
+uncle Test: uncle(bob,sammy)
+Expected: false
+Answer: false
+
+==============
+sister Test: sister(eliana,sammy)
+aunt Test:Expected: true
+Answer: true
+
+sister Test: sister(eliana,ben)
+Expected: false
+Answer: false
+==============
+
+brother Test: brother(sammy,jonny)
+aunt Test:Expected: true
+Answer: true
+
+brother Test: brother(ben,jonny)
+Expected: false
+Answer: false
+==============
+
+grandfather Test: grandfather(jean,sammy)
+aunt Test:Expected: true
+Answer: true
+
+grandfather Test: grandfather(ben,sammy)
+Expected: false
+Answer: false
+==============
+
+grandmother Test: grandmother(pepi,sammy)
+aunt Test:Expected: true
+Answer: true
+
+grandmother Test: grandmother(pepi,rebecca)
+Expected: false
+Answer: false
+==============
+
+ancestor Test: ancestor(jean,sammy)
+aunt Test:Expected: true
+Answer: true
+
+ancestor Test: ancestor(ben,sammy)
+Expected: false
+Answer: false
+
+QUESTION 2
+(results are nested below the questions)
+
+QUESTION 3
+
+3a)
+lastEle(X,[how,are,you,today]).
+Expected: X = today .
+Answer:  X = today .
+
+3b)
+Expected: R = [f, f, f, d, c, b, a] .
+Answer: R = [f, f, f, d, c, b, a] .
+
+3c)
+Expected:
+L1 = [4, 1, 2, 3],
+L2 = [7, 8, 9] .
+Answer:
+L1 = [4, 1, 2, 3],
+L2 = [7, 8, 9] .
+
+split([4,7,1,8,2,9,3],5, [4,1,2,3], [7, 8, 9]).
+Expected: true .
+Answer: true .
+
+3d) nextto(a,b, [c,a,b,d]).
+Expected: true .
+Answer: true .
+
+nextto(a,b, [c,a,d,b]).
+Expected: false .
+Answer: false .
+
+QUESTION 4
+
+4a) myAppend([a,b],[c,d],L).
+Expected: L = [a, b, c, d]  .
+Answer: L = [a, b, c, d]  .
+
+4b) myFirst(a,[a,b,c,d]).
+Expected: true .
+Answer: true .
+
+4c) myLast(d,[a,b,c,d]).
+Expected: true .
+Answer: true .
+
+
+4d) nexttto(a,b, [c,a,b,d]).
+Expected: true .
+Answer: true .
+
+4e) myReverse([1,2,3],[3,2,1]).
+Expected: true .
+Answer: true .
+
+myReverse([1,2,3],[3,2,0]).
+Expected: false .
+Answer: false .
+
+QUESTION 5
+
+5a)
+list([1,2,3])
+Expected: true .
+Answer: true .
+
+list(hello)
+Expected: false .
+Answer: false .
+
+
+5b)
+treeFlat([1,[2,3],[[4,[5]],6]],[1,2,3,4,5,6])
+Expected: true .
+Answer: true .
+
+treeFlat([1,[2,3],[[4,[5]],6]], L)
+Expected: L = [1, 2, 3, 4, 5, 6] .
+Answer:  L = [1, 2, 3, 4, 5, 6].
+
+
+
+
+comments
+1. rules for defining family relationships all relatively self explanatory
+2
+a: using y as variable to find movies from before 2010
+b.finding title with of or the
+c. common actors found using members
+d. storing chris as variable c, and c must be a members
+e: use of gender a filter
+f: use member with sean carribean
+g: actors in two movies found where member is found in multiple Facts
+h: oldest movie found by storing in variable x, compare to everything else
+.....NOT enough time to properly comment rest of work, have 4 other assignments due, wish I could more fully comment it all.

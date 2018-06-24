@@ -1,0 +1,114 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs32 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\
+1.\cb1 \
+\cb2 select C.Name from Customer C\cb1 \
+\cb2 where exists\cb1 \
+\cb2 (select * from Account A\cb1 \
+\cb2 where C.C# = A.C#);\cb1 \
+\
+\cb2 2.\cb1 \
+\cb2 select C.Name, B.Name from Customer C, Bank B\cb1 \
+\cb2 where not exists\cb1 \
+\cb2 (select * from Account A\cb1 \
+\cb2 where C.C# = A.C# and A.B# = B.B#);\cb1 \
+\
+\cb2 3.\cb1 \
+\
+\cb2 select C.Name from Customer C\cb1 \
+\cb2 where not exists\cb1 \
+\cb2 (select * from Account A\cb1 \
+\cb2 where C.C# = A.C#);\cb1 \
+\
+\
+\cb2 4.\cb1 \
+\
+\cb2 select B.Name from Bank B\cb1 \
+\cb2 where exists\cb1 \
+\cb2 (select * from Account A, Customer C\cb1 \
+\cb2 where C.Name = 'Blake' and C.C# = A.C# and A.B# = B.B#)\cb1 \
+\cb2 union\cb1 \
+\cb2 select B.Name from Bank B\cb1 \
+\cb2 where exists\cb1 \
+\cb2 (select * from Account A, Customer C\cb1 \
+\cb2 where C.Name = 'Clark' and C.C# = A.C# and A.B# = B.B#);\cb1 \
+\
+\cb2 5.\cb1 \
+\
+\cb2 select C.Name from Customer C \cb1 \
+\cb2 where not exists\cb1 \
+\cb2 (select * from Bank B \cb1 \
+\cb2 where not exists\cb1 \
+\cb2     (select * from Account A \cb1 \
+\cb2     where C.C# = A.C# and A.B# = B.B#));\cb1 \
+\
+\
+\cb2 6.\
+\
+select C.Name from Customer C where not exists\
+(select * from Bank B where \
+ (B.Name NOT IN ('Royal','France')\
+ OR EXISTS\
+ (select * from Account A where C.C# = A.C# and A.B# = B.B#))\
+ and\
+ (B.Name IN  ('Royal', 'France') or not exists\
+ (select * from Account A where C.C# = A.C# and A.B# = B.B#)));\
+ \cb1 \
+\
+7.\
+select C3.Name from Customer C3, Customer C\
+where C3.Name != 'Clark' and C.Name = 'Clark' and exists\
+    (select * from Bank B, Account A1, Account A\
+    where C.C# = A.C# and A.B# = B.B#\
+    and C3.C# = A1.C# and A1.B# = B.B#);\
+\
+8.\
+\
+select C3.Name from Customer C3, Customer C\
+where C3.Name != 'Clark' and C.Name = 'Clark' and NOT exists\
+    (select * FROM Bank B\
+        WHERE EXISTS\
+        (SELECT * FROM Account A\
+        where C.C# = A.C# and A.B# = B.B#)\
+    and not exists\
+    (select * from Account A1, Account A\
+    where C.C# = A.C# and A.B# = B.B#\
+    and C3.C# = A1.C# and A1.B# = B.B#));\
+\
+\
+\
+9.\
+select distinct C.Name \
+from Customer C, Account A1, Account A2\
+where C.C# = A1.C# \
+and C.C# = A2.C#\
+and A1.B# !=A2.B#;\
+\
+10.\
+\
+select distinct C.Name \
+from Customer C, Account A1 where C.C# = A1.C# \
+group by C.Name Having count(A1.B#)>1;\
+\
+11.\
+select  *\
+from Customer FULL OUTER JOIN Account USING (C#)\
+FULL OUTER JOIN Bank USING(B#);\
+union\
+select C.Name \
+from Customer C, Account A1 where C.C# = A1.C# \
+group by C.Name Having count(A1.B#)=1;\
+\
+\
+12.\
+select Name, SUM(Balance)\
+from Customer FULL OUTER JOIN Account USING (C#)\
+group by C#, Name;\
+}

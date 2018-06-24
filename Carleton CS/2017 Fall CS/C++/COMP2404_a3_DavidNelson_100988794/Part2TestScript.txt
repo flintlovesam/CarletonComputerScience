@@ -1,0 +1,46 @@
+//SHOW.TXT
+// FR1.3) .help
+.help
+//Log start
+.log start
+// FR2.4) show recordings -> ID / Name / Composer / Year
+show recordings
+// FR2.4) show songs -> ID / Name / Producer
+show songs
+// FR2.4) show users -> Full Name / User Name
+show users
+// FR2.4) show playlists -> There are no global. Must call by user.
+show playlists
+// FR2.5) show playlists gjones -> User Object / Owner / Number of Playlists / Names of Playlists
+show tracks
+// FR1.6) show tracks cindy -> -> User Object / Owner / Number of Playlists / Names of Playlists
+show users -u cindy
+// FR2.7 & 2.8) ADD CUSTOM OBJECTS and ESTABLISH NEW CONNECTIONS
+// FR2.7) add a new recording -> ID / Recording Title / Artists / Producer / Year
+add -r 114 "The Very Best of Dire Straits" "Dire Straits" "Muff Winwood" 1977
+// FR2.7) add a new song -> ID / Song Title / Composer
+add -s 1182 "Sultans of Swing" "Mark Knopfler"
+// FR2.7) add a new user -> Full Name / Username(ID)
+add -u dave "Dave Nelson"
+// FR2.8) add a new track -> Recording ID / Song ID / Track# / TrackID
+add -t 183 112 1182 1
+// FR2.8) add a new playlist -> User / Playlist Name
+add -p dave "Coding Songs"
+// FR2.8) add a new playlist track -> User OBJ / Playlist OBJ / TRACK OBJ linked to PTrack
+add -l dave "Coding Songs" 183
+// FR2.9) delete LOCAL
+delete -t 183
+// FR2.10) delete GLOBAL
+delete -s 1182
+delete -r 114
+// FR2.9) delete the user
+delete -u dave
+// FR2.15) This proves a comment works (printed below)
+//This proves a comment works
+//Log stop
+.log stop
+//Log show
+.log show
+//END SHOW.TXT
+//NOTE: FR3.2.8) This executes every show command, adds a new object of every type, and links them all into a users, playlists track.
+//      This command will execute thousands of lines of code required for proof of concept.

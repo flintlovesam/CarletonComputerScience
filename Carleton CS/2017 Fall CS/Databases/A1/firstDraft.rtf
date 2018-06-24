@@ -1,0 +1,206 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\csgray\c0;\csgray\c100000;}
+\margl1440\margr1440\vieww25100\viewh13580\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 \'97 - PART 2.
+\f1\b0\fs24 \
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs26 \cf2 \cb3 \CocoaLigature0  - \'97 create the tables \
+\
+CREATE TABLE qOne\
+    (\
+    Object char(255) NOT NULL,\
+    Dependent char(255) NOT NULL,\
+	 CONSTRAINT obj_pk PRIMARY KEY (Object),\
+	 CONSTRAINT dep_fk FOREIGN KEY (Dependent)\
+    \cf0 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 REFERENCES qOne(Object) DISABLE\cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+);       \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs34 \cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs26 \cf2 - - insert content into the table \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs34 \cf2   \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs22 \cf2    INSERT ALL\
+    INTO qOne(Object, Dependent) Values ('e2','e1')\
+    INTO qOne(Object, Dependent) Values ('e3','e2')\
+    INTO qOne(Object, Dependent) Values ('e1','e3')\
+    SELECT * FROM dual;
+\fs34 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs26 \cf2 \
+ - - modify the table, enable the constraint \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs22 \cf2 ALTER TABLE qOne\
+ENABLE CONSTRAINT dep_fk;\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs34 \cf2 \
+
+\f0\b\fs28 - - PART 3.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
+
+\f1\b0\fs26 \cf2 - - CREATE THE THREE TABLES
+\fs34 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf2 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs22 \cf2 SQL> CREATE TABLE Suppliers (\
+  2  S# varchar(255) 
+\f0\b NOT NULL,
+\f1\b0 \
+  3  SNAME varchar(255),\
+  4  STATUS int,\
+  5  CITY varchar(255),\
+  6  
+\f0\b PRIMARY KEY
+\f1\b0  (S#) \
+  7  );\
+\
+\
+SQL> CREATE TABLE Parts(\
+  2  P# varchar(255) 
+\f0\b NOT NULL
+\f1\b0 ,\
+  3  PNAME varchar(255),\
+  4  Color varchar(255),\
+  5  Weight int,\
+  6  City varchar(255),\
+  7  
+\f0\b PRIMARY KEY
+\f1\b0  (P#)\
+  8  );\
+\
+SQL> CREATE TABLE sp (\
+  2  S# varchar(255),\
+  3  p# varchar(255),\
+  4  QTY int,\
+  5  
+\f0\b FOREIGN KEY
+\f1\b0  ( S#) references Suppliers (S#),\
+  6  
+\f0\b FOREIGN KEY
+\f1\b0  ( p#) references Parts (P#),\
+  7  PRIMARY KEY (S#)\
+  8  );\
+\
+\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
+
+\fs26 \cf2 - - SET ADDITIONAL CONSTRAINTS\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs22 \cf2 \
+\
+- - check that the status of the supplier is greater than zero\
+ALTER TABLE Suppliers \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf2 ADD CONSTRAINT check_Status (status > 0);
+\f1\b0 \
+\
+\
+- - ensure that the name of the supplier is not null\
+ALTER TABLE Suppliers\
+
+\f0\b MODIFY SNAME varchar NOT NULL;\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0 \cf2 - - check that the only colours to be used for the parts  tables are red, blue or green\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 ALTER TABLE Parts\
+
+\f0\b ADD CONSTRAINT check_color CHECK (Color IN (\cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 'Red'\cf0 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 , \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 'Blue'\cf0 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 , \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 'Green'\cf0 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 ));
+\fs26 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0\fs22 \cf2 \
+ \
+ - - check that the #p value has two character\
+ALTER TABLE Parts \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b \cf2 ADD CONSTRAINT check_hashP CHECK (LENGTH(P#) = 2);\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0 \cf2 \
+- - check that the qty for the supplier part is at least 100 to 400 units\
+\pard\pardeftab720\partightenfactor0
+
+\fs26 \cf0 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 ALTER TABLE sp\
+
+\f0\b ADD CONSTRAINT check_qty CHECK (QTY BETWEEN 100 and 400);
+\fs22 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0 \cf2 \
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
+
+\fs26 \cf2 - - POPULATE  TABLES\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs22 \cf2 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26 \cf0 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 INSERT ALL\
+\
+INTO Suppliers (s#, sname, status, city) VALUES ('s1', 'Smith', 20, 'London') \
+INTO Suppliers (s#, sname, status, city) VALUES ('s2', 'Jones', 30, 'Paris') \
+INTO Suppliers (s#, sname, status, city) VALUES ('s3', 'Blake', 30, 'Paris') \
+INTO Suppliers (s#, sname, status, city) VALUES ('s4', 'Clark', 20, 'London') \
+INTO Suppliers (s#, sname, status, city) VALUES ('s5', 'Adams', 30, 'Athens') \
+\
+INTO Parts (p#, pname, color, weight, city) VALUES ('p1', 'Nut', 'Red', 12.0, 'London')\
+INTO Parts (p#, pname, color, weight, city) VALUES ('p2', 'Bolt', 'Green', 17.0, 'Paris')\
+INTO Parts (p#, pname, color, weight, city) VALUES ('p3', 'Screw', 'Blue', 17.0, 'Oslo')\
+INTO Parts (p#, pname, color, weight, city) VALUES ('p4', 'Screw', 'Red', 14.0, 'London')\
+INTO Parts (p#, pname, color, weight, city) VALUES ('p5', 'Cam', 'Blue', 12.0, 'Paris') \
+INTO Parts (p#, pname, color, weight, city) VALUES ('p6', 'Cog', 'Red', 19.0, 'London')\
+\
+INTO sp (s#, p#, qty) VALUES ('s1', 'p1', 300)\
+INTO sp (s#, p#, qty) VALUES ('s1', 'p2', 200)\
+INTO sp (s#, p#, qty) VALUES ('s1', 'p3', 400)\
+INTO sp (s#, p#, qty) VALUES ('s1', 'p4', 200)\
+INTO sp (s#, p#, qty) VALUES ('s1', 'p5', 100)\
+INTO sp (s#, p#, qty) VALUES ('s1', 'p6', 100)\
+INTO sp (s#, p#, qty) VALUES ('s2', 'p1', 300)\
+INTO sp (s#, p#, qty) VALUES ('s2', 'p2', 400)\
+INTO sp (s#, p#, qty) VALUES ('s3', 'p2', 200) \
+INTO sp (s#, p#, qty) VALUES ('s4', 'p2', 200)\
+INTO sp (s#, p#, qty) VALUES ('s4', 'p4', 300)\
+INTO sp (s#, p#, qty) VALUES ('s4', 'p5', 400)\
+\
+ SELECT * FROM dual;\
+\
+\
+- - total constraints = Primary Key + Foreign Key + NOT NULL + Check_Status + Modify SName + Check_color + check_hashP + check_qty = 8 unique constrains \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+}

@@ -1,0 +1,27 @@
+/* an external style sheet
+
+   notice the use of c-style comments and not xhtml-style
+   comments
+   */
+  body {color: black; background-color: gray;}
+  table {color: black; 
+         background-color: #000000;
+         }
+  caption {font-size: 24pt;
+           font-weight: bold;
+        font-family: Georgia "Courier New";
+        }
+        
+  td,th {padding: 20px;}
+
+  #canvas {
+
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+
+
+}

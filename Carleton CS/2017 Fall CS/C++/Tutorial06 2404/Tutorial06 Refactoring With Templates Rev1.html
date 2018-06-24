@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+body {
+	font-family: arial;
+	margin-left: 80px;
+}
+p {
+	font-size:24px;
+}
+pre {
+	font-size:24px;
+	font-family: 'Courier New';
+}
+hr {
+	width: 100%;
+	height: 2px;
+	
+	margin-top:10px;
+	margin-bottom:10px
+}
+.header {
+	text-align: center;
+	font-weight: bold;
+	font-size: 40px;
+	
+	margin-top:0px;
+	margin-bottom:0px;
+	
+	color: rgb(153, 0, 0);
+}
+.subheader {
+	color: #000099;
+	
+	margin-bottom:100px;
+}
+.segment-header {
+	color: rgb(0, 0, 153);
+	font-size: 30px;
+}
+.black-bold {
+	color: rgb(0,0,0);
+	font-weight: bold;
+}
+.glossary-term {
+	font-weight: 700;
+	color: #000099;
+}
+.code {
+	font-family: 'Courier New';
+}
+.comment {
+	color:rgb(0, 128, 0);
+}
+ul li {
+	margin-bottom: 5px;
+	font-size:24px;
+}.red {
+	color: #F00;
+}
+</style>
+</head>
+
+<body>
+<p class="header">COMP 2404 Fall 2017</p>
+<p class="header subheader">Tutorial 06: Refactoring With Templates</p>
+<p>&copy; L.D. Nel 2017</p>
+<hr />
+<p class="red">Revisions will be noted here</p>
+<p class="red">Rev 1: 2017 11 02 changed references to <span class="code">template &lt;class T&gt;</span> to <span class="code">template &lt;typename T&gt;</span> to bring things more up to date. Both will work but <span class="code">typename</span> is preferred over <span class="code">class</span> when creating templates and makes it more obvious that T could be, say, an<span class="code"> int</span> and not just a <span class="code">class</span>.</p>
+<hr />
+<p class="segment-header">Description:</p>
+
+<p>The purpose of this tutorial is 
+to introduce you to C++ templates and use them in a refactoring context.</p>
+<p class="red">This tutorial is meant to be started as homework. You will not be able to finish if you only start working on it at your tutorial session.</p>
+<p>&nbsp;</p>
+<hr/>
+<p class="segment-header">Demo Code</p>
+<p><span class="black-bold">Refactoring</span> is the activity, or process, of modifying existing code without changing what it does. That is, it is not modified to meet new functional requirements rather it is modified to improve the existing code. Refactoring is done to make the code more readable, mantainable, reusable, scalable, encapsulaged, decoupled, etc. In other words it's a reworking of existing code to clean it up and make it better in some way.</p>
+<p>In this exercise we are going to refactor some existing code by removing unnecessary duplication by taking advantage of C++ templates.</p>
+<p>Compile the code in the demo code folder with g++ by executing:</p>
+<p class="code">make myApp</p>
+<p>Run the code by executing:</p>
+<p class="code">./myApp</p>
+<p>Open the <span class="code">Makefile</span> and the code files in your favourite editor and familiarize yourself with the code.</p>
+<p>Observe the following:</p>
+<p>1) We are creating our own version of a Vector class. Our own container classes.</p>
+<p>2) There are three versions of a vector-like container:<span class="code"> VectorOfInt</span>, <span class="code">VectorOfDate</span>, and <span class="code">VectorOfBankAccount</span>. Observe that their code is different only in the type of object that they store. In all other ways they are essentially &quot;cut and paste&quot; copies of each other.</p>
+<p>2) Normally the Vector classes would be represented as both .h and .cpp files. As a preliminary refactoring step we have moved all their code to just .h files. This is done because the C++ feature we are going to use (templates) requires that all the code be in just a .h file -at least as far the g++ compiler is concerned. </p>
+<p>3) Notice where the <span class="code">Makefile</span> refers to these vector .h files. Because they don't have .cpp parts those don't appear as separate compile dependencies in the make files. (Note you can still compile the code like this as well: <span class="code">g++ -g -Wall main.cpp date.cpp bankaccount.cpp</span>) but you should get used to the Makefile way of doing things.</p>
+<p>&nbsp;</p>
+<p>Run the code an make sure you can explain where all the output is coming from.</p>
+<p><br>
+</p>
+<p class="segment-header">Exercise 1</p>
+<p>Our main goal in this tutorial is to get rid of these &quot;cut and paste&quot; vector copies of essentially the same code.</p>
+<p>Our first step will be to parameterize the type in the <span class="code">vectorOfBankAccount.h</span> file.</p>
+<p>Above the class definition add the statement:</p>
+<p class="code">typedef BankAccount T;</p>
+<p>This creates an alias for type <span class="code">BankAccount</span> called <span class="code">T</span>.</p>
+<p>Now everywhere in file <span class="code">vectorOfBankAccount.h</span> where type <span class="code">BankAccount</span> is referred to directy replace it with <span class="code">T</span> instead.</p>
+<p>So the code should look something like the following:</p>
+<pre>
+<span class="red">typedef BankAccount T;</span>
+
+class  VectorOfBankAccount {
+ public:
+  VectorOfBankAccount (int len = 100){
+    cout << "Vector(int)\n";
+    mysize = len;
+    buffer = new  <span class="code"><span class="red">T</span></span>*[len];
+  }
+  
+  ~VectorOfBankAccount (void){ 
+     cout << "~Vector(void)\n";
+     delete  [] buffer; 
+   }
+   int capacity (void) const { 
+      return mysize; 
+   }
+   void addElementAt(<span class="red">T</span> & x, int index){ 
+      if(index < mysize) buffer[index] = &x;
+   }
+   T & elementAt(int index) const { 
+      return *buffer[index] ;
+   }
+   
+  private:
+  int mysize;
+  <span class="red">T</span> **buffer;
+}; 
+</pre>
+<p>Notice at this point the only occurence of the substring &quot;BankAccount&quot; is in the contructor and destructor name. What we have achieved here is called <span class="black-bold">locality of reference</span>. If you wanted to now change this code so this was a <span class="code">VectorOfPerson</span> instead you would only have to change the typedef to be <span class="code">typedef Person T</span> and change the names of the constructor and destructor. Thus we have taken our first step towards making the code more <span class="black-bold">generic</span>.</p>
+<p>After making this change recompile and re-run the code. Convince yourself that the code still behaves the same.</p>
+<p>&nbsp;</p>
+<p class="segment-header">Exercise 2</p>
+<p>Next we want to change our <span class="code">class VectorOfBankAccount</span> into a completely generic vector class <span class="black-bold">template</span>.</p>
+<p>First do a Save As... and save the <span class="code">vectorOfBankAccount.h</span> file as a new <span class="code">vector.h</span> file. </p>
+<p>Replace the <span class="code">typedef BankAccount T</span>; statement with a <span class="code">template &lt;typename T&gt;</span> statement instead and change the name of the constructor and destructor to be just <span class="code">Vector(...) </span>and <span class="code">~Vector(...)</span>.</p>
+<p>Your code should now look like the following (notice the template statement does not end in a semi-colon and must come just before the class definition):</p>
+<p>&nbsp;</p>
+<pre>
+<span class="red">template &lt;typename T&gt;</span>
+class  Vector{
+ public:
+  Vector(int len = 100){
+    cout << "Vector(int)\n";
+    mysize = len;
+    buffer = new  T*[len];
+  }
+  
+  ~Vector(void){ 
+     cout << "~Vector(void)\n";
+     delete  [] buffer; 
+   }
+   int capacity (void) const { 
+      return mysize; 
+   }
+   void addElementAt(T & x, int index){ 
+      if(index < mysize) buffer[index] = &x;
+   }
+   T & elementAt(int index) const { 
+      return *buffer[index] ;
+   }
+   
+  private:
+  int mysize;
+  T **buffer;
+}; 
+</pre>
+<p>Notice there is now absolutely no indication that this code has anything to do with BankAccount's anymore. It is completely generic. The <span class="code">template &lt;typename T&gt;</span> prefix before the class definition tells the compiler that <span class="code">T</span> is a place holder for what will be a type, or class. This code is no longer a class defintion either; it is now a template out of which the compiler can create classes.</p>
+<p>To make use of this class template now do the following:</p>
+<p>In <span class="code">main.cpp</span> do the following: </p>
+<p>1) Replace the <span class="code">#include &quot;vectorOfBankAccount.h&quot;</span> with<span class="code"> #include &quot;vector.h</span>&quot; instead.</p>
+<p>2) Replace <br>
+  <span class="code">VectorOfBankAccounts accounts (MAX_BANK_ACCTS); </span><br>
+with <br>
+<span class="code">Vector&lt;BankAccount&gt; accounts (MAX_BANK_ACCTS);</span></p>
+<p>In the above statement the compiler learns that <span class="code">T</span> should be replaced with <span class="code">BankAccount</span> and it will use the vector template to create and compile the appropriate class.</p>
+<p>In the <span class="code">Makefile</span>:</p>
+<p>1)  replace the reference to<span class="code"> vectorOfBankAccount.h</span> with <span class="code">vector.h</span> instead.</p>
+<p>Recompile and run the code. It should behave the same but now make use of your generic vector class.</p>
+<p>&nbsp;</p>
+<p class="segment-header">Exercise 3</p>
+<p>Finally we want to now get rid of the<span class="code"> VectorOfInt</span> and <span class="code">VectorOfDate</span> classes alltogether and use our new generic class.</p>
+<p>Change <span class="code">main.cpp</span> so it no longer includes either <span class="code">vectorOfInt.h</span>, <span class="code">vectorOfDate.h</span> or <span class="code">vectorOfBankAccount.h</span>. It should now only include <span class="code">vector.h</span>.</p>
+<p>Instantiate all the needed vectors in <span class="code">main.cpp</span> using the templated vector:</p>
+<p> <span class="code">Vector&lt;BankAccount&gt; accounts (MAX_BANK_ACCTS);<br>
+Vector&lt;Date&gt; dates;<br>
+Vector&lt;int&gt; someInts;</span><br>
+</p>
+<p>Finally modify the <span class="code">Makefile</span> to only refer to<span class="code"> vector.h</span></p>
+<p>Recompile and run the code to verify that it still behaves as it originally did.</p>
+<p>Congratulations you have refactored this code and removed the &quot;cut and paste&quot; copies and replaced it with a single generic container.</p>
+<p>&nbsp;</p>
+<p class="red">When you have completed the   exercises above  demonstrate your code to one of the tutorial TA's to get credit for the tutorial.</p>
+<p>&nbsp;</p>
+<h1 class="blue">Advanced Optional Exercises:</h1>
+<p>1) Can you create an output stream operator for the vector class template so that you can print vectors to cout like this:</p>
+<p class="code">cout &lt;&lt; myVector;</p>
+<p>2) Can you explain why it is necessary that the template vector class be only in one .h file. (It will not work in g++ if you try and split it into .h and .cpp files. Why do you think this is?</p>
+<p>3) You will notice that when you compile the new refactored code that the compiler creates three new files: <span class="code">bankaccount.h.gch, date.h.gch, vector.h.gch</span> what is that about? Can you modify the <span class="code">Makefile</span> so that <span class="code">make clean</span> with get rid of them as well?</p>
+<p>4) Can you modify the code so that when the constructor and destructor print to <span class="code">cout</span> they say</p>
+<p class="code">Vector&lt;BankAccount&gt;(int)<br>
+Vector&lt;Date&gt;(int)<br>
+Vector&lt;int&gt;(int)</p>
+<p>rather than just:</p>
+<p><span class="code">Vector(int)<br>
+  Vector(int)<br>
+Vector(int)</span></p>
+<p>5) The refactoring we did here can be done with inheritance instead of templates. Can you do an inheritance based version? What would be the tradeoff of using inheritance vs. using templates? We will study this later in the course.</p>
+<p class="red">If you come up with a nice solution to one of the optional problems please email it to me so I can post it for others to enjoy.</p>
+<p></p>
+<p>&nbsp;</p>
+</body>
+</html>
